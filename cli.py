@@ -12,5 +12,6 @@ def player(query):
         html = parse_html(text_result)
         players_list = players(html)
         grid = Player_grid(players_list)
-        grid.render(query)
+        selected = grid.selector(query)
+        print(players_list[selected])
         return
