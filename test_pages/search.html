@@ -1,0 +1,2055 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <script data-description="sourcepoint stub code" type="text/javascript">
+        !function () {var e = function () {var e, t = "__tcfapiLocator", a = [], n = window; for (; n;) {try {if (n.frames[t]) {e = n; break} } catch (e) { } if (n === window.top) break; n = n.parent} e || (!function e() {var a = n.document, r = !!n.frames[t]; if (!r) if (a.body) {var i = a.createElement("iframe"); i.style.cssText = "display:none", i.name = t, a.body.appendChild(i)} else setTimeout(e, 5); return !r}(), n.__tcfapi = function () {for (var e, t = arguments.length, n = new Array(t), r = 0; r < t; r++)n[r] = arguments[r]; if (!n.length) return a; if ("setGdprApplies" === n[0]) n.length > 3 && 2 === parseInt(n[1], 10) && "boolean" == typeof n[3] && (e = n[3], "function" == typeof n[2] && n[2]("set", !0)); else if ("ping" === n[0]) {var i = {gdprApplies: e, cmpLoaded: !1, cmpStatus: "stub"}; "function" == typeof n[2] && n[2](i)} else a.push(n)}, n.addEventListener("message", (function (e) {var t = "string" == typeof e.data, a = {}; try {a = t ? JSON.parse(e.data) : e.data} catch (e) { } var n = a.__tcfapiCall; n && window.__tcfapi(n.command, n.version, (function (a, r) {var i = {__tcfapiReturn: {returnValue: a, success: r, callId: n.callId}}; t && (i = JSON.stringify(i)), e.source.postMessage(i, "*")}), n.parameter)}), !1))}; "undefined" != typeof module ? module.exports = e : e()}();
+    </script>
+    <script data-description="sourcepoint configuration">
+        window._sp_ = {
+            config: {"accountId": 1254, "propertyId": 7429, "gdpr": {"consentLanguage": "es", "targetingParams": {"acps": "false"}}, "baseEndpoint": "https://cdn.privacy-mgmt.com", "isSPA": true, "cpPropertyId": "b117d02e"}
+        }
+    </script>
+    <script async="" src="https://cdn.privacy-mgmt.com/wrapperMessagingWithoutDetection.js">
+    </script>
+    <script data-description="contentpass integration" type="text/javascript">
+            (function () {
+                var cpBaseUrl = 'https://cp.transfermarkt.es';
+                var cpController = cpBaseUrl + '/now.js';
+                var cpPropertyId = 'b117d02e';
+
+                !function (C, o, n, t, P, a, s) {
+                    C['CPObject'] = n; C[n] || (C[n] = function () {
+                        (C[n].q = C[n].q || []).push(arguments)
+                    }); C[n].l = +new Date; a = o.createElement(t);
+                    s = o.getElementsByTagName(t)[0]; a.src = P; s.parentNode.insertBefore(a, s)
+                }
+                    (window, document, 'cp', 'script', cpController);
+
+                !function (C, o, n, t, P) {
+                    if (!C[n].patched) {
+                        cp('extension', 'authenticate'); P = C[n].q.push;
+                        C[n].q.push = function (a) {
+                            if (a[0] === 'authenticate') {
+                                if ((o['cookie'] || '').indexOf('_cpauthhint=') === -1 &&
+                                    !(C['localStorage'] || {})['_cpuser'] && C.location.href.toLowerCase().indexOf('cpauthenticated') === -1) {
+                                    t = {isLoggedIn: function () {return false;}, hasValidSubscription: function () {return false;}};
+                                    (typeof a[1] === 'function' && a[1](null, t)); C[n].afp = true; P.apply(C[n].q, [['authenticate', null]]);
+                                    return t;
+                                }
+                            } P.apply(C[n].q, [a]);
+                        }
+                    }
+                }
+                    (window, document, 'cp', false);
+
+                cp('create', cpPropertyId, {
+                    baseUrl: cpBaseUrl
+                });
+
+                cp('render', {
+                    onFullConsent: function () {
+                        console.log('[DEMO] onFullConsent');
+                    }
+                })
+            })()
+    </script>
+    <script data-description="contentpass sourcepoint fast path" type="text/javascript">
+            (function () {
+                cp('authenticate', function (err, user) {
+                    if (err || (!user.isLoggedIn() && !user.hasValidSubscription())) {
+                        // console.log('[SPCP] Taking fast path');
+                        (function spExecMsg() {
+                            if (window._sp_ && window._sp_.executeMessaging) {
+                                if (!window._sp_.config.isSPA) {
+                                    // console.warn('[SPCP] Sourcepoint not in SPA mode!');
+                                } else if (window._sp_.version) {
+                                    // console.log('[SPCP] Sourcepoint already running');
+                                } else {
+                                    // console.log('[SPCP] Starting Sourcepoint');
+                                    window._sp_.executeMessaging();
+                                }
+                            } else {
+                                // console.log('[SPCP] Sourcepoint not loaded yet. Retrying.');
+                                setTimeout(spExecMsg, 10);
+                            }
+                        })();
+                    }
+                });
+            })();
+    </script>
+    <meta charset="utf-8" />
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="/favicon-16x16.png" rel="shortcut icon" sizes="16x16" />
+    <link href="/android-chrome-192x192.png" rel="shortcut icon" sizes="192x192" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=no" name="viewport" />
+    <meta content="noindex, nofollow" name="robots" />
+    <meta
+        content="Esta es la página de la búsqueda rápida en la que se muestran los resultados del campo de búsqueda según el término de búsqueda utilizado."
+        name="description" />
+    <meta content="article" property="og:type" />
+    <meta content="https://tmssl.akamaized.net/images/tm_logo.png" property="og:image" />
+    <meta content="" property="og:description" />
+    <meta content="Resultado de búsqueda" property="og:title" />
+    <meta content="Resultado de búsqueda" property="twitter:title" />
+    <meta content="https://www.transfermarkt.es/schnellsuche/ergebnis/schnellsuche?query=lamine+yamal"
+        property="og:url" />
+    <link href="https://www.transfermarkt.de/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="de"
+        rel="alternate">
+    <link href="https://www.transfermarkt.de/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="de-LU"
+        rel="alternate">
+    <link href="https://www.transfermarkt.at/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="de-AT"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.ch/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="de-CH"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.com.tr/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="tr"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.it/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="it-CH"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.it/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="it"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.pl/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="pl"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.co.uk/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="en-GB"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.co.uk/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="en-IE"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.es/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="es"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.es/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="es-ES"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.es/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="es-CL"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.es/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="es-VE"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.es/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="es-EC"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.es/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="es-CU"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.nl/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="nl"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.pt/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="pt"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.world/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="ru"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.fr/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="fr-CH"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.fr/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="fr"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.fr/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="fr-CA"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.fr/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="fr-CI"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.fr/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="fr-LU"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.fr/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="fr-BE"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.com.br/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="pt-BR"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.us/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="en-US"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.us/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="en-CA"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.co.in/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="en-IN"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.co.za/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="en-ZA"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.com/schnellsuche/ergebnis/schnellsuche?query=lamine yamal"
+        hreflang="x-default" rel="alternate" />
+    <link href="https://www.transfermarkt.com/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="en"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.be/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="nl-BE"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.ro/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="ro"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.gr/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="el-GR"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.co.kr/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="ko-KR"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.com.ar/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="es-AR"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.mx/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="es-MX"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.co/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="es-CO"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.pe/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="es-PE"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.my/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="ms"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.jp/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="ja"
+        rel="alternate" />
+    <link href="https://www.transfermarkt.co.id/schnellsuche/ergebnis/schnellsuche?query=lamine yamal" hreflang="id"
+        rel="alternate" />
+    <link href="https://tmssl.akamaized.net/styles/tm-main.min.css?lm=1777385464" rel="stylesheet" type="text/css" />
+    <link href="https://tmssl.akamaized.net/css/stylesheets/main_desktop.css?lm=1777384877" rel="stylesheet"
+        type="text/css" />
+    <link href="https://tmssl.akamaized.net/styles/tm-discover.min.css?lm=1777385464" rel="stylesheet"
+        type="text/css" />
+    <link href="https://tmssl.akamaized.net/styles/tm-button-list.min.css?lm=1777385464" rel="stylesheet"
+        type="text/css" />
+    <link href="https://tmssl.akamaized.net/styles/tm-link-list.min.css?lm=1777385464" rel="stylesheet"
+        type="text/css" />
+    <link href="https://tmssl.akamaized.net/styles/tm-print.min.css?lm=1777385464" rel="stylesheet" type="text/css" />
+    <link href="https://tmssl.akamaized.net/styles/tm-chosen.min.css?lm=1777385464" rel="stylesheet" type="text/css" />
+    <link href="https://tmssl.akamaized.net/css/stylesheets/main.css?lm=1777384877" rel="stylesheet" type="text/css" />
+    <link href="https://tmssl.akamaized.net/css/stylesheets/paginator.css?lm=1777384877" rel="stylesheet"
+        type="text/css" />
+    <style type="text/css">
+        /*<![CDATA[*/
+
+        .ad-placement-background {
+            background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxODk2IDgwNyI+CiAgPHBhdGggZD0iTTEwNTYuMyA1MzIuNGMwLTE3LjEtMTUuMy0yOS4yLTMyLTMzLjktMTEuNS0zLjItNjUuNi0xMC42LTExNi45IDAtMTQuNiAzLTYxLjUgMTkuNy02MC43IDM4LjQuNSAxMC42IDE4LjQgMTEuOSAyNS43IDExLjkgMzguNyAwIDQ5LjEtMjIuNyA4Mi42LTIyLjdzMjcuMi0xLjQgMjcuMiAxNC44LTMzLjMgMjEuNS0zNy4yIDIyYy0xNy40IDIuNC04NC42IDEyLjQtMTA4LjYgMjUuMy0zNi40IDE5LjUtNDcgNDAuNi00NyA1Mi42IDAgMzcuNyA1MC43IDQwLjYgNzEuNyA0MC42IDMxLjQgMCA0NS42LTEwLjkgNzEuNy0xMC45czMyLjYgNi41IDQyIDYuOWM3LjMuMyAxMy45LTEuNCAxOS45LTMuMyAxNy4yLTUuNSAxOC4yLTIzLjEgMjMuMy0zNC42IDExLjEtMjUuNSAyMS42LTUxLjMgMzEuMS03Ny4yIDMuNC05LjkgNy4zLTE5LjggNy4zLTI5LjlabS0xNDQuOCAxMDljLTYuNyAxLjUtOS44IDIuMS0xNy40IDIuNC04LjUuMy0yNi43LTMuNS0yNi43LTE1LjMgMC0yNC40IDYzLjUtMzMuMiA3Mi43LTMzLjIgMTEuMi0uNCAxOC4zIDIuNyAxOC4zIDkuOSAwIDIwLjgtNDQuNiAzNS43LTQ2LjkgMzYuMlpNNzkzLjkgNTA3LjVjLTQ0LjctMjcuOS0xMDcuMiA1LTEzMC41IDUtMzEuOCAwLTMwLjctMTIuOC02NC44LTE1LTY5LTQuMS05MCAxMi4yLTEwNS4yIDEyLjJzLTkuMy04LjMtMjEuNS02LjdjLTEzLjMgMi4yLTE1LjUgNS0xOS4xIDEwLTQuNSA2LjMtNTMuNSAxMzguOC01Ni41IDE0Ni4xLTExLjEgMjYuMyA1NS43IDI5LjUgNzAuOCA4LjcgMzkuNy01NC45IDMwLjktMTE0LjIgODAuOS0xMjMuOSAxMS44LTIuMyAyMi4zLTIuNiAzMC40IDkuMWwuNC44YzcuMiAxMy4zLTUuNCAzOS44LTEzLjggNjAuNS00LjEgMTAtMTYuNiA0Mi43LTE1LjUgNTQgMS45IDIxLjEgNjYuOCAxNC4xIDc1LjYtMi4xIDE5LjMtMzUuNiAyMy4xLTk2LjkgNDQuMS0xMTMuNCAyNS42LTIwIDQ5LjItNC43IDUxLjMgNC41IDQuMiAxOC4yLTEzLjUgNTIuNy0yMyA3Mi44LTEzLjQgMjguNS03LjMgNTEuMSAyNyA1MS4yIDExLjQgMCAyNy00LjQgMzMuNy0xNC4xIDUuNy04LjMgMTQuNS0zMS42IDI3LjQtNjYuNSAxNC4xLTM4LjEgMjkuMi04MCA4LjMtOTMuMVpNMTIzNSA1MTQuMmMtMS40LTExLTEyLTE1LjYtMjEuMS0xNS4yLTYuNC4yLTE4LjggNS4yLTI4LjYgNS4yLTEwLjcgMC0xNS4yLTIuMS0yOS43LTQuNy0xNy41LTMuMi0zMy4yLTIuNi00My43IDAtMTYuMiA0LTI4LjcgMjAtMzIuMSAzMi44LTUuOCAyMS0xNi42IDQyLjQtMjQuNyA2My4zLTguNyAyMi41LTIzLjcgNjIuMi0yNC40IDcwLjEtLjYgNi45IDcuMiAxNS43IDE1LjIgMTUuNyAwIDAgMzEgLjMgMzcuMS0uMiAyNS0yLjIgMzQuNi0zNi4yIDQwLjMtNTAuNiA0LjctMTEuNyA5LjUtMjQgMTQuMi0zNS42IDMuMS03LjcgNy4zLTE5LjEgMTYuMS0yNy4zIDE3LjItMTYgMzcuNi0xNiA1Ni4zLTIwLjggMTYuOS00LjQgMjYuOC0xOSAyNS4yLTMyLjZaIiBmaWxsPSIjZDdkN2Q3Ii8+CiAgPHBhdGggZD0iTTM3LjcgNDEuOXY3MjEuN2gxODA5LjhWNDEuOUgzNy43Wm0xNzg5LjEgNzAxSDU4LjNWNjIuNWgxNzY4LjV2NjgwLjRaIiBmaWxsPSIjZDdkN2Q3Ii8+CiAgPHBhdGggZD0iTTE2MzIuNCA0OTUuOGMtNy44LTMuMS0xNS4yLTYuMi0xMy42LTE0LjIgMy0xNC41IDQuMy0yNC4zLjctMzAuNC0zLjYtNi0xMi4yLTguMy0yOC45LTcuOC0yNi43LjgtMzYuMiA3LjktNDIgMTcuMS01LjkgOS4xLTguMiAyMC4zLTIwLjQgMjkuMi03LjUgNS40LTE1LjkgNy45LTIzIDExLjItNy4xIDMuMy0xNC44IDguOC0xNC44IDE2LjMuMSA4LjQgNSAxMC45IDEwLjEgMTMuOCA1IDIuOSAxMC4yIDUuMyAxMC43IDEwLjguMyAxNi42LTcuOCAzNS43LTE2IDU0LjYtOC4zIDE4LjgtMTYuNyAzNy4zLTE2LjkgNTIuOC0xLjYgMzYuOSA0Ni43IDMxLjkgNTguMSAzMiAxNi4yLS4yIDU3LjkgMi40IDU4LjYtMjkuOCAwLTktNy43LTEyLTE1LjItMTUuMi03LjUtMy4zLTE0LjgtNi44LTE0LjEtMTYuOS4zLTMuNCA1LjQtMTguNSAxMS0zMy44IDUuNi0xNS4zIDExLjctMzAuNiAxMy45LTM0LjMgNi4yLTEwLjQgMjAuOC0xNS40IDMzLjgtMjAuNCAxMy01IDI0LjQtMTAgMjQuNC0yMC40cy04LjMtMTEuMy0xNi4xLTE0LjVaTTE0MDcuOSA1MDkuNmMtMTMuOCA1LTc3LjUgNDktODguMiAzNC41LTguMy0xNC4xIDMxLjctNzguMyAyNS44LTkwLjgtNy45LTE2LjYtNDQuMi05LTUyLjUtNS0xNS4xIDcuMy0yMC4xIDI0LjgtMjUuNyAzOC44LTEwLjcgMjYuOC02NS42IDE2Ny44LTY4LjkgMTc4LjMtNS42IDE3LjkgNTQuNyAzMCA3NC44LTE2LjcgNi4zLTE0LjUgMjQuNi0zMi4zIDQwLjktMzIuMyAzMS45IDAgMjYuNyA2My43IDcwLjQgNjQuNyA0LjggMCAyMy41LjUgMzYuNy01LjcgMjMuNC0xMS4xLTI4LTc2LjUtMjgtOTYuNnM4Ni44LTU3LjEgNzkuNi02Ny43Yy05LjItMTMuNS00Ny45LTcuNy02NS0xLjVaIiBmaWxsPSIjZDdkN2Q3Ii8+CiAgPHBhdGggZD0iTTMzMC41IDQxMS43WiIgZmlsbD0iI2I0MTAxZiIvPgogIDxwYXRoIGQ9Ik0xNDI0LjQgMjUyLjZoNDAuM2M0LjIgMCAzMiAwIDMxLjMtMTYuOC0uNi0xMy41LTE4LjctMTcuNS0zMy44LTE3LjYtMTIuOS0uMi01NC4yIDYuNS01NC4yIDIzLjZzNS42IDkuOSAxNi41IDEwLjlaTTU3My40IDI4Mi44Yy05LjIgMC03Mi43IDguOC03Mi43IDMzLjJzMTguMiAxNS43IDI2LjcgMTUuM2M3LjYtLjMgMTAuNy0uOSAxNy40LTIuMyAyLjMtLjUgNDYuOS0xNS40IDQ2LjktMzYuMnMtNy4xLTEwLjMtMTguMy05LjlaIiBmaWxsPSIjZDdkN2Q3Ii8+CiAgPHBhdGggZmlsbD0iI2FmMjAwOSIgZD0iTTM0MC40IDc1NC4xeiIvPgogIDxwYXRoIGQ9Ik0zNzcuMiA3MDYuOGMtNi0yMS42LTI1LjktMzYuMS00OC4zLTM1LjItMy44LjEtNy41LjctMTEuMSAxLjctMjUuNiA3LjItNDAuNiAzMy45LTMzLjQgNTkuNSA2LjEgMjEuNiAyNS45IDM2LjEgNDguMyAzNS4yIDMuOC0uMiA3LjUtLjcgMTEuMS0xLjggMTIuNC0zLjUgMjIuNy0xMS42IDI5LTIyLjggNi4zLTExLjIgNy45LTI0LjIgNC40LTM2LjdabS0xNS40IDMwLjVjLTQuNyA4LjMtMTIuMyAxNC4zLTIxLjQgMTYuOC0yLjcuOC01LjUgMS4yLTguMiAxLjNoLTEuNGMtMTYgMC0yOS45LTEwLjUtMzQuMy0yNi0uOS0zLjItMS4zLTYuNC0xLjMtOS42IDAtMTUuNiAxMC4zLTI5LjkgMjYtMzQuMyAyLjctLjcgNS41LTEuMiA4LjItMS4zaDEuNGMxNS45IDAgMjkuOSAxMC41IDM0LjIgMjYgLjkgMy4yIDEuMyA2LjQgMS4zIDkuNiAwIDYtMS42IDEyLTQuNiAxNy40WiIgZmlsbD0iI2Q3ZDdkNyIvPgogIDxwYXRoIGZpbGw9IiNhZjIwMDkiIGQ9Ik0zMjEuMiA2ODUuNXpNMzMwLjQgMzA4LjV6TTMyMy4yIDMwOS43eiIvPgogIDxwYXRoIGQ9Ik0xODA2LjggODEuOEg3OC4zVjQwNmgxNjZjLTM3LjkgMTYuNS03OC4yIDM0LjEtOTEuOCA0MC0xNC40IDYuMS0yMi4xIDIyLjEtMTcuOSAzNy4yIDMuOCAxMy40IDE2LjEgMjIuOCAzMCAyMi44aDEuMmMyLjQgMCA0LjgtLjUgNy4yLTEuMSAxLS4zIDIuMi0uNiAzLjUtMS4xaC4zYzAtLjEgNjgtMzAuOCA2OC0zMC44bC05LjIgMjIuOEwxOTMuOSA1OThsLS4yLjVjLTIuMiA2LjItMi41IDEyLjgtLjcgMTkgMy44IDEzLjYgMTUuOCAyMi44IDI5LjkgMjIuOGgxLjJjLjcgMCAxLjUgMCAyLjEtLjJsLTM0LjQgODQuN3MtMTMuNyAyOC45IDE0LjUgNDEuMWMzMy4xIDE0LjMgNDMuNi0xOC40IDQzLjYtMTguNGw4MC44LTE5OC44IDQxLjItMTAxLjUgMTQuNCA1LjgtMTQuMiAzNC45LTEgMi43LS4yLjljLTEuMiA1LjEtMS4xIDEwLjUuMyAxNS42IDMuOCAxMy40IDE2LjEgMjIuOCAzMCAyMi44aDEuMWMyIDAgNS0uMyA4LjEtMS40IDEwLjctMy43IDE2LjMtOS4yIDIwLjYtMjAuNWwyNS4zLTYyLjJjMi4yLTUuNCA0LTExLjUgMS43LTE5LjQtMi40LTguNy03LjctMTUuMS0xNS0xOC4xbC0uNC0uMmMtLjUtLjItMS4yLS41LTItLjhsLTMuMi0xLjNoMTM2OS40VjgxLjhaTTM0Mi4zIDE4Ni45YzEwLjUtMi42IDI2LjItMy4yIDQzLjcgMCAxNC41IDIuNiAxOSA0LjcgMjkuNyA0LjcgOS44IDAgMjUuNS00LjggMzEuOS00LjkgOC42LS4xIDIxLjUgMi42IDIxLjUgMTQuM3MtMTUuMSAzMC40LTI5IDMzLjdjLTE4LjggNC42LTM5IDQuMy01Ni4xIDIwLjMtOC44IDguMi0xMyAxOS42LTE2LjEgMjcuMy0zIDcuNS02LjEgMTUuMy05LjIgMjMtNS42LTQuNC0xMi4zLTcuNS0xOS42LTguNy0uNSAwLTEuMS0uMi0xLjctLjNoLS4yYy0uNSAwLTEtLjEtMS41LS4ySDMzMGMtMi42IDAtNS4yLjQtNy43IDEtLjguMi0xLjcuNC0yLjUuNi0xLjQuNC0yLjguOS00LjEgMS40cy0yLjcgMS4xLTMuOSAxLjhjLS42LjMtMS4zLjctMS45IDEtNi44IDMuOS0xMi41IDkuNi0xNi40IDE2LjYtNC4zIDcuNi02LjIgMTYuMi01LjUgMjQuNy4yIDIuOS43IDUuOCAxLjUgOC42LjIuOC41IDEuNS43IDIuMyAwIC4yLjEuMy4yLjUuMi42LjQgMS4yLjcgMS44IDAgLjEuMS4yLjIuNGwuOSAyLjFjMS44IDMuNyA0LjEgNy4yIDYuOCAxMC4yaC0yMi43Yy04IDAtMTUuOC04LjgtMTUuMi0xNS43LjctNy45IDE1LjgtNDcuNSAyNC40LTcwLjEgOC0yMC45IDE4LjktNDIuMyAyNC43LTYzLjMgMy41LTEyLjcgMTUuOS0yOC44IDMyLjEtMzIuOFptMjAuNiAxNTIuOWMwIDEzLjctOSAyNi4zLTIyLjggMzAuMS0yLjQuNy00LjggMS03LjIgMS4xaC0xLjNjLTE0IDAtMjYuMy05LjItMzAuMS0yMi44LS44LTIuOC0xLjItNS42LTEuMi04LjQgMC0xMy43IDktMjYuMyAyMi44LTMwLjEgMi4zLS43IDQuOC0xIDcuMi0xLjFoMS4zYzE0IDAgMjYuMiA5LjMgMzAgMjIuOS44IDIuOCAxLjIgNS42IDEuMiA4LjRabS0xNzUuNCAyOWMtMTEuNC0uMS01OS43IDQuOS01OC4xLTMyIC4yLTE1LjQgOC42LTMzLjkgMTYuOS01Mi44IDguMy0xOC44IDE2LjQtMzcuOSAxNi01NC42LS41LTUuNi01LjctOC0xMC43LTEwLjgtNS0yLjktMTAtNS40LTEwLjEtMTMuOCAwLTcuNSA3LjYtMTMgMTQuNy0xNi4zIDcuMS0zLjMgMTUuNi01LjggMjMtMTEuMiAxMi4zLTguOSAxNC42LTIwLjEgMjAuNC0yOS4yIDUuOS05LjEgMTUuMy0xNi4yIDQyLjEtMTcuMSAxNi44LS41IDI1LjMgMS43IDI4LjkgNy44IDMuNiA2IDIuMyAxNS44LS43IDMwLjQtMS42IDggNS44IDExLjEgMTMuNiAxNC4yIDcuOCAzLjIgMTYuMSA2LjMgMTYuMSAxNC41cy0xMS40IDE1LjUtMjQuNCAyMC40Yy0xMyA1LTI3LjUgOS45LTMzLjggMjAuNC0yLjIgMy43LTguMyAxOS0xMy45IDM0LjMtNS42IDE1LjMtMTAuOCAzMC40LTExIDMzLjgtLjcgMTAuMSA2LjYgMTMuNiAxNC4xIDE2LjkgNy41IDMuMyAxNS4yIDYuMyAxNS4yIDE1LjItLjcgMzIuMi00Mi4zIDI5LjctNTguNiAyOS44Wm0zNiAyNTguOGgtLjhjLTguMyAwLTE1LjYtNS41LTE3LjgtMTMuNi0uNS0xLjctLjctMy4zLS43LTUgMC0yLjEuNC00LjMgMS4xLTYuM3MzNy05MC42IDM3LTkwLjZsMzQuMSAxMy45LTM2LjcgOTAuMmMtMi4yIDUuMi02LjcgOS4xLTEyLjIgMTAuNy0xLjMuNC0yLjQuNy00IC44Wm0xNC40IDExNS4zYy0yLjUgNi4xLTYuNiAxMC40LTEyLjcgMTIuMS0xLjQuNC0yLjkuNi00LjMuN2gtLjhjLTguMyAwLTE1LjEtNS40LTE3LjQtMTMuNC0uNS0xLjctLjctMy40LS43LTUuMSAwLTEuNS4yLTMgLjYtNC41cy4zLTEuMy4zLTEuM2wuNy0yIDgxLjItMTk5LjkgMzQuMSAxMy45LTgxIDE5OS41Wk00MzguNCA0MjBjMi4xLjkgMy44IDIuMyA1IDQuMSAxLjIgMS43IDIuMSAzLjcgMi42IDUuNy40IDEuMy42IDIuNi42IDMuOCAwIDIuMy0uNyA0LjYtMS44IDcuNGwtMjUuNCA2Mi40Yy0xLjQgMy44LTIuOCA2LjUtNC44IDguNi0yIDIuMS00LjYgMy40LTguMSA0LjYtMS41LjUtMyAuNy00LjQuN2gtLjhjLTguNCAwLTE1LjctNS41LTE3LjktMTMuNi0uNS0xLjYtLjctMy4zLS43LTVzLjItMi45LjUtNC4zdi0uMmwuNy0xLjggMTguOC00Ni4zLTM3LjYtMTUuMy00MS4yIDEwMS41LTc1LjctMzAuOC0xLjEtLjUgMjEuMy01Mi42LTk2LjMgNDMuNWMtLjguMy0xLjUuNS0yLjIuNy0xLjQuNC0yLjguNi00LjMuN2gtLjhjLTguMyAwLTE1LjctNS41LTE3LjktMTMuNi0uNS0xLjctLjctMy40LS43LTUgMC03LjMgNC40LTE0LjIgMTEuNC0xNy4yIDI0LjctMTAuNyAxMzUuNS01OSAxNjMuMi03MS4xIDQtMS43IDYuMi0yLjcgNi4zLTIuNyAzLjMtMS40IDYuOC0yLjEgMTAuMi0yLjJoMS4yYzQgMCA3LjIuOCAxMS42IDIuNnM4Ni4zIDM1LjEgODYuMyAzNS4xYy43LjIgMS40LjYgMi4xLjlabTE4OS41LTU4LjRjLTYgMS45LTEyLjYgMy43LTE5LjkgMy4zLTkuNS0uNC0zOS42LTYuOS00Mi02LjktMjYuMSAwLTQwLjMgMTAuOS03MS43IDEwLjlzLTcxLjctMi44LTcxLjctNDAuNiAxMC42LTMzLjEgNDctNTIuNmMyNC0xMi45IDkxLjItMjIuOSAxMDguNi0yNS4zIDMuOS0uNSAzNy4yLTMuMSAzNy4yLTIycy0yMS43LTE0LjktMjcuMi0xNC45Yy0zMy41IDAtNDMuOSAyMi44LTgyLjYgMjIuOHMtMjUuMi0xLjItMjUuNy0xMS45Yy0uOC0xOC42IDQ2LjEtMzUuMyA2MC43LTM4LjMgNTEuMy0xMC42IDEwNS41LTMuMiAxMTYuOSAwIDE2LjcgNC42IDMyIDE2LjggMzIgMzMuOXMtMy45IDIwLTcuMyAyOS45Yy05LjQgMjYtMTkuOSA1MS43LTMxIDc3LjItNS4xIDExLjUtNi4xIDI5LTIzLjMgMzQuNVptMjE2LjYgNy4xYy05LjEgMC0yOS4yIDEuNC0yOS4xLTE0LjcgMC0xMC4zIDM1LjYtODQuNSAzNS42LTEwNC40cy0xNi4yLTIyLjMtMjguMi0yMi4zYy0yOC42IDAtNTEuMSAyMC4yLTYzLjIgNTYuMS02LjcgMjAtMjMuMiA1OS43LTI4IDY2LjktMTAuNSAxNS41LTI3IDE4LjYtNDAuOCAxOC42cy0yOC42LS4yLTI4LjYtMTcuMyAyMy45LTY0LjYgMjcuMy03Mi41YzUuNy0xMy41IDE0LjMtMzcuNiAyMC4xLTUxLjYgMTMuNy0zMy40IDE4LjYtMzguMiA1Mi0zOC43IDEwLjUtLjEgMjguNSA1LjIgNDUgNC44IDIxLjQtLjUgNDYuOS05LjIgNjguNy04LjkgMTUuOC4yIDU4IC43IDU5LjggMzQuMS45IDE2LTI3LjcgNzYuMy0zNC43IDk0LjktMTguMiA0OC40LTE4LjggNTQuOS01NS45IDU0LjlabTE4Ni43LTEzMy42YzEuMSAyNS42IDEyNC41IDguMyAxMTYuMyA2MC42LTE0LjYgOTIuOC0yMjcuNiA4NS45LTIzNi43IDQyLjQtMi4xLTEwLjIgMTguMi0yNiAzNi4zLTI1LjMgMjQuNiAxIDM3LjEgMTcuNiA2My43IDE3LjZzNTEuNS0yLjQgNTMuMS0yMWMuOS0xMC43LTIwLjUtMTQuNi0zNi41LTE2LjMtMTExLjUtMTEuNC03Ny43LTYwLTcwLTY5LjkgNDUuMS01OC4yIDIwOC40LTUwIDIwOC40LTE3LjJzLTI5LjcgMjcuMS00Ni41IDIyLjNjLTI2LjctNy42LTg5LjMtMjAuNS04OC4xIDYuN1ptMjU0LjIgNWMtNi4zIDEwLjEtOS4zIDIyLjEtMTMuNCAzMi42LTguNiAyMi4xLTE4LjggNDMuMi0yNi4xIDY1LjMtOS4xIDI3LjQtMzEgMzEtNDkuNyAzMXMtMzEuNiAwLTMxLjYtMTUuOSA0MC42LTk1IDQwLjYtMTE0LjgtMjIuMy0xNy40LTIyLjMtMjguMyA4LjYtMTQuMiAxNi43LTE3LjhjOS4xLTQgMjIuOS03LjEgMzAuOS0xOC44IDI2LjktMzkuMSA1NC44LTUwLjggOTQuNC01MC44czQ0LjMgMTEuOCA0NC40IDE1LjdjLjcgMjIuOS0zMy43IDI3LjktNDYuNyAzNS44LTEuNiAxLTMuNyAzLjgtMy43IDYuMiAwIDEwLjEgMjIuOCA3LjIgMjIuOCAyMS44cy0zOC4yIDI0LjEtNDEuOSAyNS40Yy01LjIgMi0xMC43IDYuNy0xNC4zIDEyLjRabTEzMy4xIDkxLjdjMzMuMyAwIDU4LjgtMjUuOCA4My44LTI1LjhzMjguMiA0LjQgMjguMiAxNi44LTMwLjEgMjQuNy0zOC45IDI5LjNjLTE5LjMgMTAuMS04Ny44IDI1LjMtMTMzLjggMTAuNS01OS0xOS02NC4yLTU5LjctMzUuMy0xMDcuOSAzMC44LTUxLjMgOTUtNzMuMiAxNTIuOC03My4yczg2LjYgMTEgOTIuMyA1OS45YzEuOCAxNS41LTIgMjkuMi0xNi44IDM3LjYtMTkuOCAxMS4yLTExNi42IDEtMTQ1LjUgNi4xLTExLjEgMi0yNS4xIDYuOS0yNS4xIDIwLjRzMjMuOSAyNi4zIDM4LjMgMjYuM1ptMzExLjgtOTcuNmMtMTguNyA0LjgtMzkuMSA0LjgtNTYuMyAyMC44LTguOCA4LjItMTMgMTkuNi0xNi4xIDI3LjMtNC43IDExLjYtOS41IDIzLjktMTQuMiAzNS42LTUuNyAxNC40LTE1LjMgNDguNC00MC4zIDUwLjYtNiAuNS0zNy4xLjItMzcuMS4yLTggMC0xNS44LTguOC0xNS4yLTE1LjguNy03LjkgMTUuOC00Ny42IDI0LjQtNzAuMSA4LTIwLjkgMTguOS00Mi4zIDI0LjctNjMuMyAzLjUtMTIuNyAxNS45LTI4LjggMzIuMS0zMi44IDEwLjUtMi42IDI2LjItMy4yIDQzLjcgMCAxNC41IDIuNiAxOSA0LjcgMjkuNyA0LjcgOS44IDAgMjIuMi01IDI4LjYtNS4yIDkuMS0uMyAxOS43IDQuMyAyMS4xIDE1LjIgMS43IDEzLjYtOC4zIDI4LjItMjUuMiAzMi42WiIgZmlsbD0iI2Q3ZDdkNyIvPgogIDxwYXRoIGZpbGw9IiNhZjIwMDkiIGQ9Ik0yMjUuMiA3NTV6Ii8+Cjwvc3ZnPgo=);
+            background-size: 143px 61px;
+            background-repeat: no-repeat;
+            background-position: center 20px;
+        }
+
+        /*]]>*/
+    </style>
+    <script src="https://tmssl.akamaized.net/js/vendor/jquery.min.js?lm=1777384877" type="text/javascript">
+    </script>
+    <script src="https://tmssl.akamaized.net/assets/b7c5571cf8957553f95f6d9069eaed67/jquery.ba-bbq.min.js?lm=1777384876"
+        type="text/javascript">
+        </script>
+    <script
+        src="https://tmssl.akamaized.net/assets/b344ec51bd68be8ed48379c9e69eb01d/js/jquery.scrollTo.min.js?lm=1777384876"
+        type="text/javascript">
+        </script>
+    <script
+        src="https://tmssl.akamaized.net/assets/b344ec51bd68be8ed48379c9e69eb01d/js/elinkpagermobile.js?lm=1777384876"
+        type="text/javascript">
+        </script>
+    <script src="https://tmssl.akamaized.net/js/main.js?lm=1777384877" type="text/javascript">
+    </script>
+    <script src="https://tmssl.akamaized.net/js/chosen.ajaxaddition.jquery.js?lm=1777384877" type="text/javascript">
+    </script>
+    <script src="https://tmssl.akamaized.net/js/functions.js?lm=1777384877" type="text/javascript">
+    </script>
+    <script src="https://tmssl.akamaized.net/js/main_desktop.js?lm=1777384877" type="text/javascript">
+    </script>
+    <script src="https://tmssl.akamaized.net/js/chosen.jquery.js?lm=1777384877" type="text/javascript">
+    </script>
+    <script src="https://tmsi.akamaized.net/js/svelte-components/consent/bundle.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+        /*<![CDATA[*/
+        console.info("%c [TM-ADs] Initialize Ads on domain .es (schnellsuche/ergebnis)", "background: #282828; color: #bada55")
+        console.info("%c [TM-ADs] Skip PerformPlayer (d_content_1) for google on schnellsuche/ergebnis", "background: #282828; color: #bada55")
+        console.info("%c [TM-ADs] Render slot skyscraper (/58778164/d_right_1) for google", "background: #282828; color: #bada55")
+        console.info("%c [TM-ADs] Render slot billboard (/58778164/d_top_1) for google", "background: #282828; color: #bada55")
+        console.info("%c [TM-ADs] Render slot fullsize_contentad (/58778164/d_bottom_1) for google", "background: #282828; color: #bada55")
+        var oddsServe = function (placement, competition, match, node) {
+            if (!node) {
+                var s = document.readyState === 'loading' ? document.getElementsByTagName('script') : [];
+                node = s.length ? s[s.length - 1].parentNode : null;
+            }
+            oddsServe.queue.push({contentUnitId: placement, competition: competition, match: match, node: node});
+        }
+
+        oddsServe.onInit = function (callbacks) {
+            if (typeof window.__tcfapi === 'function') {
+                __tcfapi('addEventListener', 2, function (tcdata, success) {
+                    let tcf20compatibleString;
+                    if (success) {
+                        if (tcdata.eventStatus === 'useractioncomplete') {
+                            tcf20compatibleString = tcdata.tcString;
+                        } else if (tcdata.eventStatus === 'tcloaded') {
+                            tcf20compatibleString = tcdata.tcString;
+                        }
+                        callbacks.setGdprOptions({
+                            gdpr: 1,
+                            gdpr_pd: 1,
+                            gdpr_consent: tcf20compatibleString,
+                        });
+                    }
+                });
+            } else {
+                console.warn('E2: __tcfapi not found');
+            }
+        };
+        oddsServe.options = {gdpr_wait: true};
+        oddsServe.queue = [];
+        console.info("%c [TM-ADs] Add adslot configuration for 3 ad slots skyscraper | billboard | fullsize_contentad", "background: #282828; color: #bada55")
+        console.info("%c [TM-ADs] Adslots without configuration: PerformPlayer | fireplace | skyscraper-left-bound | skyscraperbtf | richmedia | 1by1px", "background: #282828; color: #bada55")
+        console.info("%c [TM-ADs] Register slots with JS vendor lib", "background: #282828; color: #bada55")
+        window.addEventListener('load', () => {
+            const offset = window.matchMedia('(max-width: 768px)').matches ? 80 : 120;
+            document.querySelectorAll('[data-sticky]').forEach(node => {
+                const parent = node.parentElement;
+                const observer = new IntersectionObserver(([entry]) => {
+                    if (!entry.isIntersecting) {
+                        parent.style.position = 'sticky';
+                        parent.style.top = `${offset}px`;
+                        parent.style.zIndex = 12000000;
+                        setTimeout(() => {
+                            parent.style.removeProperty('position');
+                            parent.style.removeProperty('top');
+                            parent.style.removeProperty('z-index');
+                        }, parseInt(node.dataset?.sticky) || 3000);
+                        observer.unobserve(parent);
+                    }
+                }, {rootMargin: `-${offset}px 0px 0px 0px`, threshold: 1});
+                observer.observe(parent);
+            });
+        });
+
+        console.info("%c [TM-ADs] Render ad slots js for googleinhouse", "background: #282828; color: #bada55")
+        console.info("%c [TM-ADs] Added external ad script https://securepubads.g.doubleclick.net/tag/js/gpt.js for googleadvertising on suche", "background: #282828; color: #bada55")
+        console.info("%c [TM-ADs] Added external ad script https://tmsi.akamaized.net/js/ad-setup/prebid/prebid.js for googleadvertising on suche", "background: #282828; color: #bada55")
+        console.info("%c [TM-ADs] Added external ad script https://tmsi.akamaized.net/js/ad-setup/prebid/scripts/es.js for googleadvertising on suche", "background: #282828; color: #bada55")
+/*]]>*/
+    </script>
+    <title>
+        Resultado de búsqueda | Transfermarkt
+    </title>
+    <link href="/apple-touch-icon-152x152.png" rel="apple-touch-icon-precomposed" />
+    <script type="text/javascript">
+        tmData = {
+            loggedIn: "0",
+            tmTraffic: "0",
+        };
+    </script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        let utmVars = {
+            eVar1: urlParams.get('utm_campaign'),
+            eVar6: urlParams.get('utm_source'),
+            eVar24: urlParams.get('utm_medium')
+        };
+        Object.keys(utmVars).forEach((k) => utmVars[k] == null && delete utmVars[k]);
+
+        window.tmAnalyticsDataLayer = window.tmAnalyticsDataLayer || [];
+        window.tmAnalytics = {
+            dimensions: {
+                eVar10: '',
+                ...utmVars,
+                evar19: window.location.href,
+                eVar35: '',
+                eVar37: '',
+            },
+            properties: {
+                prop2: 'suche',
+                prop3: 'schnellsuche',
+                prop4: '',
+                prop5: '',
+                prop14: 'suche_schnellsuche__',
+                prop9: window.location.hostname,
+                prop10: window.location.href,
+                prop1: 'false',
+            },
+            pageDetails: {
+                pageViews: {
+                    value: 1
+                },
+                isErrorPage: 'false',
+                isHomepage: 'false',
+                name: 'Resultado de búsqueda | Transfermarkt',
+                URL: window.location.href,
+                server: 'web08'
+            },
+        };
+
+        function tmEventForLink(category, aTag, label) {
+            const url = new URL(aTag.href);
+            const link = url.pathname + url.search;
+            tmEvent(category, link, label);
+        }
+
+        function tmEvent(category, action, label, detail = '') {
+            if (typeof gtag === 'function') {
+                gtag('event',
+                    action,
+                    {
+                        'event_category': category,
+                        'event_label': label
+                    }
+                );
+            }
+
+            const ev = {
+                event: 'tmEvent',
+                tmEvent: {
+                    customDimensions: {
+                        eVars: {
+                            ...tmAnalytics.dimensions
+                        },
+                        props: {
+                            prop6: category,
+                            prop7: action,
+                            prop8: label,
+                            prop17: detail,
+                            ...tmAnalytics.properties
+                        }
+                    },
+                    event1to100: {
+                        event7: {
+                            value: 1
+                        },
+                        event8: null,
+                    },
+                    session: {
+                        web: {
+                            webInteraction: {
+                                linkClicks: {
+                                    value: 1
+                                }
+                            },
+                            webPageDetails: {
+                                ...tmAnalytics.pageDetails,
+                                ...{
+                                    pageViews: {
+                                        value: null
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            if (!window._satellite) {
+                once = false;
+                window._satellite = {
+                    _monitors: [{
+                        ruleTriggered: (e) => {
+                            if (once) {
+                                return;
+                            }
+                            once = true;
+                            setTimeout(() => {
+                                tmAnalyticsDataLayer.push(ev);
+                                tmAnalyticsDataLayer.push(function (dl) {
+                                    const state = dl.getState();
+                                });
+                            }, 1);
+                        }
+                    }]
+                };
+            } else {
+                tmAnalyticsDataLayer.push(ev);
+                tmAnalyticsDataLayer.push(function (dl) {
+                    const state = dl.getState();
+                });
+            }
+        }
+        function tmTrackingAndAds() {
+            if (typeof gtag === 'function') {
+                gtag("event", "page_view", {
+                    page_path: "/jsContent" + window.location.pathname
+                });
+            }
+
+            tmAnalyticsDataLayer.push({
+                event: 'tmTrackingAndAds',
+                tmTrackingAndAds: {
+                    customDimensions: {
+                        eVars: tmAnalytics.dimensions,
+                        props: tmAnalytics.properties
+                    },
+                    event1to100: {
+                        event7: null,
+                        event8: {
+                            value: 1
+                        }
+                    },
+                    session: {
+                        web: {
+                            webInteraction: {
+                                linkClicks: {
+                                    value: null
+                                }
+                            },
+                            webPageDetails: {
+                                ...tmAnalytics.pageDetails,
+                                ...{
+                                    pageViews: {
+                                        value: 1
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            tmAnalyticsDataLayer.push(function (dl) {
+                const state = dl.getState();
+            });
+        }
+        function tmTiming(value, name, event_category, event_label) {
+            console.log('tmTiming', value, name, event_category, event_label);
+        }
+
+        !function (e, a, n, t) {
+            var i = e.head; if (i) {
+                if (a) return;
+                var o = e.createElement("style");
+                o.id = "alloy-prehiding", o.innerText = n, i.appendChild(o), setTimeout(function () {o.parentNode && o.parentNode.removeChild(o)}, t)
+            }
+        }
+            (document, document.location.href.indexOf("adobe_authoring_enabled") !== -1, ".personalization-container { opacity: 0 !important }", 3000);
+
+        !function (n, o) {
+            o.forEach(function (o) {
+                n[o] || ((n.__alloyNS = n.__alloyNS ||
+                    []).push(o), n[o] = function () {
+                        var u = arguments; return new Promise(
+                            function (i, l) {n[o].q.push([i, l, u])})
+                    }, n[o].q = [])
+            })
+        }
+            (window, ["alloy"]);
+    </script>
+    <tm-consent
+        embed="PHNjcmlwdCBhc3luYyBzcmM9Imh0dHBzOi8vYXNzZXRzLmFkb2JlZHRtLmNvbS83Y2FkY2E5NWRkOWEvY2Q0YWI4ODRkMjMxL2xhdW5jaC0wMTI3MmI0MDBjNjUubWluLmpzIj48L3NjcmlwdD4="
+        no-checkbox="" type="adobe">
+    </tm-consent>
+    <script src="https://tmssl.akamaized.net//ads/ads.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+        window.tmGaId = "UA-3816204-13";
+
+< !DOCTYPE html >
+            <html lang="es">
+
+                <head>
+
+                    <script type="text/javascript" data-description="sourcepoint stub code">
+                        !function () {var e = function () {var e, t = "__tcfapiLocator", a = [], n = window; for (; n;) {try {if (n.frames[t]) {e = n; break} } catch (e) { } if (n === window.top) break; n = n.parent} e || (!function e() {var a = n.document, r = !!n.frames[t]; if (!r) if (a.body) {var i = a.createElement("iframe"); i.style.cssText = "display:none", i.name = t, a.body.appendChild(i)} else setTimeout(e, 5); return !r}(), n.__tcfapi = function () {for (var e, t = arguments.length, n = new Array(t), r = 0; r < t; r++)n[r] = arguments[r]; if (!n.length) return a; if ("setGdprApplies" === n[0]) n.length > 3 && 2 === parseInt(n[1], 10) && "boolean" == typeof n[3] && (e = n[3], "function" == typeof n[2] && n[2]("set", !0)); else if ("ping" === n[0]) {var i = {gdprApplies: e, cmpLoaded: !1, cmpStatus: "stub"}; "function" == typeof n[2] && n[2](i)} else a.push(n)}, n.addEventListener("message", (function (e) {var t = "string" == typeof e.data, a = { }; try {a = t ? JSON.parse(e.data) : e.data} catch (e) { } var n = a.__tcfapiCall; n && window.__tcfapi(n.command, n.version, (function (a, r) {var i = {__tcfapiReturn: {returnValue: a, success: r, callId: n.callId}}; t && (i = JSON.stringify(i)), e.source.postMessage(i, "*")}), n.parameter)}), !1))}; "undefined" != typeof module ? module.exports = e : e()}();
+    </script>
+    <script data-description="sourcepoint configuration">
+                window._sp_ = {
+                    config: {"accountId": 1254, "propertyId": 7429, "gdpr": {"consentLanguage": "es", "targetingParams": {"acps": "false"}}, "baseEndpoint": "https://cdn.privacy-mgmt.com", "isSPA": true, "cpPropertyId": "b117d02e"}
+        }
+    </script>
+    <script src="https://cdn.privacy-mgmt.com/wrapperMessagingWithoutDetection.js" async></script>
+    <script type="text/javascript" data-description="contentpass integration">
+                (function () {
+        var cpBaseUrl = 'https://cp.transfermarkt.es';
+                var cpController = cpBaseUrl + '/now.js';
+                var cpPropertyId = 'b117d02e';
+
+                !function (C, o, n, t, P, a, s) {
+                    C['CPObject'] = n; C[n] || (C[n] = function () {
+                    (C[n].q = C[n].q || []).push(arguments)
+                }); C[n].l = +new Date; a = o.createElement(t);
+                s = o.getElementsByTagName(t)[0]; a.src = P; s.parentNode.insertBefore(a, s)
+        }
+                (window, document, 'cp', 'script', cpController);
+
+                !function (C, o, n, t, P) {
+            if (!C[n].patched) {
+                    cp('extension', 'authenticate'); P = C[n].q.push;
+                C[n].q.push = function (a) {
+                    if (a[0] === 'authenticate') {
+                        if ((o['cookie'] || '').indexOf('_cpauthhint=') === -1 &&
+                !(C['localStorage'] || { })['_cpuser'] && C.location.href.toLowerCase().indexOf('cpauthenticated') === -1) {
+                    t = {isLoggedIn: function () {return false;}, hasValidSubscription: function () {return false;}};
+                (typeof a[1] === 'function' && a[1](null, t)); C[n].afp = true; P.apply(C[n].q, [['authenticate', null]]);
+                return t;
+                        }
+                    } P.apply(C[n].q, [a]);
+                }
+            }
+        }
+                (window, document, 'cp', false);
+
+                cp('create', cpPropertyId, {
+                    baseUrl: cpBaseUrl
+        });
+
+                cp('render', {
+                    onFullConsent: function () {
+                    console.log('[DEMO] onFullConsent');
+            }
+        })
+    })()
+    </script>
+
+    <script type="text/javascript" data-description="contentpass sourcepoint fast path">
+                (function () {
+                    cp('authenticate', function (err, user) {
+                        if (err || (!user.isLoggedIn() && !user.hasValidSubscription())) {
+                            // console.log('[SPCP] Taking fast path');
+                            (function spExecMsg() {
+                                if (window._sp_ && window._sp_.executeMessaging) {
+                                    if (!window._sp_.config.isSPA) {
+                                        // console.warn('[SPCP] Sourcepoint not in SPA mode!');
+                                    } else if (window._sp_.version) {
+                                        // console.log('[SPCP] Sourcepoint already running');
+                                    } else {
+                                        // console.log('[SPCP] Starting Sourcepoint');
+                                        window._sp_.executeMessaging();
+                                    }
+                                } else {
+                                    // console.log('[SPCP] Sourcepoint not loaded yet. Retrying.');
+                                    setTimeout(spExecMsg, 10);
+                                }
+                            })();
+                        }
+                    });
+            })();
+    </script>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="shortcut icon" sizes="192x192" href="/android-chrome-192x192.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=no" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description"
+        content="Esta es la página de la búsqueda rápida en la que se muestran los resultados del campo de búsqueda según el término de búsqueda utilizado." />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://tmssl.akamaized.net/images/tm_logo.png" />
+    <meta property="og:description" content="" />
+    <meta property="og:title" content="Resultado de búsqueda" />
+    <meta property="twitter:title" content="Resultado de búsqueda" />
+    <meta property="og:url" content="https://www.transfermarkt.es/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="de" rel="alternate"
+        href="https://www.transfermarkt.de/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="de-LU" rel="alternate"
+        href="https://www.transfermarkt.de/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="de-AT" rel="alternate"
+        href="https://www.transfermarkt.at/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="de-CH" rel="alternate"
+        href="https://www.transfermarkt.ch/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="tr" rel="alternate"
+        href="https://www.transfermarkt.com.tr/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="it-CH" rel="alternate"
+        href="https://www.transfermarkt.it/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="it" rel="alternate"
+        href="https://www.transfermarkt.it/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="pl" rel="alternate"
+        href="https://www.transfermarkt.pl/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="en-GB" rel="alternate"
+        href="https://www.transfermarkt.co.uk/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="en-IE" rel="alternate"
+        href="https://www.transfermarkt.co.uk/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="es" rel="alternate"
+        href="https://www.transfermarkt.es/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="es-ES" rel="alternate"
+        href="https://www.transfermarkt.es/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="es-CL" rel="alternate"
+        href="https://www.transfermarkt.es/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="es-VE" rel="alternate"
+        href="https://www.transfermarkt.es/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="es-EC" rel="alternate"
+        href="https://www.transfermarkt.es/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="es-CU" rel="alternate"
+        href="https://www.transfermarkt.es/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="nl" rel="alternate"
+        href="https://www.transfermarkt.nl/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="pt" rel="alternate"
+        href="https://www.transfermarkt.pt/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="ru" rel="alternate"
+        href="https://www.transfermarkt.world/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="fr-CH" rel="alternate"
+        href="https://www.transfermarkt.fr/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="fr" rel="alternate"
+        href="https://www.transfermarkt.fr/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="fr-CA" rel="alternate"
+        href="https://www.transfermarkt.fr/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="fr-CI" rel="alternate"
+        href="https://www.transfermarkt.fr/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="fr-LU" rel="alternate"
+        href="https://www.transfermarkt.fr/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="fr-BE" rel="alternate"
+        href="https://www.transfermarkt.fr/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="pt-BR" rel="alternate"
+        href="https://www.transfermarkt.com.br/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="en-US" rel="alternate"
+        href="https://www.transfermarkt.us/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="en-CA" rel="alternate"
+        href="https://www.transfermarkt.us/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="en-IN" rel="alternate"
+        href="https://www.transfermarkt.co.in/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="en-ZA" rel="alternate"
+        href="https://www.transfermarkt.co.za/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="x-default" rel="alternate"
+        href="https://www.transfermarkt.com/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="en" rel="alternate"
+        href="https://www.transfermarkt.com/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="nl-BE" rel="alternate"
+        href="https://www.transfermarkt.be/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="ro" rel="alternate"
+        href="https://www.transfermarkt.ro/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="el-GR" rel="alternate"
+        href="https://www.transfermarkt.gr/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="ko-KR" rel="alternate"
+        href="https://www.transfermarkt.co.kr/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="es-AR" rel="alternate"
+        href="https://www.transfermarkt.com.ar/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="es-MX" rel="alternate"
+        href="https://www.transfermarkt.mx/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="es-CO" rel="alternate"
+        href="https://www.transfermarkt.co/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="es-PE" rel="alternate"
+        href="https://www.transfermarkt.pe/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="ms" rel="alternate"
+        href="https://www.transfermarkt.my/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="ja" rel="alternate"
+        href="https://www.transfermarkt.jp/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link hreflang="id" rel="alternate"
+        href="https://www.transfermarkt.co.id/schnellsuche/ergebnis/schnellsuche?query=yamal" />
+    <link rel="next"
+        href="https://www.transfermarkt.es/schnellsuche/ergebnis/schnellsuche?query=yamal&amp;Spieler_page=2" />
+    <link rel="stylesheet" type="text/css" href="https://tmssl.akamaized.net/styles/tm-main.min.css?lm=1777385463" />
+    <link rel="stylesheet" type="text/css"
+        href="https://tmssl.akamaized.net/css/stylesheets/main_desktop.css?lm=1777384877" />
+    <link rel="stylesheet" type="text/css"
+        href="https://tmssl.akamaized.net/styles/tm-discover.min.css?lm=1777385463" />
+    <link rel="stylesheet" type="text/css"
+        href="https://tmssl.akamaized.net/styles/tm-button-list.min.css?lm=1777385463" />
+    <link rel="stylesheet" type="text/css"
+        href="https://tmssl.akamaized.net/styles/tm-link-list.min.css?lm=1777385463" />
+    <link rel="stylesheet" type="text/css" href="https://tmssl.akamaized.net/styles/tm-print.min.css?lm=1777385463" />
+    <link rel="stylesheet" type="text/css" href="https://tmssl.akamaized.net/styles/tm-chosen.min.css?lm=1777385463" />
+    <link rel="stylesheet" type="text/css" href="https://tmssl.akamaized.net/css/stylesheets/main.css?lm=1777384877" />
+    <link rel="stylesheet" type="text/css"
+        href="https://tmssl.akamaized.net/css/stylesheets/paginator.css?lm=1777384877" />
+    <style type="text/css">
+        /*<![CDATA[*/
+
+        .ad-placement-background {
+            background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxODk2IDgwNyI+CiAgPHBhdGggZD0iTTEwNTYuMyA1MzIuNGMwLTE3LjEtMTUuMy0yOS4yLTMyLTMzLjktMTEuNS0zLjItNjUuNi0xMC42LTExNi45IDAtMTQuNiAzLTYxLjUgMTkuNy02MC43IDM4LjQuNSAxMC42IDE4LjQgMTEuOSAyNS43IDExLjkgMzguNyAwIDQ5LjEtMjIuNyA4Mi42LTIyLjdzMjcuMi0xLjQgMjcuMiAxNC44LTMzLjMgMjEuNS0zNy4yIDIyYy0xNy40IDIuNC04NC42IDEyLjQtMTA4LjYgMjUuMy0zNi40IDE5LjUtNDcgNDAuNi00NyA1Mi42IDAgMzcuNyA1MC43IDQwLjYgNzEuNyA0MC42IDMxLjQgMCA0NS42LTEwLjkgNzEuNy0xMC45czMyLjYgNi41IDQyIDYuOWM3LjMuMyAxMy45LTEuNCAxOS45LTMuMyAxNy4yLTUuNSAxOC4yLTIzLjEgMjMuMy0zNC42IDExLjEtMjUuNSAyMS42LTUxLjMgMzEuMS03Ny4yIDMuNC05LjkgNy4zLTE5LjggNy4zLTI5LjlabS0xNDQuOCAxMDljLTYuNyAxLjUtOS44IDIuMS0xNy40IDIuNC04LjUuMy0yNi43LTMuNS0yNi43LTE1LjMgMC0yNC40IDYzLjUtMzMuMiA3Mi43LTMzLjIgMTEuMi0uNCAxOC4zIDIuNyAxOC4zIDkuOSAwIDIwLjgtNDQuNiAzNS43LTQ2LjkgMzYuMlpNNzkzLjkgNTA3LjVjLTQ0LjctMjcuOS0xMDcuMiA1LTEzMC41IDUtMzEuOCAwLTMwLjctMTIuOC02NC44LTE1LTY5LTQuMS05MCAxMi4yLTEwNS4yIDEyLjJzLTkuMy04LjMtMjEuNS02LjdjLTEzLjMgMi4yLTE1LjUgNS0xOS4xIDEwLTQuNSA2LjMtNTMuNSAxMzguOC01Ni41IDE0Ni4xLTExLjEgMjYuMyA1NS43IDI5LjUgNzAuOCA4LjcgMzkuNy01NC45IDMwLjktMTE0LjIgODAuOS0xMjMuOSAxMS44LTIuMyAyMi4zLTIuNiAzMC40IDkuMWwuNC44YzcuMiAxMy4zLTUuNCAzOS44LTEzLjggNjAuNS00LjEgMTAtMTYuNiA0Mi43LTE1LjUgNTQgMS45IDIxLjEgNjYuOCAxNC4xIDc1LjYtMi4xIDE5LjMtMzUuNiAyMy4xLTk2LjkgNDQuMS0xMTMuNCAyNS42LTIwIDQ5LjItNC43IDUxLjMgNC41IDQuMiAxOC4yLTEzLjUgNTIuNy0yMyA3Mi44LTEzLjQgMjguNS03LjMgNTEuMSAyNyA1MS4yIDExLjQgMCAyNy00LjQgMzMuNy0xNC4xIDUuNy04LjMgMTQuNS0zMS42IDI3LjQtNjYuNSAxNC4xLTM4LjEgMjkuMi04MCA4LjMtOTMuMVpNMTIzNSA1MTQuMmMtMS40LTExLTEyLTE1LjYtMjEuMS0xNS4yLTYuNC4yLTE4LjggNS4yLTI4LjYgNS4yLTEwLjcgMC0xNS4yLTIuMS0yOS43LTQuNy0xNy41LTMuMi0zMy4yLTIuNi00My43IDAtMTYuMiA0LTI4LjcgMjAtMzIuMSAzMi44LTUuOCAyMS0xNi42IDQyLjQtMjQuNyA2My4zLTguNyAyMi41LTIzLjcgNjIuMi0yNC40IDcwLjEtLjYgNi45IDcuMiAxNS43IDE1LjIgMTUuNyAwIDAgMzEgLjMgMzcuMS0uMiAyNS0yLjIgMzQuNi0zNi4yIDQwLjMtNTAuNiA0LjctMTEuNyA5LjUtMjQgMTQuMi0zNS42IDMuMS03LjcgNy4zLTE5LjEgMTYuMS0yNy4zIDE3LjItMTYgMzcuNi0xNiA1Ni4zLTIwLjggMTYuOS00LjQgMjYuOC0xOSAyNS4yLTMyLjZaIiBmaWxsPSIjZDdkN2Q3Ii8+CiAgPHBhdGggZD0iTTM3LjcgNDEuOXY3MjEuN2gxODA5LjhWNDEuOUgzNy43Wm0xNzg5LjEgNzAxSDU4LjNWNjIuNWgxNzY4LjV2NjgwLjRaIiBmaWxsPSIjZDdkN2Q3Ii8+CiAgPHBhdGggZD0iTTE2MzIuNCA0OTUuOGMtNy44LTMuMS0xNS4yLTYuMi0xMy42LTE0LjIgMy0xNC41IDQuMy0yNC4zLjctMzAuNC0zLjYtNi0xMi4yLTguMy0yOC45LTcuOC0yNi43LjgtMzYuMiA3LjktNDIgMTcuMS01LjkgOS4xLTguMiAyMC4zLTIwLjQgMjkuMi03LjUgNS40LTE1LjkgNy45LTIzIDExLjItNy4xIDMuMy0xNC44IDguOC0xNC44IDE2LjMuMSA4LjQgNSAxMC45IDEwLjEgMTMuOCA1IDIuOSAxMC4yIDUuMyAxMC43IDEwLjguMyAxNi42LTcuOCAzNS43LTE2IDU0LjYtOC4zIDE4LjgtMTYuNyAzNy4zLTE2LjkgNTIuOC0xLjYgMzYuOSA0Ni43IDMxLjkgNTguMSAzMiAxNi4yLS4yIDU3LjkgMi40IDU4LjYtMjkuOCAwLTktNy43LTEyLTE1LjItMTUuMi03LjUtMy4zLTE0LjgtNi44LTE0LjEtMTYuOS4zLTMuNCA1LjQtMTguNSAxMS0zMy44IDUuNi0xNS4zIDExLjctMzAuNiAxMy45LTM0LjMgNi4yLTEwLjQgMjAuOC0xNS40IDMzLjgtMjAuNCAxMy01IDI0LjQtMTAgMjQuNC0yMC40cy04LjMtMTEuMy0xNi4xLTE0LjVaTTE0MDcuOSA1MDkuNmMtMTMuOCA1LTc3LjUgNDktODguMiAzNC41LTguMy0xNC4xIDMxLjctNzguMyAyNS44LTkwLjgtNy45LTE2LjYtNDQuMi05LTUyLjUtNS0xNS4xIDcuMy0yMC4xIDI0LjgtMjUuNyAzOC44LTEwLjcgMjYuOC02NS42IDE2Ny44LTY4LjkgMTc4LjMtNS42IDE3LjkgNTQuNyAzMCA3NC44LTE2LjcgNi4zLTE0LjUgMjQuNi0zMi4zIDQwLjktMzIuMyAzMS45IDAgMjYuNyA2My43IDcwLjQgNjQuNyA0LjggMCAyMy41LjUgMzYuNy01LjcgMjMuNC0xMS4xLTI4LTc2LjUtMjgtOTYuNnM4Ni44LTU3LjEgNzkuNi02Ny43Yy05LjItMTMuNS00Ny45LTcuNy02NS0xLjVaIiBmaWxsPSIjZDdkN2Q3Ii8+CiAgPHBhdGggZD0iTTMzMC41IDQxMS43WiIgZmlsbD0iI2I0MTAxZiIvPgogIDxwYXRoIGQ9Ik0xNDI0LjQgMjUyLjZoNDAuM2M0LjIgMCAzMiAwIDMxLjMtMTYuOC0uNi0xMy41LTE4LjctMTcuNS0zMy44LTE3LjYtMTIuOS0uMi01NC4yIDYuNS01NC4yIDIzLjZzNS42IDkuOSAxNi41IDEwLjlaTTU3My40IDI4Mi44Yy05LjIgMC03Mi43IDguOC03Mi43IDMzLjJzMTguMiAxNS43IDI2LjcgMTUuM2M3LjYtLjMgMTAuNy0uOSAxNy40LTIuMyAyLjMtLjUgNDYuOS0xNS40IDQ2LjktMzYuMnMtNy4xLTEwLjMtMTguMy05LjlaIiBmaWxsPSIjZDdkN2Q3Ii8+CiAgPHBhdGggZmlsbD0iI2FmMjAwOSIgZD0iTTM0MC40IDc1NC4xeiIvPgogIDxwYXRoIGQ9Ik0zNzcuMiA3MDYuOGMtNi0yMS42LTI1LjktMzYuMS00OC4zLTM1LjItMy44LjEtNy41LjctMTEuMSAxLjctMjUuNiA3LjItNDAuNiAzMy45LTMzLjQgNTkuNSA2LjEgMjEuNiAyNS45IDM2LjEgNDguMyAzNS4yIDMuOC0uMiA3LjUtLjcgMTEuMS0xLjggMTIuNC0zLjUgMjIuNy0xMS42IDI5LTIyLjggNi4zLTExLjIgNy45LTI0LjIgNC40LTM2LjdabS0xNS40IDMwLjVjLTQuNyA4LjMtMTIuMyAxNC4zLTIxLjQgMTYuOC0yLjcuOC01LjUgMS4yLTguMiAxLjNoLTEuNGMtMTYgMC0yOS45LTEwLjUtMzQuMy0yNi0uOS0zLjItMS4zLTYuNC0xLjMtOS42IDAtMTUuNiAxMC4zLTI5LjkgMjYtMzQuMyAyLjctLjcgNS41LTEuMiA4LjItMS4zaDEuNGMxNS45IDAgMjkuOSAxMC41IDM0LjIgMjYgLjkgMy4yIDEuMyA2LjQgMS4zIDkuNiAwIDYtMS42IDEyLTQuNiAxNy40WiIgZmlsbD0iI2Q3ZDdkNyIvPgogIDxwYXRoIGZpbGw9IiNhZjIwMDkiIGQ9Ik0zMjEuMiA2ODUuNXpNMzMwLjQgMzA4LjV6TTMyMy4yIDMwOS43eiIvPgogIDxwYXRoIGQ9Ik0xODA2LjggODEuOEg3OC4zVjQwNmgxNjZjLTM3LjkgMTYuNS03OC4yIDM0LjEtOTEuOCA0MC0xNC40IDYuMS0yMi4xIDIyLjEtMTcuOSAzNy4yIDMuOCAxMy40IDE2LjEgMjIuOCAzMCAyMi44aDEuMmMyLjQgMCA0LjgtLjUgNy4yLTEuMSAxLS4zIDIuMi0uNiAzLjUtMS4xaC4zYzAtLjEgNjgtMzAuOCA2OC0zMC44bC05LjIgMjIuOEwxOTMuOSA1OThsLS4yLjVjLTIuMiA2LjItMi41IDEyLjgtLjcgMTkgMy44IDEzLjYgMTUuOCAyMi44IDI5LjkgMjIuOGgxLjJjLjcgMCAxLjUgMCAyLjEtLjJsLTM0LjQgODQuN3MtMTMuNyAyOC45IDE0LjUgNDEuMWMzMy4xIDE0LjMgNDMuNi0xOC40IDQzLjYtMTguNGw4MC44LTE5OC44IDQxLjItMTAxLjUgMTQuNCA1LjgtMTQuMiAzNC45LTEgMi43LS4yLjljLTEuMiA1LjEtMS4xIDEwLjUuMyAxNS42IDMuOCAxMy40IDE2LjEgMjIuOCAzMCAyMi44aDEuMWMyIDAgNS0uMyA4LjEtMS40IDEwLjctMy43IDE2LjMtOS4yIDIwLjYtMjAuNWwyNS4zLTYyLjJjMi4yLTUuNCA0LTExLjUgMS43LTE5LjQtMi40LTguNy03LjctMTUuMS0xNS0xOC4xbC0uNC0uMmMtLjUtLjItMS4yLS41LTItLjhsLTMuMi0xLjNoMTM2OS40VjgxLjhaTTM0Mi4zIDE4Ni45YzEwLjUtMi42IDI2LjItMy4yIDQzLjcgMCAxNC41IDIuNiAxOSA0LjcgMjkuNyA0LjcgOS44IDAgMjUuNS00LjggMzEuOS00LjkgOC42LS4xIDIxLjUgMi42IDIxLjUgMTQuM3MtMTUuMSAzMC40LTI5IDMzLjdjLTE4LjggNC42LTM5IDQuMy01Ni4xIDIwLjMtOC44IDguMi0xMyAxOS42LTE2LjEgMjcuMy0zIDcuNS02LjEgMTUuMy05LjIgMjMtNS42LTQuNC0xMi4zLTcuNS0xOS42LTguNy0uNSAwLTEuMS0uMi0xLjctLjNoLS4yYy0uNSAwLTEtLjEtMS41LS4ySDMzMGMtMi42IDAtNS4yLjQtNy43IDEtLjguMi0xLjcuNC0yLjUuNi0xLjQuNC0yLjguOS00LjEgMS40cy0yLjcgMS4xLTMuOSAxLjhjLS42LjMtMS4zLjctMS45IDEtNi44IDMuOS0xMi41IDkuNi0xNi40IDE2LjYtNC4zIDcuNi02LjIgMTYuMi01LjUgMjQuNy4yIDIuOS43IDUuOCAxLjUgOC42LjIuOC41IDEuNS43IDIuMyAwIC4yLjEuMy4yLjUuMi42LjQgMS4yLjcgMS44IDAgLjEuMS4yLjIuNGwuOSAyLjFjMS44IDMuNyA0LjEgNy4yIDYuOCAxMC4yaC0yMi43Yy04IDAtMTUuOC04LjgtMTUuMi0xNS43LjctNy45IDE1LjgtNDcuNSAyNC40LTcwLjEgOC0yMC45IDE4LjktNDIuMyAyNC43LTYzLjMgMy41LTEyLjcgMTUuOS0yOC44IDMyLjEtMzIuOFptMjAuNiAxNTIuOWMwIDEzLjctOSAyNi4zLTIyLjggMzAuMS0yLjQuNy00LjggMS03LjIgMS4xaC0xLjNjLTE0IDAtMjYuMy05LjItMzAuMS0yMi44LS44LTIuOC0xLjItNS42LTEuMi04LjQgMC0xMy43IDktMjYuMyAyMi44LTMwLjEgMi4zLS43IDQuOC0xIDcuMi0xLjFoMS4zYzE0IDAgMjYuMiA5LjMgMzAgMjIuOS44IDIuOCAxLjIgNS42IDEuMiA4LjRabS0xNzUuNCAyOWMtMTEuNC0uMS01OS43IDQuOS01OC4xLTMyIC4yLTE1LjQgOC42LTMzLjkgMTYuOS01Mi44IDguMy0xOC44IDE2LjQtMzcuOSAxNi01NC42LS41LTUuNi01LjctOC0xMC43LTEwLjgtNS0yLjktMTAtNS40LTEwLjEtMTMuOCAwLTcuNSA3LjYtMTMgMTQuNy0xNi4zIDcuMS0zLjMgMTUuNi01LjggMjMtMTEuMiAxMi4zLTguOSAxNC42LTIwLjEgMjAuNC0yOS4yIDUuOS05LjEgMTUuMy0xNi4yIDQyLjEtMTcuMSAxNi44LS41IDI1LjMgMS43IDI4LjkgNy44IDMuNiA2IDIuMyAxNS44LS43IDMwLjQtMS42IDggNS44IDExLjEgMTMuNiAxNC4yIDcuOCAzLjIgMTYuMSA2LjMgMTYuMSAxNC41cy0xMS40IDE1LjUtMjQuNCAyMC40Yy0xMyA1LTI3LjUgOS45LTMzLjggMjAuNC0yLjIgMy43LTguMyAxOS0xMy45IDM0LjMtNS42IDE1LjMtMTAuOCAzMC40LTExIDMzLjgtLjcgMTAuMSA2LjYgMTMuNiAxNC4xIDE2LjkgNy41IDMuMyAxNS4yIDYuMyAxNS4yIDE1LjItLjcgMzIuMi00Mi4zIDI5LjctNTguNiAyOS44Wm0zNiAyNTguOGgtLjhjLTguMyAwLTE1LjYtNS41LTE3LjgtMTMuNi0uNS0xLjctLjctMy4zLS43LTUgMC0yLjEuNC00LjMgMS4xLTYuM3MzNy05MC42IDM3LTkwLjZsMzQuMSAxMy45LTM2LjcgOTAuMmMtMi4yIDUuMi02LjcgOS4xLTEyLjIgMTAuNy0xLjMuNC0yLjQuNy00IC44Wm0xNC40IDExNS4zYy0yLjUgNi4xLTYuNiAxMC40LTEyLjcgMTIuMS0xLjQuNC0yLjkuNi00LjMuN2gtLjhjLTguMyAwLTE1LjEtNS40LTE3LjQtMTMuNC0uNS0xLjctLjctMy40LS43LTUuMSAwLTEuNS4yLTMgLjYtNC41cy4zLTEuMy4zLTEuM2wuNy0yIDgxLjItMTk5LjkgMzQuMSAxMy45LTgxIDE5OS41Wk00MzguNCA0MjBjMi4xLjkgMy44IDIuMyA1IDQuMSAxLjIgMS43IDIuMSAzLjcgMi42IDUuNy40IDEuMy42IDIuNi42IDMuOCAwIDIuMy0uNyA0LjYtMS44IDcuNGwtMjUuNCA2Mi40Yy0xLjQgMy44LTIuOCA2LjUtNC44IDguNi0yIDIuMS00LjYgMy40LTguMSA0LjYtMS41LjUtMyAuNy00LjQuN2gtLjhjLTguNCAwLTE1LjctNS41LTE3LjktMTMuNi0uNS0xLjYtLjctMy4zLS43LTVzLjItMi45LjUtNC4zdi0uMmwuNy0xLjggMTguOC00Ni4zLTM3LjYtMTUuMy00MS4yIDEwMS41LTc1LjctMzAuOC0xLjEtLjUgMjEuMy01Mi42LTk2LjMgNDMuNWMtLjguMy0xLjUuNS0yLjIuNy0xLjQuNC0yLjguNi00LjMuN2gtLjhjLTguMyAwLTE1LjctNS41LTE3LjktMTMuNi0uNS0xLjctLjctMy40LS43LTUgMC03LjMgNC40LTE0LjIgMTEuNC0xNy4yIDI0LjctMTAuNyAxMzUuNS01OSAxNjMuMi03MS4xIDQtMS43IDYuMi0yLjcgNi4zLTIuNyAzLjMtMS40IDYuOC0yLjEgMTAuMi0yLjJoMS4yYzQgMCA3LjIuOCAxMS42IDIuNnM4Ni4zIDM1LjEgODYuMyAzNS4xYy43LjIgMS40LjYgMi4xLjlabTE4OS41LTU4LjRjLTYgMS45LTEyLjYgMy43LTE5LjkgMy4zLTkuNS0uNC0zOS42LTYuOS00Mi02LjktMjYuMSAwLTQwLjMgMTAuOS03MS43IDEwLjlzLTcxLjctMi44LTcxLjctNDAuNiAxMC42LTMzLjEgNDctNTIuNmMyNC0xMi45IDkxLjItMjIuOSAxMDguNi0yNS4zIDMuOS0uNSAzNy4yLTMuMSAzNy4yLTIycy0yMS43LTE0LjktMjcuMi0xNC45Yy0zMy41IDAtNDMuOSAyMi44LTgyLjYgMjIuOHMtMjUuMi0xLjItMjUuNy0xMS45Yy0uOC0xOC42IDQ2LjEtMzUuMyA2MC43LTM4LjMgNTEuMy0xMC42IDEwNS41LTMuMiAxMTYuOSAwIDE2LjcgNC42IDMyIDE2LjggMzIgMzMuOXMtMy45IDIwLTcuMyAyOS45Yy05LjQgMjYtMTkuOSA1MS43LTMxIDc3LjItNS4xIDExLjUtNi4xIDI5LTIzLjMgMzQuNVptMjE2LjYgNy4xYy05LjEgMC0yOS4yIDEuNC0yOS4xLTE0LjcgMC0xMC4zIDM1LjYtODQuNSAzNS42LTEwNC40cy0xNi4yLTIyLjMtMjguMi0yMi4zYy0yOC42IDAtNTEuMSAyMC4yLTYzLjIgNTYuMS02LjcgMjAtMjMuMiA1OS43LTI4IDY2LjktMTAuNSAxNS41LTI3IDE4LjYtNDAuOCAxOC42cy0yOC42LS4yLTI4LjYtMTcuMyAyMy45LTY0LjYgMjcuMy03Mi41YzUuNy0xMy41IDE0LjMtMzcuNiAyMC4xLTUxLjYgMTMuNy0zMy40IDE4LjYtMzguMiA1Mi0zOC43IDEwLjUtLjEgMjguNSA1LjIgNDUgNC44IDIxLjQtLjUgNDYuOS05LjIgNjguNy04LjkgMTUuOC4yIDU4IC43IDU5LjggMzQuMS45IDE2LTI3LjcgNzYuMy0zNC43IDk0LjktMTguMiA0OC40LTE4LjggNTQuOS01NS45IDU0LjlabTE4Ni43LTEzMy42YzEuMSAyNS42IDEyNC41IDguMyAxMTYuMyA2MC42LTE0LjYgOTIuOC0yMjcuNiA4NS45LTIzNi43IDQyLjQtMi4xLTEwLjIgMTguMi0yNiAzNi4zLTI1LjMgMjQuNiAxIDM3LjEgMTcuNiA2My43IDE3LjZzNTEuNS0yLjQgNTMuMS0yMWMuOS0xMC43LTIwLjUtMTQuNi0zNi41LTE2LjMtMTExLjUtMTEuNC03Ny43LTYwLTcwLTY5LjkgNDUuMS01OC4yIDIwOC40LTUwIDIwOC40LTE3LjJzLTI5LjcgMjcuMS00Ni41IDIyLjNjLTI2LjctNy42LTg5LjMtMjAuNS04OC4xIDYuN1ptMjU0LjIgNWMtNi4zIDEwLjEtOS4zIDIyLjEtMTMuNCAzMi42LTguNiAyMi4xLTE4LjggNDMuMi0yNi4xIDY1LjMtOS4xIDI3LjQtMzEgMzEtNDkuNyAzMXMtMzEuNiAwLTMxLjYtMTUuOSA0MC42LTk1IDQwLjYtMTE0LjgtMjIuMy0xNy40LTIyLjMtMjguMyA4LjYtMTQuMiAxNi43LTE3LjhjOS4xLTQgMjIuOS03LjEgMzAuOS0xOC44IDI2LjktMzkuMSA1NC44LTUwLjggOTQuNC01MC44czQ0LjMgMTEuOCA0NC40IDE1LjdjLjcgMjIuOS0zMy43IDI3LjktNDYuNyAzNS44LTEuNiAxLTMuNyAzLjgtMy43IDYuMiAwIDEwLjEgMjIuOCA3LjIgMjIuOCAyMS44cy0zOC4yIDI0LjEtNDEuOSAyNS40Yy01LjIgMi0xMC43IDYuNy0xNC4zIDEyLjRabTEzMy4xIDkxLjdjMzMuMyAwIDU4LjgtMjUuOCA4My44LTI1LjhzMjguMiA0LjQgMjguMiAxNi44LTMwLjEgMjQuNy0zOC45IDI5LjNjLTE5LjMgMTAuMS04Ny44IDI1LjMtMTMzLjggMTAuNS01OS0xOS02NC4yLTU5LjctMzUuMy0xMDcuOSAzMC44LTUxLjMgOTUtNzMuMiAxNTIuOC03My4yczg2LjYgMTEgOTIuMyA1OS45YzEuOCAxNS41LTIgMjkuMi0xNi44IDM3LjYtMTkuOCAxMS4yLTExNi42IDEtMTQ1LjUgNi4xLTExLjEgMi0yNS4xIDYuOS0yNS4xIDIwLjRzMjMuOSAyNi4zIDM4LjMgMjYuM1ptMzExLjgtOTcuNmMtMTguNyA0LjgtMzkuMSA0LjgtNTYuMyAyMC44LTguOCA4LjItMTMgMTkuNi0xNi4xIDI3LjMtNC43IDExLjYtOS41IDIzLjktMTQuMiAzNS42LTUuNyAxNC40LTE1LjMgNDguNC00MC4zIDUwLjYtNiAuNS0zNy4xLjItMzcuMS4yLTggMC0xNS44LTguOC0xNS4yLTE1LjguNy03LjkgMTUuOC00Ny42IDI0LjQtNzAuMSA4LTIwLjkgMTguOS00Mi4zIDI0LjctNjMuMyAzLjUtMTIuNyAxNS45LTI4LjggMzIuMS0zMi44IDEwLjUtMi42IDI2LjItMy4yIDQzLjcgMCAxNC41IDIuNiAxOSA0LjcgMjkuNyA0LjcgOS44IDAgMjIuMi01IDI4LjYtNS4yIDkuMS0uMyAxOS43IDQuMyAyMS4xIDE1LjIgMS43IDEzLjYtOC4zIDI4LjItMjUuMiAzMi42WiIgZmlsbD0iI2Q3ZDdkNyIvPgogIDxwYXRoIGZpbGw9IiNhZjIwMDkiIGQ9Ik0yMjUuMiA3NTV6Ii8+Cjwvc3ZnPgo=);
+            background-size: 143px 61px;
+            background-repeat: no-repeat;
+            background-position: center 20px;
+        }
+
+        /*]]>*/
+    </style>
+    <script type="text/javascript" src="https://tmssl.akamaized.net/js/vendor/jquery.min.js?lm=1777384877"></script>
+    <script type="text/javascript"
+        src="https://tmssl.akamaized.net/assets/b7c5571cf8957553f95f6d9069eaed67/jquery.ba-bbq.min.js?lm=1777384876"></script>
+    <script type="text/javascript"
+        src="https://tmssl.akamaized.net/assets/b344ec51bd68be8ed48379c9e69eb01d/js/jquery.scrollTo.min.js?lm=1777384876"></script>
+    <script type="text/javascript"
+        src="https://tmssl.akamaized.net/assets/b344ec51bd68be8ed48379c9e69eb01d/js/elinkpagermobile.js?lm=1777384876"></script>
+    <script type="text/javascript" src="https://tmssl.akamaized.net/js/main.js?lm=1777384877"></script>
+    <script type="text/javascript"
+        src="https://tmssl.akamaized.net/js/chosen.ajaxaddition.jquery.js?lm=1777384877"></script>
+    <script type="text/javascript" src="https://tmssl.akamaized.net/js/functions.js?lm=1777384877"></script>
+    <script type="text/javascript" src="https://tmssl.akamaized.net/js/main_desktop.js?lm=1777384877"></script>
+    <script type="text/javascript" src="https://tmssl.akamaized.net/js/chosen.jquery.js?lm=1777384877"></script>
+    <script type="text/javascript" src="https://tmsi.akamaized.net/js/svelte-components/consent/bundle.js"></script>
+    <script type="text/javascript">
+        /*<![CDATA[*/
+                console.info("%c [TM-ADs] Initialize Ads on domain .es (schnellsuche/ergebnis)", "background: #282828; color: #bada55")
+                console.info("%c [TM-ADs] Skip PerformPlayer (d_content_1) for google on schnellsuche/ergebnis", "background: #282828; color: #bada55")
+                console.info("%c [TM-ADs] Render slot skyscraper (/58778164/d_right_1) for google", "background: #282828; color: #bada55")
+                console.info("%c [TM-ADs] Render slot billboard (/58778164/d_top_1) for google", "background: #282828; color: #bada55")
+                console.info("%c [TM-ADs] Render slot fullsize_contentad (/58778164/d_bottom_1) for google", "background: #282828; color: #bada55")
+                var oddsServe = function (placement, competition, match, node) {
+            if (!node) {
+                var s = document.readyState === 'loading' ? document.getElementsByTagName('script') : [];
+                node = s.length ? s[s.length - 1].parentNode : null;
+            }
+                oddsServe.queue.push({contentUnitId: placement, competition: competition, match: match, node: node});
+        }
+
+                oddsServe.onInit = function (callbacks) {
+            if (typeof window.__tcfapi === 'function') {
+                    __tcfapi('addEventListener', 2, function (tcdata, success) {
+                        let tcf20compatibleString;
+                        if (success) {
+                            if (tcdata.eventStatus === 'useractioncomplete') {
+                                tcf20compatibleString = tcdata.tcString;
+                            } else if (tcdata.eventStatus === 'tcloaded') {
+                                tcf20compatibleString = tcdata.tcString;
+                            }
+                            callbacks.setGdprOptions({
+                                gdpr: 1,
+                                gdpr_pd: 1,
+                                gdpr_consent: tcf20compatibleString,
+                            });
+                        }
+                    });
+            } else {
+                    console.warn('E2: __tcfapi not found');
+            }
+        };
+                oddsServe.options = {gdpr_wait: true};
+                oddsServe.queue = [];
+                console.info("%c [TM-ADs] Add adslot configuration for 3 ad slots skyscraper | billboard | fullsize_contentad", "background: #282828; color: #bada55")
+                console.info("%c [TM-ADs] Adslots without configuration: PerformPlayer | fireplace | skyscraper-left-bound | skyscraperbtf | richmedia | 1by1px", "background: #282828; color: #bada55")
+                console.info("%c [TM-ADs] Register slots with JS vendor lib", "background: #282828; color: #bada55")
+        window.addEventListener('load', () => {
+            const offset = window.matchMedia('(max-width: 768px)').matches ? 80 : 120;
+            document.querySelectorAll('[data-sticky]').forEach(node => {
+                const parent = node.parentElement;
+                const observer = new IntersectionObserver(([entry]) => {
+                    if (!entry.isIntersecting) {
+                    parent.style.position = 'sticky';
+                parent.style.top = `${offset}px`;
+                parent.style.zIndex = 12000000;
+                        setTimeout(() => {
+                    parent.style.removeProperty('position');
+                parent.style.removeProperty('top');
+                parent.style.removeProperty('z-index');
+                        }, parseInt(node.dataset?.sticky) || 3000);
+                observer.unobserve(parent);
+                    }
+                }, {rootMargin: `-${offset}px 0px 0px 0px`, threshold: 1});
+                observer.observe(parent);
+            });
+        });
+
+                console.info("%c [TM-ADs] Render ad slots js for googleinhouse", "background: #282828; color: #bada55")
+                console.info("%c [TM-ADs] Added external ad script https://securepubads.g.doubleclick.net/tag/js/gpt.js for googleadvertising on suche", "background: #282828; color: #bada55")
+                console.info("%c [TM-ADs] Added external ad script https://tmsi.akamaized.net/js/ad-setup/prebid/prebid.js for googleadvertising on suche", "background: #282828; color: #bada55")
+                console.info("%c [TM-ADs] Added external ad script https://tmsi.akamaized.net/js/ad-setup/prebid/scripts/es.js for googleadvertising on suche", "background: #282828; color: #bada55")
+/*]]>*/
+    </script>
+    <title>Resultado de búsqueda | Transfermarkt</title>
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-152x152.png">
+
+    <script type="text/javascript">
+                tmData = {
+                    loggedIn: "0",
+                tmTraffic: "0",
+        };
+    </script>
+    <script>
+                const urlParams = new URLSearchParams(window.location.search);
+                let utmVars = {
+                    eVar1: urlParams.get('utm_campaign'),
+                eVar6: urlParams.get('utm_source'),
+                eVar24: urlParams.get('utm_medium')
+        };
+        Object.keys(utmVars).forEach((k) => utmVars[k] == null && delete utmVars[k]);
+
+                window.tmAnalyticsDataLayer = window.tmAnalyticsDataLayer || [];
+                window.tmAnalytics = {
+                    dimensions: {
+                    eVar10: '',
+                ...utmVars,
+                evar19: window.location.href,
+                eVar35: '',
+                eVar37: '',
+            },
+                properties: {
+                    prop2: 'suche',
+                prop3: 'schnellsuche',
+                prop4: '',
+                prop5: '',
+                prop14: 'suche_schnellsuche__',
+                prop9: window.location.hostname,
+                prop10: window.location.href,
+                prop1: 'false',
+            },
+                pageDetails: {
+                    pageViews: {
+                    value: 1
+                },
+                isErrorPage: 'false',
+                isHomepage: 'false',
+                name: 'Resultado de búsqueda | Transfermarkt',
+                URL: window.location.href,
+                server: 'web05'
+            },
+        };
+
+                function tmEventForLink(category, aTag, label) {
+            const url = new URL(aTag.href);
+                const link = url.pathname + url.search;
+                tmEvent(category, link, label);
+        }
+
+                function tmEvent(category, action, label, detail = '') {
+            if (typeof gtag === 'function') {
+                    gtag('event',
+                        action,
+                        {
+                            'event_category': category,
+                            'event_label': label
+                        }
+                    );
+            }
+
+                const ev = {
+                    event: 'tmEvent',
+                tmEvent: {
+                    customDimensions: {
+                    eVars: {
+                    ...tmAnalytics.dimensions
+                },
+                props: {
+                    prop6: category,
+                prop7: action,
+                prop8: label,
+                prop17: detail,
+                ...tmAnalytics.properties
+                        }
+                    },
+                event1to100: {
+                    event7: {
+                    value: 1
+                        },
+                event8: null,
+                    },
+                session: {
+                    web: {
+                    webInteraction: {
+                    linkClicks: {
+                    value: 1
+                                }
+                            },
+                webPageDetails: {
+                    ...tmAnalytics.pageDetails,
+                                ...{
+                    pageViews: {
+                    value: null
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+                if (!window._satellite) {
+                    once = false;
+                window._satellite = {
+                    _monitors: [{
+                    ruleTriggered: (e) => {
+                            if (once) {
+                                return;
+                            }
+                once = true;
+                            setTimeout(() => {
+                    tmAnalyticsDataLayer.push(ev);
+                tmAnalyticsDataLayer.push(function (dl) {
+                                    const state = dl.getState();
+                                });
+                            }, 1);
+                        }
+                    }]
+                };
+            } else {
+                    tmAnalyticsDataLayer.push(ev);
+                tmAnalyticsDataLayer.push(function (dl) {
+                    const state = dl.getState();
+                });
+            }
+        }
+                function tmTrackingAndAds() {
+            if (typeof gtag === 'function') {
+                    gtag("event", "page_view", {
+                        page_path: "/jsContent" + window.location.pathname
+                    });
+            }
+
+                tmAnalyticsDataLayer.push({
+                    event: 'tmTrackingAndAds',
+                tmTrackingAndAds: {
+                    customDimensions: {
+                    eVars: tmAnalytics.dimensions,
+                props: tmAnalytics.properties
+                    },
+                event1to100: {
+                    event7: null,
+                event8: {
+                    value: 1
+                        }
+                    },
+                session: {
+                    web: {
+                    webInteraction: {
+                    linkClicks: {
+                    value: null
+                                }
+                            },
+                webPageDetails: {
+                    ...tmAnalytics.pageDetails,
+                                ...{
+                    pageViews: {
+                    value: 1
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+                tmAnalyticsDataLayer.push(function (dl) {
+                const state = dl.getState();
+            });
+        }
+                function tmTiming(value, name, event_category, event_label) {
+                    console.log('tmTiming', value, name, event_category, event_label);
+        }
+
+                !function (e, a, n, t) {
+            var i = e.head; if (i) {
+                if (a) return;
+                var o = e.createElement("style");
+                o.id = "alloy-prehiding", o.innerText = n, i.appendChild(o), setTimeout(function () {o.parentNode && o.parentNode.removeChild(o)}, t)
+            }
+        }
+                (document, document.location.href.indexOf("adobe_authoring_enabled") !== -1, ".personalization-container {opacity: 0 !important }", 3000);
+
+                !function (n, o) {
+                    o.forEach(function (o) {
+                        n[o] || ((n.__alloyNS = n.__alloyNS ||
+                            []).push(o), n[o] = function () {
+                                var u = arguments; return new Promise(
+                                    function (i, l) {n[o].q.push([i, l, u])})
+                            }, n[o].q = [])
+                    })
+                }
+                (window, ["alloy"]);
+    </script>
+    <tm-consent type="adobe" no-checkbox
+        embed="PHNjcmlwdCBhc3luYyBzcmM9Imh0dHBzOi8vYXNzZXRzLmFkb2JlZHRtLmNvbS83Y2FkY2E5NWRkOWEvY2Q0YWI4ODRkMjMxL2xhdW5jaC0wMTI3MmI0MDBjNjUubWluLmpzIj48L3NjcmlwdD4=">
+    </tm-consent>
+
+    <script type="text/javascript" src="https://tmssl.akamaized.net//ads/ads.js"></script>
+    <script type="text/javascript">
+                window.tmGaId = "UA-3816204-13";
+
+                function sendIvwData() { }
+    </script>
+</head>
+
+<body class="desktop " itemscope itemtype="http://schema.org/WebPage" data-tm-tld="es" data-cmp-layer-id="910187"
+    data-db-name="es-der-zauberzwerg">
+
+    <tm-domain-note></tm-domain-note>
+    <div id="main">
+        <button id="back-to-top" title="Nach oben">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17.795" height="10.009" viewBox="0 0 17.795 10.009">
+                <path id="angle-up"
+                    d="M20.683,17.01a1.112,1.112,0,0,1-.786-.326l-7-7-7,7a1.112,1.112,0,1,1-1.573-1.573l7.785-7.785a1.112,1.112,0,0,1,1.573,0l7.785,7.785a1.112,1.112,0,0,1-.786,1.9Z"
+                    transform="translate(-4 -7)" fill="#fff" />
+            </svg>
+        </button>
+        <div class="werbung-skyscraper-left-bound-container">
+        </div>
+        <div class="werbung-skyscraper-container">
+            <div class="ad-placement-note werbung werbung-skyscraper" data-ad-placement-note="Anuncio">
+                <div id="d_right_1" style="min-height: 600px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="werbung-skyscraperbtf-container">
+        </div>
+
+        <div id="tm-overlay"></div>
+
+        <div class="tm-header__box">
+            <!-- logo  -->
+            <a href="/" class="tm-header__logo" onclick="tmEvent('hauptnavi', '/', 'TM-Logo');">
+                <img src="https://tmsi.akamaized.net/head/tm_logo_rebrush.svg" height="62" width="156"
+                    title="Transfermarkt" alt="Transfermarkt">
+            </a>
+
+            <!-- domainswitcher  -->
+            <div class="domin-swicher">
+                <tm-domain-switcher tld="es"
+                    translations='{&quot;chooseYourDomain&quot;:&quot;Elige tu dominio&quot;}'></tm-domain-switcher>
+            </div>
+
+            <!-- live -->
+            <tm-live-match-count class="tm-header__live" auto-request
+                content='{&quot;liveMatches&quot;:&quot;Partidos en directo&quot;,&quot;liveMatch&quot;:&quot;Partido en vivo&quot;,&quot;live&quot;:&quot;En vivo&quot;}'></tm-live-match-count>
+
+            <!-- Search -->
+            <div class="tm-header__search " id="schnellsuche-platz">
+                <form name="schnellsuche" id="schnellsuche" class="tm-header__form"
+                    action="/schnellsuche/ergebnis/schnellsuche">
+                    <input type="text" name="query" class="tm-header__input--search-field" onClick=""
+                        placeholder="Introducir término (p.ej. jugador, club,...)" autocorrect="off" spellcheck="false"
+                        value="yamal" />
+                    <button type="submit" value="" class="tm-header__input--search-send" alt="Buscar">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18"
+                            height="18" viewBox="0 0 18 18">
+                            <path
+                                d="M17.825,16.847 L14.28,13.303 C17.072,9.987 16.756,5.061 13.563,2.13 C10.37,-0.8 5.435,-0.695 2.37,2.37 C-0.695,5.435 -0.8,10.37 2.13,13.563 C5.061,16.756 9.987,17.072 13.303,14.28 L16.847,17.825 C17.121,18.069 17.538,18.057 17.797,17.797 C18.057,17.538 18.069,17.121 17.825,16.847 z M1.418,8.108 C1.417,4.413 4.412,1.417 8.107,1.416 C11.802,1.415 14.798,4.411 14.799,8.106 C14.799,11.801 11.804,14.797 8.108,14.797 C4.414,14.797 1.419,11.803 1.418,8.108 z"
+                                fill="#000" />
+                        </svg>
+                    </button>
+                </form>
+                <a href="/detailsuche/spielerdetail/suche" title="Acceder a la búsqueda detallada" id="detailsuche-head"
+                    class="tm-header__search-detail">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18"
+                        height="18" viewBox="0, 0, 18, 18">
+                        <path
+                            d="M3.138,3.558 C3.137,1.593 4.727,0 6.69,0 C8.652,-0 10.243,1.592 10.243,3.556 C10.243,5.521 8.653,7.113 6.69,7.113 C4.729,7.113 3.138,5.522 3.138,3.558 z M8.233,13.187 C8.261,11.778 8.861,10.442 9.893,9.486 C9.967,9.418 9.997,9.315 9.971,9.219 C9.946,9.119 9.863,9.044 9.76,9.03 C9.331,8.938 8.893,8.893 8.454,8.895 L4.906,8.895 C3.583,8.808 2.286,9.298 1.35,10.239 C0.414,11.179 -0.07,12.479 0.021,13.804 C-0.085,14.656 0.209,15.509 0.817,16.114 C1.425,16.72 2.279,17.009 3.13,16.897 L9.266,16.897 C9.372,16.895 9.467,16.831 9.508,16.732 C9.549,16.634 9.527,16.521 9.453,16.444 C8.665,15.544 8.232,14.387 8.236,13.191 z M17.805,17.804 C17.68,17.93 17.511,18 17.334,18 C17.158,18 16.989,17.93 16.864,17.804 L15.237,16.177 C13.686,17.242 11.58,16.949 10.378,15.501 C9.176,14.052 9.274,11.926 10.604,10.594 C11.934,9.263 14.058,9.165 15.505,10.368 C16.952,11.571 17.244,13.68 16.181,15.233 L17.805,16.866 C18.065,17.126 18.065,17.548 17.805,17.808 z M15.484,13.182 C15.484,11.911 14.455,10.881 13.186,10.881 C11.917,10.881 10.888,11.911 10.888,13.182 C10.888,14.452 11.917,15.482 13.186,15.482 C14.455,15.482 15.484,14.452 15.484,13.182 z"
+                            fill="#000" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- login button -->
+            <div class="tm-header__login">
+                <tm-userbox
+                    translations='{&quot;addFavorite&quot;:&quot;Agregar favoritos&quot;,&quot;adminArea&quot;:&quot;\u00c1rea de Administraci\u00f3n&quot;,&quot;adminTools&quot;:&quot;Herramientas administrativas&quot;,&quot;allFavoriteLinkText&quot;:&quot;Ir a mis favoritos&quot;,&quot;applyAsModOrDatascout&quot;:&quot;Convi\u00e9rtete en moderador o data scout&quot;,&quot;checkAllNews&quot;:&quot;Ver todas las noticias&quot;,&quot;checkAllRumours&quot;:&quot;Todos los rumores aqu\u00ed&quot;,&quot;chooseYourDomain&quot;:&quot;Elige tu dominio&quot;,&quot;clickAgain&quot;:&quot;Haz clic de nuevo para copiar el enlace corto en el portapapeles&quot;,&quot;clubBoard&quot;:&quot;Foro de equipo&quot;,&quot;confirm&quot;:&quot;De acuerdo&quot;,&quot;copied&quot;:&quot;Copiar al portapapeles&quot;,&quot;copyLink&quot;:&quot;Copiar link&quot;,&quot;createAccount&quot;:&quot;Crea tu cuenta&quot;,&quot;createNewMessage&quot;:&quot;Escribir nuevo mensaje&quot;,&quot;createShortlink&quot;:&quot;Acortar URL&quot;,&quot;createShortNews&quot;:&quot;Crear noticia corta&quot;,&quot;dashboard&quot;:&quot;Resumen&quot;,&quot;dataAdministration&quot;:&quot;Base de datos&quot;,&quot;debug&quot;:&quot;Debug&quot;,&quot;deleteAll&quot;:&quot;Borrar todos&quot;,&quot;deleteConfirm&quot;:&quot;Si, borrar todas.&quot;,&quot;editText&quot;:&quot;Editar&quot;,&quot;forgotPassword&quot;:&quot;\u00bfHas olvidado la contrase\u00f1a?&quot;,&quot;forgotUsername&quot;:&quot;\u00bfHas olvidado tu nombre de usuario?&quot;,&quot;forgotLoginDetails&quot;:&quot;\u00bfOlvidaste tus datos de inicio de sesi\u00f3n? &quot;,&quot;forum&quot;:&quot;forum&quot;,&quot;groundhoppingTool&quot;:&quot;Estadios visitados&quot;,&quot;lastMatch&quot;:&quot;\u00daltimo partido&quot;,&quot;signin&quot;:&quot;Iniciar sesi\u00f3n&quot;,&quot;login&quot;:&quot;Iniciar sesi\u00f3n&quot;,&quot;logOut&quot;:&quot;Cerrar sesi\u00f3n&quot;,&quot;manageFavorites&quot;:&quot;Gestionar favoritos&quot;,&quot;marketValue&quot;:&quot;valor de mercado&quot;,&quot;matchplan&quot;:&quot;Plan de encuentros&quot;,&quot;messages&quot;:&quot;Mensajes&quot;,&quot;myClub&quot;:&quot;Mi club&quot;,&quot;myClubText&quot;:&quot;Con una cuenta en Transfermarkt puedes guardar tu club favorito y encontrar todas las informaciones relacionadas con el equipo de tus amores.&quot;,&quot;myDreamTeam&quot;:&quot;Mi XI ideal&quot;,&quot;myFavorites&quot;:&quot;Mis favoritos&quot;,&quot;myFavoritesText&quot;:&quot;Con una cuenta en Transfermarkt puedes guardar cualquier p\u00e1gina en tus favoritos y acceder a ella con un solo clic. &quot;,&quot;myProfile&quot;:&quot;Mi Perfil&quot;,&quot;news&quot;:&quot;Noticias&quot;,&quot;newsAdministration&quot;:&quot;Administraci\u00f3n de noticias&quot;,&quot;nextMatch&quot;:&quot;Pr\u00f3ximo partido&quot;,&quot;noNewNotifications&quot;:&quot;No hay nuevas notificaciones &quot;,&quot;notifications&quot;:&quot;Avisos&quot;,&quot;notificationsDeletedAutomatically&quot;:&quot;Nota: las notificaciones se eliminan autom\u00e1ticamente despu\u00e9s de 30 d\u00edas.&quot;,&quot;notifyDeleteMessage&quot;:&quot;Los mensajes privados con m\u00e1s de 45 d\u00edas antig\u00fcedad se borrar\u00e1n de vez en cuando (excepto los de los data scouts y moderadores).&quot;,&quot;or&quot;:&quot;o&quot;,&quot;other&quot;:&quot;Diversos&quot;,&quot;overview&quot;:&quot;vista general&quot;,&quot;password&quot;:&quot;Contrase\u00f1a&quot;,&quot;playerRatings&quot;:&quot;Notas de jugadores&quot;,&quot;playerWatchlist&quot;:&quot;Lista de seguimiento de jugadores&quot;,&quot;postponed&quot;:&quot;aplazado&quot;,&quot;profile&quot;:&quot;Perfil&quot;,&quot;progDebug&quot;:&quot;Prog. Debug&quot;,&quot;progProfile&quot;:&quot;Prog. Profile&quot;,&quot;registerNow&quot;:&quot;Reg\u00edstrate ahora&quot;,&quot;rememberMe&quot;:&quot;Guardar sesi\u00f3n&quot;,&quot;removeFavorite&quot;:&quot;Quitar favoritos&quot;,&quot;rumors&quot;:&quot;Rumores&quot;,&quot;schedule&quot;:&quot;calendario&quot;,&quot;sessionExpired&quot;:&quot;Tu sesi\u00f3n en Transfermarkt ha caducado. Vuelve a iniciar sesi\u00f3n.&quot;,&quot;sessionExpiredTitle&quot;:&quot;Sesi\u00f3n caducada&quot;,&quot;setting&quot;:&quot;Ajustes&quot;,&quot;shortlink&quot;:&quot;Acortador de URL&quot;,&quot;shortLinkCreationError&quot;:&quot;Se ha producido un error al crear el enlace corto.&quot;,&quot;shortLinkHasBeenCreated&quot;:&quot;Se ha creado un enlace corto y se ha copiado&quot;,&quot;shortLinkIsBeingCreated&quot;:&quot;Crear enlace corto&quot;,&quot;showAllMessages&quot;:&quot;Todos los mensajes&quot;,&quot;totalMarketValue&quot;:&quot;Valor de mercado total&quot;,&quot;translation&quot;:&quot;Traducir&quot;,&quot;username&quot;:&quot;Nombre de usuario&quot;,&quot;whyRegister&quot;:&quot;\u00bfPor qu\u00e9 registrarse?&quot;,&quot;Bitte korrigieren Sie die markierten Felder&quot;:&quot;Bitte korrigieren Sie die markierten Felder&quot;,&quot;mindestensDreiZeichen&quot;:&quot;Al menos tres caracteres&quot;,&quot;mindestensAchtZeichen&quot;:&quot;Al menos ocho caracteres&quot;,&quot;pleaseCorrectFields&quot;:&quot;profil&quot;,&quot;minThreeCharacters&quot;:&quot;Al menos tres caracteres&quot;,&quot;minEightCharacters&quot;:&quot;Al menos ocho caracteres&quot;,&quot;noAtCharacter&quot;:&quot;El @ (arroba) no est\u00e1 permitido en el nombre de usuario.&quot;,&quot;agentProfile&quot;:&quot;Perfil de mi agencia&quot;}'
+                    page-title="Resultado de búsqueda | Transfermarkt" tld="es" agent-profile="" />
+            </div>
+        </div>
+
+
+        <!-- mobile end -->
+        <nav class="main-navbar">
+            <a href="/" class="main-navbar__lp-link " onclick="tmEvent('hauptnavi', '/', 'DESCUBRE')">
+                DESCUBRE </a>
+            <a href="/navigation/transfersundgeruechte" class="main-navbar__lp-link "
+                onclick="tmEvent('hauptnavi', '/navigation/transfersundgeruechte', 'FICHAJES Y RUMORES')">
+                FICHAJES Y RUMORES </a>
+            <a href="/navigation/marktwerte" class="main-navbar__lp-link "
+                onclick="tmEvent('hauptnavi', '/navigation/marktwerte', 'VALORES DE MERCADO')">
+                VALORES DE MERCADO </a>
+            <a href="/navigation/wettbewerbe" class="main-navbar__lp-link "
+                onclick="tmEvent('hauptnavi', '/navigation/wettbewerbe', 'COMPETICIONES')">
+                COMPETICIONES </a>
+            <a href="/navigation/statistiken" class="main-navbar__lp-link "
+                onclick="tmEvent('hauptnavi', '/navigation/statistiken', 'ESTADÍSTICAS')">
+                ESTADÍSTICAS </a>
+            <a href="/navigation/community" class="main-navbar__lp-link "
+                onclick="tmEvent('hauptnavi', '/navigation/community', 'COMUNIDAD')">
+                COMUNIDAD </a>
+            <a href="/navigation/gaming" class="main-navbar__lp-link "
+                onclick="tmEvent('hauptnavi', '/navigation/gaming', 'JUEGOS')">
+                JUEGOS </a>
+            <div class="main-navbar__details">
+                <div class="hamburger">
+                    <em></em>
+                </div>
+                <div class="dropdown-layer"></div>
+                <div class="main-navbar__dropdown">
+                    <div class="recommendation">
+
+
+                        <div
+                            class="tm-discover__hero-container tm-discover__hero-container-grid tm-discover-container-grid">
+
+                            <section class="tm-button-list__wrapper tm-button-list__wrapper--two-thirds  "><span
+                                    class="tm-discover__h2">Lo más visto</span>
+                                <ul class="tm-button-list">
+                                    <li><a href="/laliga/startseite/wettbewerb/ES1" title="LaLiga" target=""
+                                            class="tm-button-list__list-item tm-button-list__list-item--big "
+                                            onclick="tmEvent('recommendations_recommendation', '/laliga/startseite/wettbewerb/ES1' , '1_1', 'buttonList');"><img
+                                                src="https://tmssl.akamaized.net//images/logo/homepageWappen150x150/es1.png?lm=1725974302"
+                                                alt="LaLiga" class="tm-button-list__image tm-button-list__image--big 1"
+                                                width="54" height="36"></a></li>
+                                    <li><a href="/segunda-division/startseite/wettbewerb/ES2" title="2ª División"
+                                            target="" class="tm-button-list__list-item tm-button-list__list-item--big "
+                                            onclick="tmEvent('recommendations_recommendation', '/segunda-division/startseite/wettbewerb/ES2' , '1_2', 'buttonList');"><img
+                                                src="https://tmssl.akamaized.net//images/logo/homepageWappen150x150/es2.png?lm=1725974946"
+                                                alt="Segunda División"
+                                                class="tm-button-list__image tm-button-list__image--big 1" width="54"
+                                                height="36"></a></li>
+                                    <li><a href="/premier-league/startseite/wettbewerb/GB1" title="Premier League"
+                                            target="" class="tm-button-list__list-item tm-button-list__list-item--big "
+                                            onclick="tmEvent('recommendations_recommendation', '/premier-league/startseite/wettbewerb/GB1' , '1_3', 'buttonList');"><img
+                                                src="https://tmssl.akamaized.net//images/logo/homepageWappen150x150/gb1.png?lm=1521104656"
+                                                alt="Premier League"
+                                                class="tm-button-list__image tm-button-list__image--big 1" width="54"
+                                                height="36"></a></li>
+                                    <li><a href="/serie-a/startseite/wettbewerb/IT1" title="Serie A" target=""
+                                            class="tm-button-list__list-item tm-button-list__list-item--big "
+                                            onclick="tmEvent('recommendations_recommendation', '/serie-a/startseite/wettbewerb/IT1' , '1_4', 'buttonList');"><img
+                                                src="https://tmssl.akamaized.net//images/logo/homepageWappen150x150/it1.png?lm=1656073460"
+                                                alt="Serie A" class="tm-button-list__image tm-button-list__image--big 1"
+                                                width="54" height="36"></a></li>
+                                    <li><a href="/bundesliga/startseite/wettbewerb/L1" title="Bundesliga" target=""
+                                            class="tm-button-list__list-item tm-button-list__list-item--big "
+                                            onclick="tmEvent('recommendations_recommendation', '/bundesliga/startseite/wettbewerb/L1' , '1_5', 'buttonList');"><img
+                                                src="https://tmssl.akamaized.net//images/logo/homepageWappen150x150/l1.png?lm=1525905518"
+                                                alt="Bundesliga"
+                                                class="tm-button-list__image tm-button-list__image--big 1" width="54"
+                                                height="36"></a></li>
+                                    <li><a href="/ligue-1/startseite/wettbewerb/FR1" title="Ligue 1" target="_self"
+                                            class="tm-button-list__list-item tm-button-list__list-item--big "
+                                            onclick="tmEvent('recommendations_recommendation', '/ligue-1/startseite/wettbewerb/FR1' , '1_6', 'buttonList');"><img
+                                                src="https://tmssl.akamaized.net//images/logo/homepageWappen150x150/fr1.png?lm=1732280518"
+                                                alt="Ligue 1" class="tm-button-list__image tm-button-list__image--big 1"
+                                                width="54" height="36"></a></li>
+                                </ul>
+                            </section>
+
+
+
+
+                            <section
+                                class="tm-button-list__wrapper tm-button-list__wrapper--one-third  tm-button-list__desktop">
+                                <span class="tm-discover__h2">Agentes</span>
+                                <ul class="tm-button-list">
+                                    <li><a href="/agent-support/beraterIndex/berater" title="Soporte agentes"
+                                            target="_self"
+                                            class="tm-button-list__list-item tm-button-list__list-item--big tm-button-list__agent"
+                                            onclick="tmEvent('recommendations_recommendation', '/agent-support/beraterIndex/berater' , '2_1', 'buttonList');"><img
+                                                src="https://tmsi.akamaized.net/rebrush/navigation/agent-support.webp"
+                                                alt=""
+                                                class="tm-button-list__image tm-button-list__image--big tm-button-list__image--country tm-button-list__image--border"
+                                                width="54" height="36">Soporte<br>agentes</a></li>
+                                    <li><a href="/berater/beraterfirmenuebersicht/berater" title="Agencias de jugadores"
+                                            target="_self"
+                                            class="tm-button-list__list-item tm-button-list__list-item--big tm-button-list__agent"
+                                            onclick="tmEvent('recommendations_recommendation', '/berater/beraterfirmenuebersicht/berater' , '2_2', 'buttonList');"><img
+                                                src="https://tmsi.akamaized.net/rebrush/navigation/agent-statistic.webp"
+                                                alt=""
+                                                class="tm-button-list__image tm-button-list__image--big tm-button-list__image--country tm-button-list__image--border"
+                                                width="54" height="36">Agencias<br>de<br>jugadores</a></li>
+                                    <li><a href="/premium-service/berater" title="Servicio Premium" target="_self"
+                                            class="tm-button-list__list-item tm-button-list__list-item--big tm-button-list__agent"
+                                            onclick="tmEvent('recommendations_recommendation', '/premium-service/berater' , '2_3', 'buttonList');"><img
+                                                src="https://tmsi.akamaized.net/rebrush/navigation/premium-service.webp"
+                                                alt=""
+                                                class="tm-button-list__image tm-button-list__image--big tm-button-list__image--country tm-button-list__image--border"
+                                                width="54" height="36">Servicio<br>Premium</a></li>
+                                </ul>
+                            </section>
+
+
+
+
+
+                            <section class="tm-link-list-container tm-link-list--full ">
+                                <div class="tm-link-list-element" role="navigation" aria-label="">
+
+
+                                    <ul class="tm-link-list-unordered   recommendation__links">
+                                        <li class="tm-link-list-item">
+                                            <a class="tm-link__arrow  " href="/statistik/neuestetransfers"
+                                                title="Últimos fichajes" target="_self"
+                                                onclick="tmEvent('recommendations_recommendation', '/statistik/neuestetransfers' , '3_1','linkList');">
+                                                Últimos fichajes
+                                            </a>
+                                        </li>
+                                        <li class="tm-link-list-item">
+                                            <a class="tm-link__arrow  " href="/fabrica-de-rumores/detail/forum/154"
+                                                title="Fábrica de rumores" target="_self"
+                                                onclick="tmEvent('recommendations_recommendation', '/fabrica-de-rumores/detail/forum/154' , '3_2','linkList');">
+                                                Fábrica de rumores
+                                            </a>
+                                        </li>
+                                        <li class="tm-link-list-item">
+                                            <a class="tm-link__arrow  " href="/aktuell/newsarchiv"
+                                                title="Todas las noticias" target="_self"
+                                                onclick="tmEvent('recommendations_recommendation', '/aktuell/newsarchiv' , '3_3','linkList');">
+                                                Todas las noticias
+                                            </a>
+                                        </li>
+                                        <li class="tm-link-list-item">
+                                            <a class="tm-link__arrow  " href="/whatsMyValue" title="What's my value?"
+                                                target="_self"
+                                                onclick="tmEvent('recommendations_recommendation', '/whatsMyValue' , '3_4','linkList');">
+                                                What's my value?
+                                            </a>
+                                        </li>
+                                        <li class="tm-link-list-item">
+                                            <a class="tm-link__arrow  "
+                                                href="/spieler-statistik/wertvollstespieler/marktwertetop"
+                                                title="Jugadores más valiosos del mundo" target="_self"
+                                                onclick="tmEvent('recommendations_recommendation', '/spieler-statistik/wertvollstespieler/marktwertetop' , '3_5','linkList');">
+                                                Jugadores más valiosos del mundo
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <ul class="tm-link-list-unordered   recommendation__links">
+                                        <li class="tm-link-list-item">
+                                            <a class="tm-link__arrow  " href="/laliga/marktwerte/wettbewerb/ES1"
+                                                title="Jugadores más valiosos de LaLiga" target="_self"
+                                                onclick="tmEvent('recommendations_recommendation', '/laliga/marktwerte/wettbewerb/ES1' , '3_6','linkList');">
+                                                Jugadores más valiosos de LaLiga
+                                            </a>
+                                        </li>
+                                        <li class="tm-link-list-item">
+                                            <a class="tm-link__arrow  "
+                                                href="/analisis-del-valor-de-mercado/detail/forum/67"
+                                                title="Análisis de los valores de mercado" target="_self"
+                                                onclick="tmEvent('recommendations_recommendation', '/analisis-del-valor-de-mercado/detail/forum/67' , '3_7','linkList');">
+                                                Análisis de los valores de mercado
+                                            </a>
+                                        </li>
+                                        <li class="tm-link-list-item">
+                                            <a class="tm-link__arrow  " href="/statistik/vertragslosespieler"
+                                                title="Agentes libres" target="_self"
+                                                onclick="tmEvent('recommendations_recommendation', '/statistik/vertragslosespieler' , '3_8','linkList');">
+                                                Agentes libres
+                                            </a>
+                                        </li>
+                                        <li class="tm-link-list-item">
+                                            <a class="tm-link__arrow  " href="/statistik/endendevertraege"
+                                                title="Terminan contrato" target="_self"
+                                                onclick="tmEvent('recommendations_recommendation', '/statistik/endendevertraege' , '3_9','linkList');">
+                                                Terminan contrato
+                                            </a>
+                                        </li>
+                                        <li class="tm-link-list-item">
+                                            <a class="tm-link__arrow  " href="/apuestas/" title="Apuestas"
+                                                target="_self"
+                                                onclick="tmEvent('recommendations_recommendation', '/apuestas/' , '3_10','linkList');">
+                                                Apuestas
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </section>
+
+
+
+
+                            <section
+                                class="tm-button-list__wrapper tm-button-list__wrapper--full  tm-button-list__mobile">
+                                <span class="tm-discover__h2">Agentes</span>
+                                <ul class="tm-button-list">
+                                    <li><a href="/agent-support/beraterIndex/berater" title="Soporte agentes"
+                                            target="_self"
+                                            class="tm-button-list__list-item tm-button-list__list-item--big tm-button-list__agent"
+                                            onclick="tmEvent('recommendations_recommendation', '/agent-support/beraterIndex/berater' , '4_1', 'buttonList');"><img
+                                                src="https://tmsi.akamaized.net/rebrush/navigation/agent-support.webp"
+                                                alt=""
+                                                class="tm-button-list__image tm-button-list__image--big tm-button-list__image--country tm-button-list__image--border"
+                                                width="54" height="36">Soporte<br>agentes</a></li>
+                                    <li><a href="/berater/beraterfirmenuebersicht/berater" title="Agencias de jugadores"
+                                            target="_self"
+                                            class="tm-button-list__list-item tm-button-list__list-item--big tm-button-list__agent"
+                                            onclick="tmEvent('recommendations_recommendation', '/berater/beraterfirmenuebersicht/berater' , '4_2', 'buttonList');"><img
+                                                src="https://tmsi.akamaized.net/rebrush/navigation/agent-statistic.webp"
+                                                alt=""
+                                                class="tm-button-list__image tm-button-list__image--big tm-button-list__image--country tm-button-list__image--border"
+                                                width="54" height="36">Agencias<br>de<br>jugadores</a></li>
+                                    <li><a href="/premium-service/berater" title="Servicio Premium" target="_self"
+                                            class="tm-button-list__list-item tm-button-list__list-item--big tm-button-list__agent"
+                                            onclick="tmEvent('recommendations_recommendation', '/premium-service/berater' , '4_3', 'buttonList');"><img
+                                                src="https://tmsi.akamaized.net/rebrush/navigation/premium-service.webp"
+                                                alt=""
+                                                class="tm-button-list__image tm-button-list__image--big tm-button-list__image--country tm-button-list__image--border"
+                                                width="54" height="36">Servicio<br>Premium</a></li>
+                                </ul>
+                            </section>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="quick-select-wrapper">
+
+            <tm-quick-select defaultCountry="157" defaultCompetition="" defaultClub="" defaultPlayer=""
+                dropdown-visible=""
+                translations='{"home":"Inicio","country":"Pa\u00eds","competition":"Competici\u00f3n ","club":"Club","player":"Jugadores","attack":"Delantero","midfield":"Centrocampista","defense":"Defensa","goalkeeper":"Portero"}'>
+            </tm-quick-select>
+        </div>
+
+
+
+        <div class="ad-placement-note ad-placement-background werbung werbung-billboard"
+            data-ad-placement-note="Anuncio">
+            <div id="d_top_1" style="min-width: 1024px; min-height: 250px;">
+            </div>
+        </div>
+
+
+
+        <main id="tm-main">
+
+            <div class="row">
+                <div class="large-12 columns">
+                    <div class="box">
+                        <h2 class="content-box-headline">Resultados de búsqueda de jugador - 17 Resultados </h2>
+                        <div class="responsive-table">
+                            <div id="player-grid" class="grid-view">
+                                <div class="summary"></div>
+                                <table class="items">
+                                    <thead>
+                                        <tr>
+                                            <th id="player-grid_c0"><a class="sort-link"
+                                                    href="/schnellsuche/ergebnis/schnellsuche?query=yamal&amp;sort=nameAnzeige">Nombre
+                                                    / Posición</a></th>
+                                            <th class="zentriert" id="player-grid_c1">Puesto</th>
+                                            <th class="zentriert" id="player-grid_c2">Club</th>
+                                            <th class="zentriert" id="player-grid_c3"><a class="sort-link"
+                                                    href="/schnellsuche/ergebnis/schnellsuche?query=yamal&amp;sort=age">Edad</a>
+                                            </th>
+                                            <th class="zentriert" id="player-grid_c4">Nac.</th>
+                                            <th class="rechts" id="player-grid_c5"><a class="sort-link"
+                                                    href="/schnellsuche/ergebnis/schnellsuche?query=yamal&amp;sort=marktwert.desc">Valor
+                                                    de mercado</a></th>
+                                            <th class="rechts" id="player-grid_c6">Agentes</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="odd">
+                                            <td>
+                                                <table class="inline-table">
+                                                    <tr>
+                                                        <td rowspan="2"><a href="#"><img
+                                                                    src="https://img.a.transfermarkt.technology/portrait/small/937958-1773173768.jpg?lm=1"
+                                                                    title="Lamine Yamal" alt="Lamine Yamal"
+                                                                    class="bilderrahmen-fixed" /></a></td>
+                                                        <td class="hauptlink"><a title="Lamine Yamal"
+                                                                href="/lamine-yamal/profil/spieler/937958">Lamine
+                                                                Yamal</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><a title="FC Barcelona"
+                                                                href="/fc-barcelona/startseite/verein/131">FC
+                                                                Barcelona</a></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td class="zentriert">ED</td>
+                                            <td class="zentriert"><a title="FC Barcelona"
+                                                    href="/fc-barcelona/startseite/verein/131"><img
+                                                        src="https://tmssl.akamaized.net//images/wappen/tiny/131.png?lm=1406739548"
+                                                        title="FC Barcelona" alt="FC Barcelona"
+                                                        class="tiny_wappen" /></a></td>
+                                            <td class="zentriert">18</td>
+                                            <td class="zentriert"><img
+                                                    src="https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569"
+                                                    title="España" alt="España" class="flaggenrahmen" /></td>
+                                            <td class="rechts hauptlink">200,00 mill. €</td>
+                                            <td class="rechts"><img
+                                                    style="margin-right: 3px; position: relative; top: 2px"
+                                                    src="https://tmsi.akamaized.net/berater/verified_premium_minified.png"
+                                                    alt="Verificado" title="Verificado" height="13" width="13"><a
+                                                    href="/gestifute/beraterfirma/berater/413">Gestifute</a></td>
+                                        </tr>
+                                        <tr class="even">
+                                            <td>
+                                                <table class="inline-table">
+                                                    <tr>
+                                                        <td rowspan="2"><a href="#"><img
+                                                                    src="https://img.a.transfermarkt.technology/portrait/small/default.jpg?lm=1"
+                                                                    title="Elgün Dünyamaliyev" alt="Elgün Dünyamaliyev"
+                                                                    class="bilderrahmen-fixed" /></a></td>
+                                                        <td class="hauptlink"><a title="Elgün Dünyamaliyev"
+                                                                href="/elgun-dunyamaliyev/profil/spieler/1074072">Elgün
+                                                                Dünyamaliyev</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><a title="FK Cabrayil"
+                                                                href="/fk-cabrayil/startseite/verein/113037">FK
+                                                                Cabrayil</a></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td class="zentriert">PIV</td>
+                                            <td class="zentriert"><a title="FK Cabrayil"
+                                                    href="/fk-cabrayil/startseite/verein/113037"><img
+                                                        src="https://tmssl.akamaized.net//images/wappen/tiny/113037.png?lm=1728657045"
+                                                        title="FK Cabrayil" alt="FK Cabrayil" class="tiny_wappen" /></a>
+                                            </td>
+                                            <td class="zentriert">20</td>
+                                            <td class="zentriert"><img
+                                                    src="https://tmssl.akamaized.net//images/flagge/verysmall/13.png?lm=1520611569"
+                                                    title="Azerbaiyán" alt="Azerbaiyán" class="flaggenrahmen" /></td>
+                                            <td class="rechts hauptlink">50 mil €</td>
+                                            <td class="rechts"></td>
+                                        </tr>
+                                        <tr class="odd">
+                                            <td>
+                                                <table class="inline-table">
+                                                    <tr>
+                                                        <td rowspan="2"><a href="#"><img
+                                                                    src="https://img.a.transfermarkt.technology/portrait/small/default.jpg?lm=1"
+                                                                    title="Kennett Stewart" alt="Kennett Stewart"
+                                                                    class="bilderrahmen-fixed" /></a></td>
+                                                        <td class="hauptlink"><a title="Kennett Stewart"
+                                                                href="/kennett-stewart/profil/spieler/865889">Kennett
+                                                                Stewart</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><a title="CA Independiente de La Chorrera II"
+                                                                href="/ca-independiente-de-la-chorrera-ii/startseite/verein/88239">CA
+                                                                Independiente de La Chorrera II</a></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td class="zentriert">EI</td>
+                                            <td class="zentriert"><a title="CA Independiente de La Chorrera II"
+                                                    href="/ca-independiente-de-la-chorrera-ii/startseite/verein/88239"><img
+                                                        src="https://tmssl.akamaized.net//images/wappen/tiny/88239.png?lm=1746047436"
+                                                        title="CA Independiente de La Chorrera II"
+                                                        alt="CA Independiente de La Chorrera II"
+                                                        class="tiny_wappen" /></a></td>
+                                            <td class="zentriert">23</td>
+                                            <td class="zentriert"><img
+                                                    src="https://tmssl.akamaized.net//images/flagge/verysmall/130.png?lm=1520611569"
+                                                    title="Panamá" alt="Panamá" class="flaggenrahmen" /></td>
+                                            <td class="rechts hauptlink">-</td>
+                                            <td class="rechts"></td>
+                                        </tr>
+                                        <tr class="even">
+                                            <td>
+                                                <table class="inline-table">
+                                                    <tr>
+                                                        <td rowspan="2"><a href="#"><img
+                                                                    src="https://img.a.transfermarkt.technology/portrait/small/default.jpg?lm=1"
+                                                                    title="Karim Yamal" alt="Karim Yamal"
+                                                                    class="bilderrahmen-fixed" /></a></td>
+                                                        <td class="hauptlink"><a title="Karim Yamal"
+                                                                href="/karim-yamal/profil/spieler/1413677">Karim
+                                                                Yamal</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><a title="La Viena FC"
+                                                                href="/la-viena-fc/startseite/verein/87769">La Viena
+                                                                FC</a></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td class="zentriert">LI</td>
+                                            <td class="zentriert"><a title="La Viena FC"
+                                                    href="/la-viena-fc/startseite/verein/87769"><img
+                                                        src="https://tmssl.akamaized.net//images/wappen/tiny/87769.png?lm=1722894724"
+                                                        title="La Viena FC" alt="La Viena FC" class="tiny_wappen" /></a>
+                                            </td>
+                                            <td class="zentriert">22</td>
+                                            <td class="zentriert"><img
+                                                    src="https://tmssl.akamaized.net//images/flagge/verysmall/2.png?lm=1520611569"
+                                                    title="Egipto" alt="Egipto" class="flaggenrahmen" /></td>
+                                            <td class="rechts hauptlink">-</td>
+                                            <td class="rechts"></td>
+                                        </tr>
+                                        <tr class="odd">
+                                            <td>
+                                                <table class="inline-table">
+                                                    <tr>
+                                                        <td rowspan="2"><a href="#"><img
+                                                                    src="https://img.a.transfermarkt.technology/portrait/small/default.jpg?lm=1"
+                                                                    title="Felix Anyamale" alt="Felix Anyamale"
+                                                                    class="bilderrahmen-fixed" /></a></td>
+                                                        <td class="hauptlink"><a title="Felix Anyamale"
+                                                                href="/felix-anyamale/profil/spieler/1235861">Felix
+                                                                Anyamale</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><a title="TSV Leuna"
+                                                                href="/tsv-leuna/startseite/verein/55050">TSV Leuna</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td class="zentriert">DEL</td>
+                                            <td class="zentriert"><a title="TSV Leuna"
+                                                    href="/tsv-leuna/startseite/verein/55050"><img
+                                                        src="https://tmssl.akamaized.net//images/wappen/tiny/55050.png?lm=1581538351"
+                                                        title="TSV Leuna" alt="TSV Leuna" class="tiny_wappen" /></a>
+                                            </td>
+                                            <td class="zentriert">23</td>
+                                            <td class="zentriert"><img
+                                                    src="https://tmssl.akamaized.net//images/flagge/verysmall/124.png?lm=1520611569"
+                                                    title="Nigeria" alt="Nigeria" class="flaggenrahmen" /></td>
+                                            <td class="rechts hauptlink">-</td>
+                                            <td class="rechts"></td>
+                                        </tr>
+                                        <tr class="even">
+                                            <td>
+                                                <table class="inline-table">
+                                                    <tr>
+                                                        <td rowspan="2"><a href="#"><img
+                                                                    src="https://img.a.transfermarkt.technology/portrait/small/default.jpg?lm=1"
+                                                                    title="Ugur Yamal" alt="Ugur Yamal"
+                                                                    class="bilderrahmen-fixed" /></a></td>
+                                                        <td class="hauptlink"><a title="Ugur Yamal"
+                                                                href="/ugur-yamal/profil/spieler/1159521">Ugur Yamal</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Retirado</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td class="zentriert">Defensa</td>
+                                            <td class="zentriert"><img
+                                                    src="https://tmssl.akamaized.net//images/wappen/tiny/123.png?lm=1456997286"
+                                                    title="Retirado" alt="Retirado" class="tiny_wappen" /></td>
+                                            <td class="zentriert">38</td>
+                                            <td class="zentriert"><img
+                                                    src="https://tmssl.akamaized.net//images/flagge/verysmall/174.png?lm=1520611569"
+                                                    title="Turquía" alt="Turquía" class="flaggenrahmen" /></td>
+                                            <td class="rechts hauptlink">-</td>
+                                            <td class="rechts"></td>
+                                        </tr>
+                                        <tr class="odd">
+                                            <td>
+                                                <table class="inline-table">
+                                                    <tr>
+                                                        <td rowspan="2"><a href="#"><img
+                                                                    src="https://img.a.transfermarkt.technology/portrait/small/default.jpg?lm=1"
+                                                                    title="Shyamal Besra" alt="Shyamal Besra"
+                                                                    class="bilderrahmen-fixed" /></a></td>
+                                                        <td class="hauptlink"><a title="Shyamal Besra"
+                                                                href="/shyamal-besra/profil/spieler/1128365">Shyamal
+                                                                Besra</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><a title="East Bengal FC II"
+                                                                href="/sc-east-bengal-ii/startseite/verein/85349">East
+                                                                Bengal FC II</a></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td class="zentriert">MC</td>
+                                            <td class="zentriert"><a title="East Bengal FC II"
+                                                    href="/sc-east-bengal-ii/startseite/verein/85349"><img
+                                                        src="https://tmssl.akamaized.net//images/wappen/tiny/85349.png?lm=1703227177"
+                                                        title="East Bengal FC II" alt="East Bengal FC II"
+                                                        class="tiny_wappen" /></a></td>
+                                            <td class="zentriert">21</td>
+                                            <td class="zentriert"><img
+                                                    src="https://tmssl.akamaized.net//images/flagge/verysmall/67.png?lm=1520611569"
+                                                    title="India" alt="India" class="flaggenrahmen" /></td>
+                                            <td class="rechts hauptlink">-</td>
+                                            <td class="rechts"><a
+                                                    href="/ibisa-consultancy-pvt-ltd-/beraterfirma/berater/8207">IBISA</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="even">
+                                            <td>
+                                                <table class="inline-table">
+                                                    <tr>
+                                                        <td rowspan="2"><a href="#"><img
+                                                                    src="https://img.a.transfermarkt.technology/portrait/small/default.jpg?lm=1"
+                                                                    title="Kyamal Rashidov" alt="Kyamal Rashidov"
+                                                                    class="bilderrahmen-fixed" /></a></td>
+                                                        <td class="hauptlink"><a title="Kyamal Rashidov"
+                                                                href="/kyamal-rashidov/profil/spieler/1127065">Kyamal
+                                                                Rashidov</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Retirado</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td class="zentriert">POR</td>
+                                            <td class="zentriert"><img
+                                                    src="https://tmssl.akamaized.net//images/wappen/tiny/123.png?lm=1456997286"
+                                                    title="Retirado" alt="Retirado" class="tiny_wappen" /></td>
+                                            <td class="zentriert">32</td>
+                                            <td class="zentriert"><img
+                                                    src="https://tmssl.akamaized.net//images/flagge/verysmall/81.png?lm=1520611569"
+                                                    title="Kazajistán" alt="Kazajistán" class="flaggenrahmen" /></td>
+                                            <td class="rechts hauptlink">-</td>
+                                            <td class="rechts"></td>
+                                        </tr>
+                                        <tr class="odd">
+                                            <td>
+                                                <table class="inline-table">
+                                                    <tr>
+                                                        <td rowspan="2"><a href="#"><img
+                                                                    src="https://img.a.transfermarkt.technology/portrait/small/default.jpg?lm=1"
+                                                                    title="Shyamal Narayan" alt="Shyamal Narayan"
+                                                                    class="bilderrahmen-fixed" /></a></td>
+                                                        <td class="hauptlink"><a title="Shyamal Narayan"
+                                                                href="/shyamal-narayan/profil/spieler/985080">Shyamal
+                                                                Narayan</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><a title="Desconocido"
+                                                                href="/unbekannt/startseite/verein/75">Desconocido</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td class="zentriert">Centrocampista</td>
+                                            <td class="zentriert"><a title="DesconocidoDesconocido"
+                                                    href="/unbekannt/startseite/verein/75"><img
+                                                        src="https://tmssl.akamaized.net//images/wappen/tiny/75.png?lm=1456997316"
+                                                        title="Desconocido" alt="Desconocido" class="tiny_wappen" /></a>
+                                            </td>
+                                            <td class="zentriert">31</td>
+                                            <td class="zentriert"><img
+                                                    src="https://tmssl.akamaized.net//images/flagge/verysmall/48.png?lm=1520611569"
+                                                    title="Fiyi" alt="Fiyi" class="flaggenrahmen" /></td>
+                                            <td class="rechts hauptlink">-</td>
+                                            <td class="rechts"></td>
+                                        </tr>
+                                        <tr class="even">
+                                            <td>
+                                                <table class="inline-table">
+                                                    <tr>
+                                                        <td rowspan="2"><a href="#"><img
+                                                                    src="https://img.a.transfermarkt.technology/portrait/small/default.jpg?lm=1"
+                                                                    title="Yamal" alt="Yamal"
+                                                                    class="bilderrahmen-fixed" /></a></td>
+                                                        <td class="hauptlink"><a title="Yamal"
+                                                                href="/yamal/profil/spieler/71286">Yamal</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Retirado</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td class="zentriert">MC</td>
+                                            <td class="zentriert"><img
+                                                    src="https://tmssl.akamaized.net//images/wappen/tiny/123.png?lm=1456997286"
+                                                    title="Retirado" alt="Retirado" class="tiny_wappen" /></td>
+                                            <td class="zentriert">50</td>
+                                            <td class="zentriert"><img
+                                                    src="https://tmssl.akamaized.net//images/flagge/verysmall/157.png?lm=1520611569"
+                                                    title="España" alt="España" class="flaggenrahmen" /><br /><img
+                                                    src="https://tmssl.akamaized.net//images/flagge/verysmall/107.png?lm=1520611569"
+                                                    title="Marruecos" alt="Marruecos" class="flaggenrahmen" /></td>
+                                            <td class="rechts hauptlink">-</td>
+                                            <td class="rechts"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="pager">
+                                    <ul class="tm-pagination">
+
+                                        <li class="tm-pagination__list-item tm-pagination__list-item--active"><a
+                                                href="/schnellsuche/ergebnis/schnellsuche?query=yamal" title="Página 1"
+                                                class="tm-pagination__link">1</a></li>
+                                        <li class="tm-pagination__list-item"><a
+                                                href="/schnellsuche/ergebnis/schnellsuche?query=yamal&Spieler_page=2"
+                                                title="Página 2" class="tm-pagination__link">2</a></li>
+                                        <li class="tm-pagination__list-item tm-pagination__list-item--icon-next-page"><a
+                                                href="/schnellsuche/ergebnis/schnellsuche?query=yamal&Spieler_page=2"
+                                                title="A la página siguiente"
+                                                class="tm-pagination__link">&nbsp;&nbsp;</a></li>
+                                        <li class="tm-pagination__list-item tm-pagination__list-item--icon-last-page"><a
+                                                href="/schnellsuche/ergebnis/schnellsuche?query=yamal&Spieler_page=2"
+                                                title="A la última página (Página 2)"
+                                                class="tm-pagination__link">&nbsp;&nbsp;</a></li>
+                                    </ul>
+                                </div>
+                                <div class="keys" style="display:none"
+                                    title="/schnellsuche/ergebnis/schnellsuche?query=yamal">
+                                    <span>937958</span><span>1074072</span><span>865889</span><span>1413677</span><span>1235861</span><span>1159521</span><span>1128365</span><span>1127065</span><span>985080</span><span>71286</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-footer">
+                            <a href="/detailsuche/spielerdetail/suche">
+                                Acceder a la búsqueda detallada </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <div class="box">
+                        <h2 class="content-box-headline">Buscar resultados: Entrenadores y gerentes - 1 Resultados</h2>
+                        <div class="responsive-table">
+                            <div id="coach-grid" class="grid-view">
+                                <div class="summary"></div>
+                                <table class="items">
+                                    <thead>
+                                        <tr>
+                                            <th id="coach-grid_c0"><a class="sort-link"
+                                                    href="/schnellsuche/ergebnis/schnellsuche?query=yamal&amp;sort=nameAnzeige">Nombre</a>
+                                            </th>
+                                            <th class="zentriert" id="coach-grid_c1">Club</th>
+                                            <th class="zentriert" id="coach-grid_c2"><a class="sort-link"
+                                                    href="/schnellsuche/ergebnis/schnellsuche?query=yamal&amp;sort=age">Edad</a>
+                                            </th>
+                                            <th class="zentriert" id="coach-grid_c3">Nac.</th>
+                                            <th class="zentriert" id="coach-grid_c4">Función</th>
+                                            <th class="zentriert" id="coach-grid_c5">Contrato hasta</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="odd">
+                                            <td>
+                                                <table class="inline-table">
+                                                    <tr>
+                                                        <td rowspan="2"><a href="#"><img
+                                                                    src="https://img.a.transfermarkt.technology/portrait/small/67807-1608460266.png?lm=1"
+                                                                    title="Damir Yamalatdinov" alt="Damir Yamalatdinov"
+                                                                    class="bilderrahmen-fixed" /></a></td>
+                                                        <td class="hauptlink"><a title="Damir Yamalatdinov" id="67807"
+                                                                href="/damir-yamalatdinov/profil/trainer/67807">Damir
+                                                                Yamalatdinov</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><a title="Sin equipo"
+                                                                href="/trainer/verfuegbaretrainer/statistik">Sin
+                                                                equipo</a></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td class="zentriert"><a title="Sin equipoSin equipo"
+                                                    href="/vereinslos/startseite/verein/515"><img
+                                                        src="https://tmssl.akamaized.net//images/wappen/tiny/515.png?lm=1456997255"
+                                                        title="Sin equipo" alt="Sin equipo" class="tiny_wappen" /></a>
+                                            </td>
+                                            <td class="zentriert">58</td>
+                                            <td class="zentriert"><img
+                                                    src="https://tmssl.akamaized.net//images/flagge/verysmall/141.png?lm=1520611569"
+                                                    title="Rusia" alt="Rusia" class="flaggenrahmen" /></td>
+                                            <td class="rechts">Preparador físico</td>
+                                            <td class="rechts">-</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="keys" style="display:none"
+                                    title="/schnellsuche/ergebnis/schnellsuche?query=yamal"><span>67807</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                <!--
+                .icon-transfer-grey {
+                    background-position: -375px -26px;
+                    width: 15px;
+                    height: 15px;
+                    vertical-align: middle;
+                    cursor: pointer !important;
+                }
+
+                .icon-stadion-grey {
+                    background-position: -656px -30px;
+                    width: 29px;
+                    height: 15px;
+                    vertical-align: middle;
+                    cursor: pointer !important;
+                }
+                -->
+            </style>
+            <div class="ad-placement-note ad-placement-background werbung werbung-fullsize_contentad"
+                data-ad-placement-note="Anuncio">
+                <div id="d_bottom_1" style="min-width: 1024px; min-height: 250px;">
+                </div>
+            </div>
+        </main>
+        <footer class="tm-footer">
+            <section class="tm-footer__section-quick-links">
+                <strong class="tm-footer__headline tm-footer__headline--large">
+                    Enlaces directos </strong>
+                <div class="tm-footer__link-wrapper">
+                    <a href="/spieler-statistik/wertvollstespieler/marktwertetop"
+                        onclick="tmEvent('footer', 'quick_links', '/spieler-statistik/wertvollstespieler')"
+                        class="tm-footer__link tm-footer__link--arrow">
+                        Jugadores más valiosos del mundo </a>
+                    <a href="/statistik/neuestetransfers"
+                        onclick="tmEvent('footer', 'quick_links', '/statistik/neuestetransfers')"
+                        class="tm-footer__link tm-footer__link--arrow">
+                        Últimos fichajes </a>
+                    <a href="/geruechte/aktuellegeruechte/statistik"
+                        onclick="tmEvent('footer', 'quick_links', '/statistik/aktuellegeruechte')"
+                        class="tm-footer__link tm-footer__link--arrow">
+                        Rumores actuales </a>
+                    <a href="/spieler-statistik/marktwertaenderungen/marktwertetop"
+                        onclick="tmEvent('footer', 'quick_links', '/spieler-statistik/marktwertaenderungen/marktwertetop')"
+                        class="tm-footer__link tm-footer__link--arrow">
+                        Últimas actualizaciones de valores de mercado </a>
+                    <a href="/statistik/weltrangliste"
+                        onclick="tmEvent('footer', 'quick_links', '/statistik/weltrangliste')"
+                        class="tm-footer__link tm-footer__link--arrow">
+                        Ranking mundial FIFA </a>
+                    <a href="/apuestas/casas-apuestas/"
+                        onclick="tmEvent('footer', 'quick_links', '/apuestas/casas-apuestas/')"
+                        class="tm-footer__link tm-footer__link--arrow">
+                        Mejores Casas de Apuestas </a>
+                </div>
+            </section>
+            <section class="tm-footer__section-involved">
+                <strong class="tm-footer__headline tm-footer__headline--large">
+                    Únete al equipo de TM </strong>
+                <div class="tm-footer__link-wrapper">
+                    <a href="/intern/paten" onclick="tmEvent('footer', 'be_involved', 'mods_data_scouts')"
+                        class="tm-footer__link tm-footer__link--arrow">
+                        Mod & Data scouts </a>
+                    <a href="/profil/bewerbung" onclick="tmEvent('footer', 'be_involved', 'apply_mod_datascout')"
+                        class="tm-footer__link tm-footer__link--arrow">
+                        ¿Quieres ser moderador o data scout? </a>
+                    <a href="/intern/elfGebote" onclick="tmEvent('footer', 'be_involved', '11_commandments')"
+                        class="tm-footer__link tm-footer__link--arrow">
+                        11 mandamientos </a>
+                    <a href="/intern/fehlermelden" onclick="tmEvent('footer', 'be_involved', 'found_mistake')"
+                        class="tm-footer__link tm-footer__link--arrow">
+                        Enviar reporte de errores </a>
+                </div>
+            </section>
+            <section class="tm-footer__section-career">
+                <strong class="tm-footer__headline tm-footer__headline--large">
+                    Trabaja con nosotros </strong>
+                <div class="tm-footer__link-wrapper">
+                    <a href="/intern/tmteam" class="tm-footer__link tm-footer__link--arrow"
+                        onclick="tmEvent('footer', 'career', 'contact')">
+                        Contacto </a>
+                </div>
+            </section>
+            <section class="tm-footer__section-about">
+                <strong class="tm-footer__headline tm-footer__headline--large">
+                    Sobre nosotros </strong>
+                <div class="tm-footer__link-wrapper">
+                    <a href="/intern/tmteam" onclick="tmEvent('footer', 'about_us', 'tm_team')"
+                        class="tm-footer__link tm-footer__link--arrow">
+                        Equipo de TM </a>
+                    <a href="/intern/faq" onclick="tmEvent('footer', 'about_us', 'faq')"
+                        class="tm-footer__link tm-footer__link--arrow">
+                        Ayuda </a>
+                </div>
+            </section>
+            <section class="tm-footer__section-social">
+                <strong class="tm-footer__headline
+            ">
+                    Redes sociales </strong>
+                <div class="tm-footer__social-wrapper">
+                    <a href="https://www.instagram.com/transfermarkt.es" target="_blank" class="tm-footer__link-social"
+                        onclick="tmEvent('footer', 'social_media', 'instagram')">
+                        <img src="https://tmsi.akamaized.net/icons/socialMedia/instaRebrush.svg" alt="instagram"
+                            width="28" height="28" class="tm-footer__icon-social">
+                    </a>
+                    <a href="https://www.facebook.com/transfermarkt.es" target="_blank" class="tm-footer__link-social"
+                        onclick="tmEvent('footer', 'social_media', 'facebook')">
+                        <img src="https://tmsi.akamaized.net/icons/socialMedia/fbRebrush.svg" alt="facebook" width="25"
+                            height="25" class="tm-footer__icon-social">
+                    </a>
+                    <a href="https://whatsapp.com/channel/0029Va6Kevx47XeF0gE99J35" target="_blank"
+                        class="tm-footer__link-social" onclick="tmEvent('footer', 'social_media', 'whatsapp')">
+                        <img src="https://tmsi.akamaized.net/icons/socialMedia/whatsappRebrush.svg" alt="whatsapp"
+                            width="28" height="28" class="tm-footer__icon-social">
+                    </a>
+                    <a href="https://x.com/TMes_news" target="_blank" class="tm-footer__link-social"
+                        onclick="tmEvent('footer', 'social_media', 'x')">
+                        <img src="https://tmsi.akamaized.net/icons/socialMedia/twitter_rebrush.svg" alt="x" width="28"
+                            height="28" class="tm-footer__icon-social">
+                    </a>
+                    <a href="https://www.threads.net/@transfermarkt.es" target="_blank" class="tm-footer__link-social"
+                        onclick="tmEvent('footer', 'social_media', 'threads')">
+                        <img src="https://tmsi.akamaized.net/icons/socialMedia/threadsRebrush.svg" alt="threads"
+                            width="28" height="28" class="tm-footer__icon-social">
+                    </a>
+                    <a href="https://www.tiktok.com/@transfermarkt" target="_blank" class="tm-footer__link-social"
+                        onclick="tmEvent('footer', 'social_media', 'tiktok')">
+                        <img src="https://tmsi.akamaized.net/icons/socialMedia/tiktokRebrush.svg" alt="tiktok"
+                            width="28" height="28" class="tm-footer__icon-social">
+                    </a>
+                    <a href="https://www.youtube.com/@TransfermarktEnglish" target="_blank"
+                        class="tm-footer__link-social" onclick="tmEvent('footer', 'social_media', 'youtube')">
+                        <img src="https://tmsi.akamaized.net/icons/socialMedia/RebrushYoutube.svg" alt="youtube"
+                            width="28" height="28" class="tm-footer__icon-social">
+                    </a>
+                    <a href="https://www.transfermarkt.es/intern/rssguide" target="_blank"
+                        class="tm-footer__link-social" onclick="tmEvent('footer', 'social_media', 'rss')">
+                        <img src="https://tmsi.akamaized.net/icons/socialMedia/RebrushRss.svg" alt="rss" width="28"
+                            height="28" class="tm-footer__icon-social">
+                    </a>
+                    <a href="https://www.linkedin.com/company/transfermarkt-gmbh-&-co-kg" target="_blank"
+                        class="tm-footer__link-social" onclick="tmEvent('footer', 'social_media', 'linkedIn')">
+                        <img src="https://tmsi.akamaized.net/icons/socialMedia/linkedInRebrush.svg" alt="linkedIn"
+                            width="28" height="28" class="tm-footer__icon-social">
+                    </a>
+                </div>
+            </section>
+        </footer>
+        <div id="menue_overlay"></div>
+    </div>
+    <section class="tm-footer__mobile tm-footer__transfermarkt-info">
+        <section class="tm-footer__section-desktop-width">
+            <section class="tm-footer__section-company-links">
+                <span class="tm-footer__headline tm-footer__headline--medium">
+                    Proyectos de Transfermarkt </span>
+                <div class="tm-footer__project-wrapper">
+                    <a href="/wahretabelle" onclick="tmEvent('footer', 'projects', 'wahretabelle')"
+                        class="tm-footer__link">
+                        Wahretabelle </a>
+                    <a href="https://www.soccerdonna.de/" onclick="tmEvent('footer', 'projects', 'soccerdonna')"
+                        class="tm-footer__link">
+                        Soccerdonna.de </a>
+                    <a href="https://scoutastic.com/de/" onclick="tmEvent('footer', 'projects', 'scoutastic')"
+                        class="tm-footer__link">
+                        Scoutastic.com </a>
+                </div>
+            </section>
+            <section class="tm-footer__section-company-infos">
+                <span class="tm-footer__headline tm-footer__headline--medium">&copy; Transfermarkt <span
+                        id="currentYear">2026</span></span>
+                <div class="tm-footer__company-wrapper">
+                    <a href="/intern/impressum" class="tm-footer__link tm-footer__link--blue"
+                        onclick="tmEvent('footer', 'officials', 'impressum')">
+                        Aviso legal </a>
+                    <a href="/intern/web/datenschutz" class="tm-footer__link tm-footer__link--blue"
+                        onclick="tmEvent('footer', 'officials', 'data_protection')">
+                        Política de privacidad </a>
+                    <a href="javascript:void(0)" class="cmp-link tm-footer__link tm-footer__link--blue"
+                        onclick="tmEvent('footer', 'officials', 'privacy')">
+                        Privacidad </a>
+                    <a href="javascript:void(0)" class="revoke-tracking tm-footer__link tm-footer__link--blue"
+                        onclick="tmEvent('footer', 'officials', 'tracking_revocation')">
+                        Anular el seguimiento </a>
+                    <a href="/intern/anb" class="tm-footer__link tm-footer__link--blue"
+                        onclick="tmEvent('footer', 'officials', 'general_conduct_of_use')">
+                        Políticas del sitio </a>
+                </div>
+            </section>
+        </section>
+    </section>
+    <script type="text/javascript">
+                if (typeof (adet) == "boolean" && adet == false) {
+                    img_src = "/static/singlepictures/jk99hhfsdh209nbnkjldgh90sghfsdlk";
+        } else {
+                    img_src = "/static/singlepictures/jku90whjlkjbwbta1g4b8h89fh8sgh8d";
+        }
+                var elem = document.createElement("img");
+                document.body.appendChild(elem);
+                elem.src = img_src;
+    </script>
+
+    <script>
+                document.addEventListener('DOMContentLoaded', function () {
+            var cnt = document.querySelectorAll('div.large-4.columns').length;
+                if (cnt == 1) {
+                var sidebarDiv = document.querySelector('div.large-4.columns');
+                if (sidebarDiv !== null) {
+                    var sidebar = document.getElementById('werbung_recommender_sidebar_wrapper');
+                sidebarDiv.appendChild(sidebar);
+                sidebar.style.display = 'block';
+                }
+            }
+        });
+    </script>
+    <div id="werbung_recommender_sidebar_wrapper" style="display: none;">
+    </div>
+    <tm-consent type="adition" no-checkbox
+        embed="PHNjcmlwdCBzcmM9Imh0dHBzOi8vY3JlYXRpdmUtY2RuLm9kZHNzZXJ2ZS5jb20vbG9hZGVyLmpzP3B1Ymxpc2hlcj10bSIgYXN5bmM9ImFzeW5jIj48L3NjcmlwdD4="></tm-consent><tm-consent
+        type='adrenalead' no-checkbox
+        embed='PHNjcmlwdCB0eXBlPSd0ZXh0L2phdmFzY3JpcHQnPgogICAgICAgICAgICB3aW5kb3cuX25BZHpxPXdpbmRvdy5fbkFkenF8fFtdOyhmdW5jdGlvbigpewogICAgICAgICAgICB3aW5kb3cuX25BZHpxLnB1c2goWydzZXRJZHMnLCc2ODdmNGMwNDRkYTU3ZDA0J10pOwogICAgICAgICAgICB2YXIgZT0naHR0cHM6Ly9ub3RpZnB1c2guY29tL3NjcmlwdHMvJzsKICAgICAgICAgICAgdmFyIHQ9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnc2NyaXB0Jyk7CiAgICAgICAgICAgIHQudHlwZT0ndGV4dC9qYXZhc2NyaXB0JzsKICAgICAgICAgICAgdC5kZWZlcj10cnVlOwogICAgICAgICAgICB0LmFzeW5jPXRydWU7CiAgICAgICAgICAgIHQuc3JjPWUrJ25hZHotc2RrLmpzJzsKICAgICAgICAgICAgdmFyIHM9ZG9jdW1lbnQuZ2V0RWxlbWVudHNCeVRhZ05hbWUoJ3NjcmlwdCcpWzBdOwogICAgICAgICAgICBzLnBhcmVudE5vZGUuaW5zZXJ0QmVmb3JlKHQscyl9KSgpOwogICAgICAgIDwvc2NyaXB0Pg=='></tm-consent>
+    <tm-modal id="tm-modal-revoke-tracking" additionalClose="Cerrar">
+        <div class="tm-modal__headline">Anular el seguimiento</div>
+        <p class="tm-modal__text">Sie haben erfolgreich Ihre Einwilligung in die Nutzung von Transfermarkt mit Tracking
+            und Cookies widerrufen. Sie können sich jetzt zwischen dem Contentpass-Abo und der Nutzung mit
+            personalisierter Werbung, Cookies und Tracking entscheiden.</p>
+    </tm-modal>
+
+    <tm-consent type="googleadvertising" no-checkbox
+        embed="PHNjcmlwdCAgc3JjPSJodHRwczovL3NlY3VyZXB1YmFkcy5nLmRvdWJsZWNsaWNrLm5ldC90YWcvanMvZ3B0LmpzIiBhc3luYz0iYXN5bmMiPjwvc2NyaXB0Pg=="></tm-consent>
+    <tm-consent type="googleadvertising" no-checkbox
+        embed="PHNjcmlwdCAgc3JjPSJodHRwczovL3Rtc2kuYWthbWFpemVkLm5ldC9qcy9hZC1zZXR1cC9wcmViaWQvcHJlYmlkLmpzIiBhc3luYz0iYXN5bmMiPjwvc2NyaXB0Pg=="></tm-consent>
+    <tm-consent type="googleadvertising" no-checkbox
+        embed="PHNjcmlwdCAgc3JjPSJodHRwczovL3Rtc2kuYWthbWFpemVkLm5ldC9qcy9hZC1zZXR1cC9wcmViaWQvc2NyaXB0cy9lcy5qcyIgYXN5bmM9ImFzeW5jIj48L3NjcmlwdD4="></tm-consent>
+    <script type="text/javascript"
+        src="https://tmssl.akamaized.net/assets/aa69c6e9c51f1e811847082c63633956/gridview/jquery.yiigridview.js?lm=1777384876"></script>
+    <script type="text/javascript" src="https://tmssl.akamaized.net/js/custom/vendors.min.js?lm=1777384877"></script>
+    <script type="text/javascript"
+        src="https://tmsi.akamaized.net/js/svelte-components/domain-switcher/bundle.js"></script>
+    <script type="text/javascript"
+        src="https://tmsi.akamaized.net/js/svelte-components/quick-select-bar/bundle.js"></script>
+    <script type="text/javascript" src="https://tmsi.akamaized.net/js/svelte-components/userbox/bundle.js"></script>
+    <script type="text/javascript"
+        src="https://tmsi.akamaized.net/js/svelte-components/live-match-count/bundle.js"></script>
+    <script type="text/javascript" src="https://tmsi.akamaized.net/js/svelte-components/domain-note/bundle.js"></script>
+    <script type="text/javascript" src="https://tmsi.akamaized.net/js/svelte-components/modal/bundle.js"></script>
+    <script type="text/javascript"
+        src="https://tmssl.akamaized.net/js/custom/tm-skyscraper.min.js?lm=1777384877"></script>
+    <script type="text/javascript">
+        /*<![CDATA[*/
+                var loginUrl = '/profil/login';
+                var onlyDE = '';
+                var onlyMobile = '';
+                var onlyTablet = '';
+                var getUserID = '';
+
+                jQuery(function ($) {
+                    jQuery('#player-grid').yiiGridView({'ajaxUpdate': ['player\x2Dgrid'], 'ajaxVar': 'ajax', 'pagerClass': 'pager', 'loadingClass': 'grid\x2Dview\x2Dloading', 'filterClass': 'filters', 'tableClass': 'items', 'selectableRows': 1, 'enableHistory': false, 'updateSelector': '\x7Bpage\x7D,\x20\x7Bsort\x7D', 'filterSelector': '\x7Bfilter\x7D', 'pageVar': 'Spieler_page'});
+                jQuery('#coach-grid').yiiGridView({'ajaxUpdate': ['coach\x2Dgrid'], 'ajaxVar': 'ajax', 'pagerClass': 'pager', 'loadingClass': 'grid\x2Dview\x2Dloading', 'filterClass': 'filters', 'tableClass': 'items', 'selectableRows': 1, 'enableHistory': false, 'updateSelector': '\x7Bpage\x7D,\x20\x7Bsort\x7D', 'filterSelector': '\x7Bfilter\x7D', 'pageVar': 'Trainer_page'});
+        });
+/*]]>*/
+    </script>
+</body>
+
+</html>
