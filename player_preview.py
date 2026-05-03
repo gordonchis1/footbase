@@ -1,9 +1,3 @@
-def claculate_diff_string(str1, str2):
-    if len(str1) <= len(str2):
-        return 0
-    return len(str1) - len(str2)
-
-
 class Player_preview:
     def __init__(
         self,

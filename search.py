@@ -6,6 +6,8 @@ from test_pages.tests_index import SEARCH_PAGE
 from utils import parse_text
 from console import console
 from time import sleep
+from utils import parse_html
+from player_grid import Player_grid
 
 
 def searchPlayer(query):
@@ -77,3 +79,13 @@ def players(html):
             players_list.append(player)
 
     return players_list
+
+
+def search_and_select_player(query):
+    text_result = searchPlayer(query)
+    html = parse_html(text_result)
+    players_list = players(html)
+    grid = Player_grid(players_list)
+    selected = grid.selector(query)
+    player = players_list[selected]
+    return player
