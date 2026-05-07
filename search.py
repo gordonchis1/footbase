@@ -1,7 +1,7 @@
 import os
 import requests
 from constants import BASE_TRANSFERMARKT_SEARCH_URL
-from player_preview import Player_preview
+from player import PlayerPreview
 from test_pages.tests_index import SEARCH_PAGE
 from utils import parse_text
 from console import console
@@ -61,11 +61,10 @@ def players(html):
             player_info = parse_player_info_table(player_info_table)
 
             position = player_tr[1].get_text()
-            club_img = player_tr[2].find("img").get("src")
             age = player_tr[3].get_text()
             nationality = player_tr[4].find("img").get("alt")
             worth = player_tr[5].get_text()
-            player = Player_preview(
+            player = PlayerPreview(
                 player_info["name"],
                 age,
                 player_info["team"],
@@ -73,8 +72,6 @@ def players(html):
                 player_info["url"],
                 position,
                 worth,
-                player_info["player_img"],
-                club_img,
             )
             players_list.append(player)
 

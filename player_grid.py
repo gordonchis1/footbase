@@ -4,6 +4,8 @@ from console import console
 from rich.table import Table
 import readchar
 
+from player import PlayerPreview
+
 
 class Player_grid:
     def __init__(self, players=[]):
@@ -40,7 +42,7 @@ class Player_grid:
         table.add_column("Worth", justify="right", style="cyan", no_wrap=True)
 
         for idx in range(len(self.players)):
-            player = self.players[idx]
+            player: PlayerPreview = self.players[idx]
             style = ""
             if self.selected == idx:
                 style = "on green bold white"

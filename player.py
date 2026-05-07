@@ -1,0 +1,73 @@
+import os
+from club import Club
+import requests
+from get_player import get_player, parse_player_page
+from console import console
+import tempfile
+from rich_pixels import Pixels
+
+
+class Player:
+    def __init__(self, name, age, team, nationality, path, position, worth):
+        self.name = name
+        self.age = age
+        self.team = team
+        self.nationality = nationality
+        self.path = path
+        self.position = position
+        self.worth = worth
+
+
+class PlayerPreview(Player):
+    def __init__(self, name, age, team, nationality, path, position, worth):
+        super().__init__(name, age, team, nationality, path, position, worth)
+
+    def load_full(self):
+        if not self.path:
+            raise ValueError("No player_url")
+        player_page = get_player(self.path)
+        club, player_info, player_image_url = parse_player_page(player_page)
+        if isinstance(club, Club):
+            active_player = ActivePlayer(player_info, player_image_url)
+            active_player.render()
+            print(active_player)
+
+    def __repr__(self):
+        return f"""
+        - Name: {self.name}
+        - Age: {self.age}
+        - Team: {self.team}
+        - Nationality: {self.nationality}
+        - Path: {self.path}
+        - Position: {self.position}
+        - Wroth: {self.worth}
+        """
+
+
+class ActivePlayer:
+    def __init__(self, data: dict, player_image_url: str):
+        self.__dict__.update(data)
+        self.__player_image_url = player_image_url
+
+    def __repr__(self):
+        result = ""
+        for key in self.__dict__:
+            if key.startswith("_"):
+                continue
+            result += f"- {key}: {self.__dict__[key]} \n"
+        return result
+
+    def render(self):
+        local_img_path = None
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as temp:
+            response = requests.get(self.__player_image_url)
+            response.raise_for_status()
+            temp.write(response.content)
+            local_img_path = temp.name
+
+        if local_img_path is not None:
+            player_image_asii = Pixels.from_image_path(local_img_path, (50, 50))
+            console.print(player_image_asii)
+        os.remove(local_img_path)
+        while True:
+            pass

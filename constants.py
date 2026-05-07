@@ -1,5 +1,5 @@
-BASE_TRANSFERMARKT_URL = "https://www.transfermarkt.es/"
+BASE_TRANSFERMARKT_URL = "https://www.transfermarkt.com"
 # Ejemplo https://www.transfermarkt.es/schnellsuche/ergebnis/schnellsuche?query=yamal
 BASE_TRANSFERMARKT_SEARCH_URL = (
-    "https://www.transfermarkt.es/schnellsuche/ergebnis/schnellsuche"
+    "https://www.transfermarkt.com/schnellsuche/ergebnis/schnellsuche"
 )
