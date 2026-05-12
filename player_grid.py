@@ -1,4 +1,5 @@
 from rich import print
+from rich.align import Align
 from rich.live import Live
 from console import console
 from rich.table import Table
@@ -14,13 +15,11 @@ class Player_grid:
 
     def selector(self, title):
         table = self.mount_table(title)
-        console.print("Controls: ↑/k up  ↓/j down  Enter select", style="dim")
 
-        with Live(table) as live:
+        with Live(table, screen=True, console=console) as live:
+            live.console.print("Controls: ↑/k up  ↓/j down  Enter select", style="dim")
             while True:
-                live.update
                 key = readchar.readkey()
-
                 if key == readchar.key.UP or key == "k":
                     self.selected = (self.selected - 1) % len(self.players)
                     table = self.mount_table(title)
@@ -30,6 +29,7 @@ class Player_grid:
                     table = self.mount_table(title)
                     live.update(table)
                 elif key == readchar.key.ENTER:
+                    console.clear()
                     return self.selected
 
     def mount_table(self, title="Players"):
@@ -55,7 +55,7 @@ class Player_grid:
                 player.worth,
                 style=style,
             )
-        return table
+        return Align.center(table)
 
     def render(self, title="players"):
         table = self.mount_table(title)

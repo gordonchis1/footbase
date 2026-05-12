@@ -1,9 +1,6 @@
 import os
-from threading import Event
 
 from rich import layout
-from rich.align import Align
-from rich.padding import Padding
 from club import Club
 import requests
 from get_player import get_player, parse_player_page
@@ -11,8 +8,6 @@ from console import console
 import tempfile
 from rich_pixels import Pixels
 from rich.layout import Layout
-from rich.panel import Panel
-from rich.markdown import Markdown
 
 
 class Player:
@@ -36,9 +31,7 @@ class PlayerPreview(Player):
         player_page = get_player(self.path)
         club, player_info, player_image_url = parse_player_page(player_page)
         if isinstance(club, Club):
-            active_player = ActivePlayer(
-                player_info["name"], club, player_info, player_image_url
-            )
+            active_player = ActivePlayer(player_info, player_image_url)
             active_player.render()
 
     def __repr__(self):
@@ -54,22 +47,17 @@ class PlayerPreview(Player):
 
 
 class ActivePlayer:
-    def __init__(self, name, club: Club, data: dict, player_image_url: str):
+    def __init__(self, data: dict, player_image_url: str):
         self.__dict__.update(data)
-        self.name = name
         self.__player_image_url = player_image_url
-        self.club = club
 
     def __repr__(self):
         result = ""
         for key in self.__dict__:
             if key.startswith("_"):
                 continue
-            result += f"- **{key}**: {self.__dict__[key]} \n"
+            result += f"- {key}: {self.__dict__[key]} \n"
         return result
-
-    def __get_markdown_rendered(self):
-        return Markdown(self.__repr__())
 
     def render(self):
         local_img_path = None
@@ -79,23 +67,11 @@ class ActivePlayer:
             temp.write(response.content)
             local_img_path = temp.name
 
-        with console.screen() as screen:
-            player_image_asii = Pixels.from_image_path(local_img_path, (40, 40))
+        player_image_asii = Pixels.from_image_path(local_img_path, (40, 50))
 
-            main_layout = Layout()
-            main_layout.split_row(
-                Layout(name="left", size=40),
-                Layout(
-                    Panel(
-                        self.__get_markdown_rendered(),
-                        title=self.name,
-                    ),
-                    name="right",
-                ),
-            )
-            main_layout["left"].split_column(
-                Layout(player_image_asii, name="bottom"), Layout()
-            )
-            screen.update(Align.center(main_layout, vertical="middle"))
-            Event().wait()
-            os.remove(local_img_path)
+        main_layout = Layout()
+        main_layout.split_row(Layout(name="left"), Layout(name="right"))
+        os.remove(local_img_path)
+
+        while True:
+            pass

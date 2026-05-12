@@ -32,7 +32,7 @@ def get_player(path):
 def parse_player_page(player_page):
     console.clear()
     html = parse_html(player_page)
-    html_club_info = html.find("div", "data-header__club-info")
+    html_club_info = html.find("div", "data-header__box--big")
     club = parse_text(html.find("span", "data-header__club").get_text())
     league = html.find("span", "data-header__league")
 
@@ -44,6 +44,11 @@ def parse_player_page(player_page):
         )
         league_level = parse_text(league_level.get_text().split(":", 1)[1])
         joined = parse_text(joined.get_text().split(":", 1)[1])
+        club_img = (
+            html_club_info.find("a", "data-header__box__club-link")
+            .find("img")
+            .get("srcset")
+        )
         expires = parse_text(expires.get_text().split(":", 1)[1])
 
         player_info = html.find("div", "info-table--right-space")
@@ -63,8 +68,11 @@ def parse_player_page(player_page):
             if "/" in key:
                 key = key.split("/")[0]
             info_obj[key] = value
+        info_obj["name"] = parse_text(
+            html.find("h1", "data-header__headline-wrapper").get_text()
+        )
 
-        club_info = Club(club, league, joined, expires, league_level)
+        club_info = Club(club, league, joined, expires, league_level, club_img)
 
         return club_info, info_obj, player_image_url
     return None
