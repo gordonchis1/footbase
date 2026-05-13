@@ -29,8 +29,21 @@ def get_player(path):
             raise Exception(error)
 
 
+def get_injury(player_page):
+    injury = {"injury": False, "type": "", "expected_return": ""}
+    html = parse_html(player_page)
+    injury_box = html.find("div", "verletzungsbox")
+    if injury_box:
+        injury_text = parse_text(injury_box.find("div", "text").get_text(",")).split(
+            ",", 1
+        )
+        injury["injury"] = True
+        injury["type"] = injury_text[0]
+        injury["expected_return"] = injury_text[1]
+    return injury
+
+
 def parse_player_page(player_page):
-    console.clear()
     html = parse_html(player_page)
     html_club_info = html.find("div", "data-header__box--big")
     club = parse_text(html.find("span", "data-header__club").get_text())
