@@ -1,0 +1,12 @@
+[project]
+name = "FootBase"
+version = "0.1.0"
+description = ""
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.1",
+]
+
+[project.scripts]
+footbase = "cli:cli"
+

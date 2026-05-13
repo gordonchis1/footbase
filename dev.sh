@@ -1,1 +1,1 @@
-MODE=dev ./.venv/bin/python main.py player lamine
+MODE=dev footbase search lamine
