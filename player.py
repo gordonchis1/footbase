@@ -35,16 +35,15 @@ class PlayerPreview(Player):
         player_page = get_player(self.path)
         club, player_info, player_image_url = parse_player_page(player_page)
         injury = get_injury(player_page)
-        if isinstance(club, Club):
-            active_player = ActivePlayer(
-                player_info["name"],
-                club,
-                player_info,
-                player_image_url,
-                self.worth,
-                injury,
-            )
-            active_player.render()
+        active_player = ActivePlayer(
+            player_info["name"],
+            club,
+            player_info,
+            player_image_url,
+            self.worth,
+            injury,
+        )
+        return active_player
 
     def __repr__(self):
         return f"""

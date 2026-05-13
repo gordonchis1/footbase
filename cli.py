@@ -6,6 +6,7 @@ def player(query):
     if not query:
         raise ValueError("No player name")
     else:
-        player: PlayerPreview = search_and_select_player(query)
-        player.load_full()
+        player_preview: PlayerPreview = search_and_select_player(query)
+        player = player_preview.load_full()
+        player.render()
         return
