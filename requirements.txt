@@ -1,6 +1,8 @@
 beautifulsoup4==4.14.3
 certifi==2026.4.22
 charset-normalizer==3.4.7
+click==8.3.3
+-e git+https://github.com/gordonchis1/footbase.git@7947a51c99ba252db44451c1a22b6648247a8c35#egg=FootBase
 idna==3.13
 inquirerpy==0.3.4
 markdown-it-py==4.0.0
