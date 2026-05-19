@@ -1,4 +1,4 @@
-from rich_pixels import FullcellRenderer, Pixels
+from rich_pixels import Pixels
 
 from utils import save_tmp_image
 
@@ -10,7 +10,7 @@ class Club:
         self.joined = joined
         self.expires = expires
         self.league_level = league_level
-        self.club_img = club_img
+        self.__club_img = club_img
 
     def __repr__(self):
         return f"""
@@ -21,7 +21,9 @@ class Club:
     - League Level: {self.league_level}
     """
 
-    def get_asii_img(self, local_img_path, size):
+    def render_club_img(self):
+        local_img_path = save_tmp_image(self.__club_img)
+        club_image_asii = None
         if local_img_path:
-            player_image_asii = Pixels.from_image_path(local_img_path, resize=size)
-            return player_image_asii
+            club_image_asii = Pixels.from_image_path(local_img_path, (40, 40))
+        return club_image_asii, local_img_path
