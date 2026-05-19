@@ -6,7 +6,6 @@ commands = {"player": player}
 
 
 def main():
-    clear_console()
     args = sys.argv
     if len(args) >= 2:
         command = args[1]

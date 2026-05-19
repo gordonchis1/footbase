@@ -1,11 +1,14 @@
 from rich import print
+from rich import align
 from rich.align import Align
+from rich.console import Group
 from rich.live import Live
 from console import console
 from rich.table import Table
 import readchar
 
 from player import PlayerPreview
+from rich.text import Text
 
 
 class Player_grid:
@@ -15,22 +18,26 @@ class Player_grid:
 
     def selector(self, title):
         table = self.mount_table(title)
+        controls = Text.from_markup(
+            "[dim]Controls:[/dim] [green]↑/k[/green] [dim]up[/dim] [green]↓/j[/green] [dim]down[/dim] [green]Enter[/green] [dim]select[/dim]",
+            justify="center",
+        )
+        layout = Group(table, controls)
 
-        with Live(table, screen=True, console=console) as live:
-            live.console.print("Controls: ↑/k up  ↓/j down  Enter select", style="dim")
+        with Live(layout, screen=True, console=console) as live:
             while True:
                 key = readchar.readkey()
                 if key == readchar.key.UP or key == "k":
                     self.selected = (self.selected - 1) % len(self.players)
-                    table = self.mount_table(title)
-                    live.update(table)
                 if key == readchar.key.DOWN or key == "j":
                     self.selected = (self.selected + 1) % len(self.players)
-                    table = self.mount_table(title)
-                    live.update(table)
                 elif key == readchar.key.ENTER:
                     console.clear()
                     return self.selected
+
+                table = self.mount_table(title)
+                layout = Group(table, controls)
+                live.update(layout)
 
     def mount_table(self, title="Players"):
         table = Table(title=title, show_lines=True)

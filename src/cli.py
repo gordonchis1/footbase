@@ -19,7 +19,7 @@ def search(name):
     else:
         player_preview: PlayerPreview = search_and_select_player(name)
         player = player_preview.load_full()
-        player.render()
+        player.render_layout()
         return
 
 

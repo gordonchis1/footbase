@@ -10,6 +10,8 @@ from rich.layout import Layout
 from rich.panel import Panel
 from rich.markdown import Markdown
 from rich import box
+from rich.columns import Columns
+from rich.table import Table
 
 from utils import save_tmp_image
 
@@ -73,6 +75,7 @@ class ActivePlayer:
         self.club = club
         self.worth = worth
         self.injury = injury
+        self.__tab = "info"
 
     def __repr__(self):
         result = ""
@@ -86,11 +89,10 @@ class ActivePlayer:
     def __get_markdown_rendered(self):
         return Markdown(self.__repr__())
 
-    def render(self):
+    def render_layout(self):
         local_img_path = save_tmp_image(self.__player_image_url)
         local_club_path = save_tmp_image(self.club.club_img)
-        club_img_asii = self.club.get_asii_img(local_club_path, (35, 30))
-        print(self.injury["expected_return"])
+        club_img_asii = self.club.get_asii_img(local_club_path, (40, 40))
         try:
             with console.screen() as screen:
                 player_image_asii = ""
@@ -111,12 +113,28 @@ class ActivePlayer:
 """
                 )
 
+                controls_table = Table(
+                    box=box.SQUARE,
+                    show_header=False,
+                    padding=(0, 1),
+                    expand=True,
+                )
+
+                controls_table.add_column(justify="center")
+                controls_table.add_column(justify="center")
+
+                controls_table.add_row(
+                    "Info ([green]I[/green])",
+                    "Achievements ([green]A[/green])",
+                )
+
                 main_layout["right"].split_column(
+                    Layout(controls_table, size=3),
                     Layout(
                         Panel(
                             self.__get_markdown_rendered(),
                             title=self.name,
-                            expand=False,
+                            expand=True,
                         )
                     ),
                     Layout(
