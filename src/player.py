@@ -1,16 +1,14 @@
 import os
-from threading import Event
 
 import readchar
 from rich.align import Align
 from club import Club
 from get_player import get_injury, get_player, parse_player_page
-from console import console
 from rich_pixels import Pixels
 from rich.layout import Layout
 from rich.panel import Panel
 from rich.markdown import Markdown
-from rich import box, padding
+from rich import box
 from rich.table import Table
 from rich.live import Live
 
@@ -60,14 +58,30 @@ class PlayerPreview(Player):
         """
 
 
-activePlayerControls = [
-    {"title": "Info", "label": "info", "key": "i"},
-    {"title": "Achievements", "label": "achievements", "key": "a"},
-    {"title": "Stats", "label": "stats", "key": "s"},
-]
-
-
 class ActivePlayer:
+    @property
+    def controls(self):
+        return {
+            "info": {
+                "title": "Info",
+                "label": "info",
+                "key": "i",
+                "render": self.render_info,
+            },
+            "stats": {
+                "title": "Stats",
+                "label": "stats",
+                "key": "s",
+                "render": self.render_stats,
+            },
+            "achievements": {
+                "title": "Achievements",
+                "label": "achievements",
+                "key": "a",
+                "render": self.render_achievements,
+            },
+        }
+
     def __init__(
         self,
         name,
@@ -84,6 +98,32 @@ class ActivePlayer:
         self.worth = worth
         self.injury = injury
         self.__tab = "info"
+
+    def render_achievements(self):
+        return [Layout()]
+
+    def render_stats(self):
+        return [Layout()]
+
+    def render_info(self):
+        injury_markdown = self.render_injury()
+
+        return [
+            Layout(
+                Panel(
+                    self.__get_markdown_rendered(),
+                    title=self.name,
+                    expand=True,
+                ),
+                name="info",
+            ),
+            Layout(
+                Panel(injury_markdown, box=box.ROUNDED, style="red"),
+                size=5,
+                name="injury",
+                visible=self.injury["injury"],
+            ),
+        ]
 
     def __repr__(self):
         result = ""
@@ -123,8 +163,8 @@ class ActivePlayer:
 
         controls_strings = []
 
-        for control in activePlayerControls:
-            style = "black on white" if control["label"] == self.__tab else ""
+        for control in self.controls:
+            style = "black on white" if control == self.__tab else ""
 
             controls_table.add_column(
                 justify="center",
@@ -132,14 +172,14 @@ class ActivePlayer:
                 ratio=1,
             )
 
-        for control in activePlayerControls:
-            if control["label"] == self.__tab:
+        for control in self.controls:
+            if control == self.__tab:
                 controls_strings.append(
-                    f"{control['title']} ([green]{control['key']}[/green])"
+                    f"{self.controls[control]['title']} ([green]{self.controls[control]['key']}[/green])"
                 )
                 continue
             controls_strings.append(
-                f"{control['title']} ([green]{control['key']}[/green])"
+                f"{self.controls[control]['title']} ([green]{self.controls[control]['key']}[/green])"
             )
 
         controls_table.add_row(*controls_strings)
@@ -150,7 +190,6 @@ class ActivePlayer:
         player_img_tmp_path = None
         club_img_tmp_path = None
         try:
-            injury_markdown = self.render_injury()
             controls_table = self.render_controls()
             player_image, player_img_tmp_path = self.render_player_image()
             club_image, club_img_tmp_path = self.club.render_club_img()
@@ -159,22 +198,6 @@ class ActivePlayer:
             main_layout.split_row(
                 Layout(name="left", size=40),
                 Layout(name="right"),
-            )
-            main_layout["right"].split_column(
-                Layout(controls_table, size=3, name="controls"),
-                Layout(
-                    Panel(
-                        self.__get_markdown_rendered(),
-                        title=self.name,
-                        expand=True,
-                    )
-                ),
-                Layout(
-                    Panel(injury_markdown, box=box.ROUNDED, style="red"),
-                    size=5,
-                    name="injury",
-                    visible=self.injury["injury"],
-                ),
             )
 
             main_layout["left"].split_column(
@@ -188,18 +211,33 @@ class ActivePlayer:
                 ),
             )
 
+            to_render = [
+                Layout(controls_table, size=3, name="controls"),
+                *self.controls[self.__tab]["render"](),
+            ]
+            main_layout["right"].split_column(*to_render)
+
             with Live(
                 Align.center(main_layout, vertical="middle"), screen=True
             ) as live:
                 while True:
-                    sections = list(map(lambda x: x["key"], activePlayerControls))
-                    key = readchar.readkey()
-                    if key in sections:
-                        for idx in range(len(sections)):
-                            key_section = sections[idx]
-                            if key_section == key:
-                                self.__tab = activePlayerControls[idx]["label"]
-                        main_layout["right"]["controls"].update(self.render_controls())
+                    asigned_keys = list(
+                        map(
+                            lambda control: self.controls[control]["key"], self.controls
+                        )
+                    )
+                    key = readchar.readkey().lower()
+                    if key in asigned_keys:
+                        for control in self.controls:
+                            if self.controls[control]["key"] == key:
+                                self.__tab = self.controls[control]["label"]
+                        controls_table = self.render_controls()
+                        to_render = [
+                            Layout(controls_table, size=3, name="controls"),
+                            *self.controls[self.__tab]["render"](),
+                        ]
+                        main_layout["right"].unsplit()
+                        main_layout["right"].split(*to_render)
                         live.update(Align.center(main_layout, vertical="middle"))
 
         except KeyboardInterrupt:
