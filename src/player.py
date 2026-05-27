@@ -1,6 +1,7 @@
 import os
 
-from get_achievements import get_achievements_page
+from console import console
+from get_achievements import get_achievements
 import readchar
 from rich.align import Align
 from club import Club
@@ -127,8 +128,16 @@ class ActivePlayer:
         return f"/{self.__path_name}/erfolge/spieler/{self.__id}"
 
     def render_achievements(self):
-        html = get_achievements_page(self.__get_achievements_path())
-        return [Layout()]
+        achievements = get_achievements(self.__get_achievements_path())
+        markdown = ""
+        for achievement in achievements:
+            markdown += f"## {achievement['name']} \n"
+            for time in achievement["times"]:
+                markdown += f"- {time} \n"
+
+        markdown_achievements = Markdown(markdown)
+
+        return [Layout(Panel(markdown_achievements, title=self.name, expand=True))]
 
     def render_stats(self):
         return [Layout()]
@@ -246,7 +255,9 @@ class ActivePlayer:
             main_layout["right"].split_column(*to_render)
 
             with Live(
-                Align.center(main_layout, vertical="middle"), screen=True
+                Align.center(main_layout, vertical="middle"),
+                screen=True,
+                console=console,
             ) as live:
                 while True:
                     asigned_keys = list(
@@ -260,6 +271,13 @@ class ActivePlayer:
                             if self.controls[control]["key"] == key:
                                 self.__tab = self.controls[control]["label"]
                         controls_table = self.render_controls()
+                        main_layout["right"].unsplit()
+                        to_render = [
+                            Layout(controls_table, size=3, name="controls"),
+                            Layout(Panel(f"loading achievements {self.name}...")),
+                        ]
+                        main_layout["right"].split(*to_render)
+                        live.update(Align.center(main_layout, vertical="middle"))
                         to_render = [
                             Layout(controls_table, size=3, name="controls"),
                             *self.controls[self.__tab]["render"](),
