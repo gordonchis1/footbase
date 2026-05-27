@@ -1,5 +1,6 @@
 import os
 
+from get_achievements import get_achievements_page
 import readchar
 from rich.align import Align
 from club import Club
@@ -29,6 +30,21 @@ class Player:
 class PlayerPreview(Player):
     def __init__(self, name, age, team, nationality, path, position, worth):
         super().__init__(name, age, team, nationality, path, position, worth)
+        self.__id = self.generate_id()
+        self.__path_name = self.generate_path_name()
+
+    def generate_path_name(self):
+        path = self.path
+        splited_path = path.split("/")
+        result = splited_path[1]
+        return result
+
+    def generate_id(self):
+        path = self.path
+        splited_path = path.split("/")
+        result = splited_path[-1]
+
+        return result
 
     def load_full(self):
         if not self.path:
@@ -36,12 +52,15 @@ class PlayerPreview(Player):
         player_page = get_player(self.path)
         club, player_info, player_image_url = parse_player_page(player_page)
         injury = get_injury(player_page)
+        # player_info["achievements_path"],
         active_player = ActivePlayer(
             player_info["name"],
             club,
             player_info,
             player_image_url,
             self.worth,
+            self.__id,
+            self.__path_name,
             injury,
         )
         return active_player
@@ -84,22 +103,31 @@ class ActivePlayer:
 
     def __init__(
         self,
-        name,
+        name: str,
         club: Club,
         data: dict,
         player_image_url: str,
-        worth,
-        injury={"injury": False, "type": "", "expected_return": ""},
+        worth: str,
+        id: str,
+        path_name: str,
+        injury: dict = {"injury": False, "type": "", "expected_return": ""},
     ):
         self.__dict__.update(data)
         self.name = name
-        self.__player_image_url = player_image_url
         self.club = club
         self.worth = worth
         self.injury = injury
         self.__tab = "info"
+        self.__player_image_url = player_image_url
+        self.__path_name = path_name
+        self.__id = id
+
+    def __get_achievements_path(self) -> str:
+        # /<path_name>/logros/jugadores/spieler/<id>
+        return f"/{self.__path_name}/erfolge/spieler/{self.__id}"
 
     def render_achievements(self):
+        html = get_achievements_page(self.__get_achievements_path())
         return [Layout()]
 
     def render_stats(self):
