@@ -274,7 +274,12 @@ class ActivePlayer:
                         main_layout["right"].unsplit()
                         to_render = [
                             Layout(controls_table, size=3, name="controls"),
-                            Layout(Panel(f"loading achievements {self.name}...")),
+                            Layout(
+                                Panel(
+                                    f"loading achievements {self.name}...",
+                                    title=self.name,
+                                )
+                            ),
                         ]
                         main_layout["right"].split(*to_render)
                         live.update(Align.center(main_layout, vertical="middle"))
