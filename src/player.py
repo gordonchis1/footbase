@@ -1,7 +1,8 @@
 import os
 
-from console import console
+from console import Console
 from get_achievements import get_achievements
+from log import write_log
 import readchar
 from rich.align import Align
 from club import Club
@@ -14,6 +15,7 @@ from rich import box
 from rich.table import Table
 from rich.live import Live
 
+from console import console
 from utils import save_tmp_image
 
 
@@ -127,25 +129,52 @@ class ActivePlayer:
         # /<path_name>/logros/jugadores/spieler/<id>
         return f"/{self.__path_name}/erfolge/spieler/{self.__id}"
 
-    def render_achievements(self):
+    def render_achievements(self, main_layout: Layout):
+        main_layout["right"].add_split(
+            Layout(
+                Panel(f"Loading {self.name} achievements...", title=self.name),
+                name="achievements",
+            ),
+        )
         achievements = get_achievements(self.__get_achievements_path())
-        markdown = ""
-        for achievement in achievements:
-            markdown += f"## {achievement['name']} \n"
+        console_test = Console()
+        panel = Panel("", title=self.name, expand=True)
+        achievements_layout = main_layout["right"]["achievements"]
+        render_map = achievements_layout.render(console, console.options)
+        height = render_map[achievements_layout].region.height
+        lines = console.render_lines(achievements_layout, options=console.options)
+        last_full_heading = ""
+
+        markdown_achievements = ""
+        raw_markdown_achievements = ""
+        raw_markdown_achievements_tmp = ""
+
+        for idx in range(len(achievements)):
+            raw_markdown_achievements_tmp = raw_markdown_achievements
+            achievement = achievements[idx]
+            raw_markdown_achievements += f"## {achievement['name']} \n"
             for time in achievement["times"]:
-                markdown += f"- {time} \n"
+                raw_markdown_achievements += f"- {time} \n"
+            markdown_achievements = Markdown(raw_markdown_achievements)
+            lines = console_test.render_lines(markdown_achievements)
+            if len(lines) > height - 3:
+                raw_markdown_achievements_tmp += "\n **page 1**"
+                break
+            raw_markdown_achievements_tmp = raw_markdown_achievements
+            last_full_heading = achievement["name"]
 
-        markdown_achievements = Markdown(markdown)
+        write_log(f"last heading {last_full_heading}")
+        write_log(raw_markdown_achievements_tmp)
+        markdown_achievements = Markdown(raw_markdown_achievements_tmp)
+        panel.renderable = markdown_achievements
+        main_layout["right"]["achievements"].update(panel)
 
-        return [Layout(Panel(markdown_achievements, title=self.name, expand=True))]
-
-    def render_stats(self):
+    def render_stats(self, main_layout):
         return [Layout()]
 
-    def render_info(self):
+    def render_info(self, main_layout: Layout) -> None:
         injury_markdown = self.render_injury()
-
-        return [
+        main_layout["right"].add_split(
             Layout(
                 Panel(
                     self.__get_markdown_rendered(),
@@ -160,7 +189,7 @@ class ActivePlayer:
                 name="injury",
                 visible=self.injury["injury"],
             ),
-        ]
+        )
 
     def __repr__(self):
         result = ""
@@ -247,12 +276,10 @@ class ActivePlayer:
                     name="left_bottom",
                 ),
             )
+            controls_layout = Layout(controls_table, size=3, name="controls")
 
-            to_render = [
-                Layout(controls_table, size=3, name="controls"),
-                *self.controls[self.__tab]["render"](),
-            ]
-            main_layout["right"].split_column(*to_render)
+            main_layout["right"].split_column(controls_layout)
+            self.controls[self.__tab]["render"](main_layout)
 
             with Live(
                 Align.center(main_layout, vertical="middle"),
@@ -271,24 +298,12 @@ class ActivePlayer:
                             if self.controls[control]["key"] == key:
                                 self.__tab = self.controls[control]["label"]
                         controls_table = self.render_controls()
+                        controls_layout = Layout(
+                            controls_table, size=3, name="controls"
+                        )
                         main_layout["right"].unsplit()
-                        to_render = [
-                            Layout(controls_table, size=3, name="controls"),
-                            Layout(
-                                Panel(
-                                    f"loading achievements {self.name}...",
-                                    title=self.name,
-                                )
-                            ),
-                        ]
-                        main_layout["right"].split(*to_render)
-                        live.update(Align.center(main_layout, vertical="middle"))
-                        to_render = [
-                            Layout(controls_table, size=3, name="controls"),
-                            *self.controls[self.__tab]["render"](),
-                        ]
-                        main_layout["right"].unsplit()
-                        main_layout["right"].split(*to_render)
+                        main_layout["right"].split_column(controls_layout)
+                        self.controls[self.__tab]["render"](main_layout)
                         live.update(Align.center(main_layout, vertical="middle"))
 
         except KeyboardInterrupt:
