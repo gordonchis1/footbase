@@ -1,3 +1,4 @@
+import enum
 import os
 
 from console import Console
@@ -143,31 +144,55 @@ class ActivePlayer:
         render_map = achievements_layout.render(console, console.options)
         height = render_map[achievements_layout].region.height
         lines = console.render_lines(achievements_layout, options=console.options)
-        last_full_heading = ""
 
         markdown_achievements = ""
         raw_markdown_achievements = ""
         raw_markdown_achievements_tmp = ""
+        pages = []
+        current_page = 1
+        last_header_idx = 0
 
         for idx in range(len(achievements)):
             raw_markdown_achievements_tmp = raw_markdown_achievements
             achievement = achievements[idx]
             raw_markdown_achievements += f"## {achievement['name']} \n"
+            last_header_idx = idx - 1
             for time in achievement["times"]:
                 raw_markdown_achievements += f"- {time} \n"
             markdown_achievements = Markdown(raw_markdown_achievements)
             lines = console_test.render_lines(markdown_achievements)
-            if len(lines) > height - 3:
-                raw_markdown_achievements_tmp += "\n **page 1**"
-                break
+            if len(lines) > height - 8:
+                idx = last_header_idx
+                pages.append(raw_markdown_achievements_tmp)
+                raw_markdown_achievements_tmp = ""
+                raw_markdown_achievements = ""
             raw_markdown_achievements_tmp = raw_markdown_achievements
-            last_full_heading = achievement["name"]
 
-        write_log(f"last heading {last_full_heading}")
-        write_log(raw_markdown_achievements_tmp)
-        markdown_achievements = Markdown(raw_markdown_achievements_tmp)
+        if len(raw_markdown_achievements_tmp) != 0:
+            pages.append(raw_markdown_achievements_tmp)
+
+        for idx, page in enumerate(pages, 1):
+            write_log(f"page {idx}: \n {page}")
+            page += f"\n page **{idx}**/{len(pages)}\n"
+            page += "Controls: **j**/↓ next, **k**/↑ previous"
+            pages[idx - 1] = page
+
+        markdown_achievements = Markdown(pages[current_page - 1])
         panel.renderable = markdown_achievements
         main_layout["right"]["achievements"].update(panel)
+
+        while True:
+            key = readchar.readkey().lower()
+            if key == "j":
+                current_page += 1
+                markdown_achievements = Markdown(pages[current_page - 1])
+                panel.renderable = markdown_achievements
+                main_layout["right"]["achievements"].update(panel)
+            if key == "k":
+                current_page -= 1
+                markdown_achievements = Markdown(pages[current_page - 1])
+                panel.renderable = markdown_achievements
+                main_layout["right"]["achievements"].update(panel)
 
     def render_stats(self, main_layout):
         return [Layout()]
