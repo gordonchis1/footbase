@@ -3,7 +3,7 @@ from datetime import datetime
 import os
 
 
-def write_log(message: str):
+def write_log(message: any):
     cwd = Path.cwd()
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     path = f"{cwd}/logs.txt"

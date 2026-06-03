@@ -1,13 +1,12 @@
-import enum
 import os
 
-from console import Console
 from get_achievements import get_achievements
 from log import write_log
 import readchar
 from rich.align import Align
 from club import Club
 from get_player import get_injury, get_player, parse_player_page
+from rich.segment import Segment
 from rich_pixels import Pixels
 from rich.layout import Layout
 from rich.panel import Panel
@@ -138,61 +137,96 @@ class ActivePlayer:
             ),
         )
         achievements = get_achievements(self.__get_achievements_path())
-        console_test = Console()
         panel = Panel("", title=self.name, expand=True)
-        achievements_layout = main_layout["right"]["achievements"]
-        render_map = achievements_layout.render(console, console.options)
-        height = render_map[achievements_layout].region.height
-        lines = console.render_lines(achievements_layout, options=console.options)
+        layout_render_lines = console.render_lines(
+            main_layout["right"]["achievements"], options=console.options
+        )
+        height = len(layout_render_lines) - 8
+        markdown_achievements = []
 
-        markdown_achievements = ""
-        raw_markdown_achievements = ""
-        raw_markdown_achievements_tmp = ""
-        pages = []
-        current_page = 1
-        last_header_idx = 0
-
-        for idx in range(len(achievements)):
-            raw_markdown_achievements_tmp = raw_markdown_achievements
-            achievement = achievements[idx]
-            raw_markdown_achievements += f"## {achievement['name']} \n"
-            last_header_idx = idx - 1
+        for achievement in achievements:
+            current_markdown_achievement = f"## {achievement['name']}"
             for time in achievement["times"]:
-                raw_markdown_achievements += f"- {time} \n"
-            markdown_achievements = Markdown(raw_markdown_achievements)
-            lines = console_test.render_lines(markdown_achievements)
-            if len(lines) > height - 8:
-                idx = last_header_idx
-                pages.append(raw_markdown_achievements_tmp)
-                raw_markdown_achievements_tmp = ""
-                raw_markdown_achievements = ""
-            raw_markdown_achievements_tmp = raw_markdown_achievements
+                current_markdown_achievement += f"\n- {time}"
+            markdown_achievements.append(current_markdown_achievement)
 
-        if len(raw_markdown_achievements_tmp) != 0:
-            pages.append(raw_markdown_achievements_tmp)
+        def generate_page(achievements_markdown_list):
+            to_render_lines = 0
+            idx = 0
+            markdown_achievements_raw_tmp = ""
 
-        for idx, page in enumerate(pages, 1):
-            write_log(f"page {idx}: \n {page}")
-            page += f"\n page **{idx}**/{len(pages)}\n"
-            page += "Controls: **j**/↓ next, **k**/↑ previous"
-            pages[idx - 1] = page
+            while height > to_render_lines and len(markdown_achievements) > idx:
+                markdown_achievements_raw_tmp += (
+                    "\n" + markdown_achievements[idx] + "\n"
+                )
+                markdown_achievement = Markdown(markdown_achievements_raw_tmp)
+                to_render_lines = len(
+                    console.render_lines(markdown_achievement, options=console.options)
+                )
+                if to_render_lines > height:
+                    break
+                idx += 1
+            write_log(
+                f"Rendered_achievements: {idx}, total_achievements: {len(achievements_markdown_list)}"
+            )
+            return achievements_markdown_list[:idx], achievements_markdown_list[idx:]
 
-        markdown_achievements = Markdown(pages[current_page - 1])
-        panel.renderable = markdown_achievements
+        def generate_pages(achievements_markdown_list):
+            pages = []
+            if len(achievements_markdown_list) == 0:
+                return pages
+
+            page, rest = generate_page(achievements_markdown_list)
+            pages = generate_pages(rest)
+            pages.insert(0, page)
+            return pages
+
+        pages = generate_pages(markdown_achievements)
+        currrent_page_idx = 0
+        final_markdown_raw = "\n".join(
+            [
+                *pages[currrent_page_idx],
+                f"\n **{currrent_page_idx + 1}/{len(pages)}** | Use: j/↓ go down or k/↑",
+            ]
+        )
+        write_log(final_markdown_raw)
+        final_markdown = Markdown(final_markdown_raw)
+        panel.renderable = final_markdown
         main_layout["right"]["achievements"].update(panel)
 
         while True:
             key = readchar.readkey().lower()
             if key == "j":
-                current_page += 1
-                markdown_achievements = Markdown(pages[current_page - 1])
-                panel.renderable = markdown_achievements
-                main_layout["right"]["achievements"].update(panel)
+                currrent_page_idx += 1
             if key == "k":
-                current_page -= 1
-                markdown_achievements = Markdown(pages[current_page - 1])
-                panel.renderable = markdown_achievements
-                main_layout["right"]["achievements"].update(panel)
+                currrent_page_idx -= 1
+            final_markdown_raw = "\n".join(
+                [
+                    *pages[currrent_page_idx],
+                    f"\n **{currrent_page_idx + 1}/{len(pages)}** | Use: j/↓ go down or k/↑",
+                ]
+            )
+
+            asigned_keys = list(
+                map(lambda control: self.controls[control]["key"], self.controls)
+            )
+            final_markdown = Markdown(final_markdown_raw)
+            panel.renderable = final_markdown
+            main_layout["right"]["achievements"].update(panel)
+
+            if key in asigned_keys:
+                for control in self.controls:
+                    if self.controls[control]["key"] == key:
+                        self.__tab = self.controls[control]["label"]
+                        self.__update_rendered(main_layout)
+                break
+
+    def __update_rendered(self, main_layout):
+        controls_table = self.render_controls()
+        controls_layout = Layout(controls_table, size=3, name="controls")
+        main_layout["right"].unsplit()
+        main_layout["right"].split_column(controls_layout)
+        self.controls[self.__tab]["render"](main_layout)
 
     def render_stats(self, main_layout):
         return [Layout()]
@@ -248,7 +282,6 @@ class ActivePlayer:
         controls_table = Table(
             box=box.SQUARE,
             show_header=False,
-            padding=(0, 1),
             expand=True,
         )
 
