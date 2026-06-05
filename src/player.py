@@ -189,17 +189,23 @@ class ActivePlayer:
                 f"\n **{currrent_page_idx + 1}/{len(pages)}** | Use: j/↓ go down or k/↑",
             ]
         )
-        write_log(final_markdown_raw)
         final_markdown = Markdown(final_markdown_raw)
         panel.renderable = final_markdown
         main_layout["right"]["achievements"].update(panel)
 
         while True:
-            key = readchar.readkey().lower()
-            if key == "j":
-                currrent_page_idx += 1
-            if key == "k":
-                currrent_page_idx -= 1
+            key = readchar.readkey()
+            if key == "j" or key == readchar.key.UP:
+                if currrent_page_idx == len(pages) - 1:
+                    currrent_page_idx = 0
+                else:
+                    currrent_page_idx += 1
+            if key == "k" or key == readchar.key.DOWN:
+                if currrent_page_idx - 1 == 0:
+                    currrent_page_idx -= 1
+                else:
+                    currrent_page_idx = len(pages) - 1
+
             final_markdown_raw = "\n".join(
                 [
                     *pages[currrent_page_idx],
@@ -217,13 +223,15 @@ class ActivePlayer:
             if key in asigned_keys:
                 for control in self.controls:
                     if self.controls[control]["key"] == key:
-                        self.__tab = self.controls[control]["label"]
+                        self.__change_tab(self.controls[control]["label"])
                         self.__update_rendered(main_layout)
                 break
 
+    def __change_tab(self, tab):
+        self.__tab = tab
+
     def __update_rendered(self, main_layout):
-        controls_table = self.render_controls()
-        controls_layout = Layout(controls_table, size=3, name="controls")
+        controls_layout = self.render_controls()
         main_layout["right"].unsplit()
         main_layout["right"].split_column(controls_layout)
         self.controls[self.__tab]["render"](main_layout)
@@ -308,13 +316,12 @@ class ActivePlayer:
 
         controls_table.add_row(*controls_strings)
 
-        return controls_table
+        return Layout(controls_table, size=3, name="controls")
 
     def render_layout(self):
         player_img_tmp_path = None
         club_img_tmp_path = None
         try:
-            controls_table = self.render_controls()
             player_image, player_img_tmp_path = self.render_player_image()
             club_image, club_img_tmp_path = self.club.render_club_img()
 
@@ -334,7 +341,7 @@ class ActivePlayer:
                     name="left_bottom",
                 ),
             )
-            controls_layout = Layout(controls_table, size=3, name="controls")
+            controls_layout = self.render_controls()
 
             main_layout["right"].split_column(controls_layout)
             self.controls[self.__tab]["render"](main_layout)
@@ -343,7 +350,7 @@ class ActivePlayer:
                 Align.center(main_layout, vertical="middle"),
                 screen=True,
                 console=console,
-            ) as live:
+            ):
                 while True:
                     asigned_keys = list(
                         map(
@@ -354,16 +361,9 @@ class ActivePlayer:
                     if key in asigned_keys:
                         for control in self.controls:
                             if self.controls[control]["key"] == key:
-                                self.__tab = self.controls[control]["label"]
-                        controls_table = self.render_controls()
-                        controls_layout = Layout(
-                            controls_table, size=3, name="controls"
-                        )
-                        main_layout["right"].unsplit()
-                        main_layout["right"].split_column(controls_layout)
-                        self.controls[self.__tab]["render"](main_layout)
-                        live.update(Align.center(main_layout, vertical="middle"))
-
+                                self.__change_tab(self.controls[control]["label"])
+                        controls_layout = self.render_controls()
+                        self.__update_rendered(main_layout)
         except KeyboardInterrupt:
             if player_img_tmp_path:
                 os.remove(player_img_tmp_path)
