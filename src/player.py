@@ -1,12 +1,13 @@
 import os
 
 from get_achievements import get_achievements
+from get_competitions import Competition, get_competitions
+from get_stats import Stats, get_stats
 from log import write_log
 import readchar
 from rich.align import Align
 from club import Club
 from get_player import get_injury, get_player, parse_player_page
-from rich.segment import Segment
 from rich_pixels import Pixels
 from rich.layout import Layout
 from rich.panel import Panel
@@ -129,6 +130,48 @@ class ActivePlayer:
         # /<path_name>/logros/jugadores/spieler/<id>
         return f"/{self.__path_name}/erfolge/spieler/{self.__id}"
 
+    def render_stats(self, main_layout: Layout):
+        main_layout["right"].add_split(
+            Layout(
+                Panel(f"Loading {self.name} stats...", title=self.name),
+                name="stats",
+            ),
+        )
+
+        stats = Stats(self.__id)
+        competitions = get_competitions(stats.competitions_ids)
+        table = Table(
+            collapse_padding=True,
+            pad_edge=False,
+            expand=True,
+            show_edge=True,
+            show_lines=True,
+        )
+        table.add_column("League", justify="left")
+        table.add_column("Goals", justify="center")
+        table.add_column("Assists", justify="center")
+        table.add_column("Minutes", justify="center")
+        table.add_column("Appearences", justify="center")
+
+        for competition in competitions:
+            if competition is None:
+                continue
+            competition_stats = stats.competitions_stats[competition.id]
+            table.add_row(
+                competition.name,
+                f"{competition_stats['total_goals']}",
+                f"{competition_stats['total_assists']}",
+                f"{competition_stats['minutes_played']}",
+                f"{competition_stats['appearences']}",
+            )
+
+        main_layout["right"]["stats"].update(Panel(table, padding=(0, 0)))
+
+        write_log(
+            f"Total goals: {stats.get_total_goals()}, Total assists: {stats.get_total_assists()}"
+        )
+        get_competitions(stats.competitions_ids)
+
     def render_achievements(self, main_layout: Layout):
         main_layout["right"].add_split(
             Layout(
@@ -201,7 +244,7 @@ class ActivePlayer:
                 else:
                     currrent_page_idx += 1
             if key == "k" or key == readchar.key.DOWN:
-                if currrent_page_idx - 1 == 0:
+                if currrent_page_idx != 0:
                     currrent_page_idx -= 1
                 else:
                     currrent_page_idx = len(pages) - 1
@@ -235,9 +278,6 @@ class ActivePlayer:
         main_layout["right"].unsplit()
         main_layout["right"].split_column(controls_layout)
         self.controls[self.__tab]["render"](main_layout)
-
-    def render_stats(self, main_layout):
-        return [Layout()]
 
     def render_info(self, main_layout: Layout) -> None:
         injury_markdown = self.render_injury()

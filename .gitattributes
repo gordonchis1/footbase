@@ -1,1 +1,2 @@
 src/test_pages/**/*.html linguist-vendored
+src/test_pages/**/*.json linguist-vendored

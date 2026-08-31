@@ -10,7 +10,7 @@ from utils import parse_html, parse_text
 from club import Club
 
 
-def get_player(path):
+def get_player(path: str) -> str:
     mode = os.getenv("MODE")
 
     with console.status(f"Loading player: {path}", spinner="bouncingBall"):
@@ -29,7 +29,7 @@ def get_player(path):
             raise Exception(error)
 
 
-def get_injury(player_page):
+def get_injury(player_page: str) -> dict[str, any]:
     injury = {"injury": False, "type": "", "expected_return": ""}
     html = parse_html(player_page)
     injury_box = html.find("div", "verletzungsbox")
@@ -43,7 +43,7 @@ def get_injury(player_page):
     return injury
 
 
-def parse_player_page(player_page):
+def parse_player_page(player_page: str) -> (Club, dict[str, any], str) | None:
     html = parse_html(player_page)
     html_club_info = html.find("div", "data-header__box--big")
     club = parse_text(html.find("span", "data-header__club").get_text())
