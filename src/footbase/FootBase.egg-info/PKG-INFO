@@ -3,7 +3,3 @@ Name: FootBase
 Version: 0.1.0
 Requires-Python: >=3.11
 Requires-Dist: click>=8.1
-Requires-Dist: readchar
-Requires-Dist: requests
-Requires-Dist: rich
-Requires-Dist: rich_pixels

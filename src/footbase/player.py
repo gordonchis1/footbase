@@ -1,13 +1,13 @@
 import os
 
-from get_achievements import get_achievements
-from get_competitions import Competition, get_competitions
-from get_stats import Stats, get_stats
-from log import write_log
+from .get_achievements import get_achievements
+from .get_competitions import Competition, get_competitions
+from .get_stats import Stats, get_stats
+from .log import write_log
 import readchar
 from rich.align import Align
-from club import Club
-from get_player import get_injury, get_player, parse_player_page
+from .club import Club
+from .get_player import get_injury, get_player, parse_player_page
 from rich_pixels import Pixels
 from rich.layout import Layout
 from rich.panel import Panel
@@ -16,8 +16,8 @@ from rich import box
 from rich.table import Table
 from rich.live import Live
 
-from console import console
-from utils import save_tmp_image
+from .console import console
+from .utils import save_tmp_image
 
 
 class Player:

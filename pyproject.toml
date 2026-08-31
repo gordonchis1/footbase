@@ -5,8 +5,14 @@ description = ""
 requires-python = ">=3.11"
 dependencies = [
     "click>=8.1",
+    "readchar",
+    "requests",
+    "rich",
+    "rich_pixels"
 ]
 
 [project.scripts]
-footbase = "cli:cli"
+footbase = "footbase.cli:cli"
 
+[tool.setuptools.packages.find]
+where = ["src"]

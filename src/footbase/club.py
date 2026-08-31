@@ -1,6 +1,6 @@
 from rich_pixels import Pixels
 
-from utils import save_tmp_image
+from .utils import save_tmp_image
 
 
 class Club:

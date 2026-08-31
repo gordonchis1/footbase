@@ -3,11 +3,11 @@ from rich import align
 from rich.align import Align
 from rich.console import Group
 from rich.live import Live
-from console import console
+from .console import console
 from rich.table import Table
 import readchar
 
-from player import PlayerPreview
+from .player import PlayerPreview
 from rich.text import Text
 
 

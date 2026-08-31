@@ -1,1 +1,5 @@
 click>=8.1
+readchar
+requests
+rich
+rich_pixels

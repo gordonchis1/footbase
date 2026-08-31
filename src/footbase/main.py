@@ -1,6 +1,6 @@
-from cli import player
+from .cli import player
 import sys
-from utils import clear_console
+from .utils import clear_console
 
 commands = {"player": player}
 

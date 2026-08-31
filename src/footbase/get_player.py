@@ -3,11 +3,11 @@ from time import sleep
 
 import requests
 
-from console import console
-from constants import BASE_TRANSFERMARKT_URL
-from test_pages.tests_index import PLAYER_PAGE
-from utils import parse_html, parse_text
-from club import Club
+from .console import console
+from .constants import BASE_TRANSFERMARKT_URL
+from .test_pages.tests_index import PLAYER_PAGE
+from .utils import parse_html, parse_text
+from .club import Club
 
 
 def get_player(path: str) -> str:

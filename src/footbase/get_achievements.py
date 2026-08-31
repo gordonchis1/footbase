@@ -1,10 +1,10 @@
 import os
 from time import sleep
-from test_pages.tests_index import ACHIEVEMENTS_PAGE
-from constants import BASE_TRANSFERMARKT_URL
+from .test_pages.tests_index import ACHIEVEMENTS_PAGE
+from .constants import BASE_TRANSFERMARKT_URL
 import requests
-from console import console
-from utils import parse_html, parse_text
+from .console import console
+from .utils import parse_html, parse_text
 
 
 def get_achievements_page(path: str) -> str:

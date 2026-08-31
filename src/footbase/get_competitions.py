@@ -1,7 +1,7 @@
-from constants import COMPETITIONS_TRANSFERMARKT_URL
+from .constants import COMPETITIONS_TRANSFERMARKT_URL
 import os
 import json
-from test_pages.tests_index import COMPETITIONS_JSON
+from .test_pages.tests_index import COMPETITIONS_JSON
 import requests
 
 

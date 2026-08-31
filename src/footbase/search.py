@@ -1,13 +1,13 @@
 import os
 import requests
-from constants import BASE_TRANSFERMARKT_SEARCH_URL
-from player import PlayerPreview
-from test_pages.tests_index import SEARCH_PAGE
-from utils import parse_text
-from console import console
+from .constants import BASE_TRANSFERMARKT_SEARCH_URL
+from .player import PlayerPreview
+from .test_pages.tests_index import SEARCH_PAGE
+from .utils import parse_text
+from .console import console
 from time import sleep
-from utils import parse_html
-from player_grid import Player_grid
+from .utils import parse_html
+from .player_grid import Player_grid
 
 
 def searchPlayer(query):

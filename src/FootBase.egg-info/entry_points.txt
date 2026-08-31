@@ -1,2 +1,2 @@
 [console_scripts]
-footbase = cli:cli
+footbase = footbase.cli:cli

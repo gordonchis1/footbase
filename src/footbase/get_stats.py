@@ -1,7 +1,7 @@
-from log import write_log
+from .log import write_log
 import requests
-from constants import STATS_TRANSFERMARKT_URL
-from test_pages.tests_index import STATS_JSON
+from .constants import STATS_TRANSFERMARKT_URL
+from .test_pages.tests_index import STATS_JSON
 import os
 import json
 import copy
