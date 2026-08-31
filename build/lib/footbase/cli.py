@@ -1,5 +1,5 @@
-from player import PlayerPreview
-from search import search_and_select_player
+from .player import PlayerPreview
+from .search import search_and_select_player
 import click
 
 
